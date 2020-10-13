@@ -1,0 +1,148 @@
+/*remove inherent coding*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /*roots*/
+  :root { 
+    } 
+
+/* universal*/
+body {
+    font-family: 'Gill Sans', sans-serif;
+    line-height: 1.5;
+    background-color: black;
+}
+h1 {
+    font-family: 'Eagle Lake', sans-serif;
+    color: #00d5c6;
+    font-size: 44px;
+    text-shadow:3px 3px 15px #00179d,5px 5px 15px #5f61ff;
+}
+h2 {
+    font-family: 'Eagle Lake', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    /*text-shadow:0px 0px 3px #00d5c6;*/
+    color: #00d5c6;
+    text-shadow:3px 3px 15px #00179d,5px 5px 15px #5f61ff;
+    padding:10px 0px;
+}
+h3 {
+    font-family: 'Eagle Lake', sans-serif;
+    font-size: 18px;
+    padding:10px 0px;
+}
+h4 {
+    font-family: 'Eagle Lake', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding:10px 0px;
+}
+
+/*Header*/
+header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color:black;
+    color:white;
+}
+
+
+header a{
+    text-decoration: none;
+    color: #00d5c6;
+}
+
+header nav {
+    margin: 7px 0;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul li {
+    margin: 0 14px;
+    padding:5px 10px;
+    font-size: 18px;
+    border: 2px solid darkblue;
+
+}
+
+header nav ul li:hover{
+
+    border: 2px solid #00d5c6;
+    text-shadow:0px 0px 25px white,3px 3px 25px #5f61ff;
+
+  }
+/*end header*/
+
+/* Hero Style Start */
+.hero {
+    background-image: url('../assets/images/sword.png');
+    background-size: 100%;
+    background-attachment: fixed;
+    min-height: 200px;
+    padding-right:30px;
+  }
+
+  .hero-box {
+    text-align:right;
+    padding: 5px 5px 5px 5px;
+    background-color: rgba(100, 200, 200, .7);
+    font-family: 'Eagle Lake', sans-serif;
+    position: relative;
+    bottom: 20px;
+    box-shadow: 5px 5px 10px #00179d, 5px 5px 15px #5f61ff;
+  }
+
+/*hero style end*/
+
+/*main body start*/
+
+/*About*/
+section {
+    display:flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    
+}
+
+.card {
+    padding:15px;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    background-color: rgba(250, 250, 250, .7);
+    margin:20px;
+}
+.card-white {
+    padding:15px;
+    background: whitesmoke;
+    margin:20px;
+    box-shadow:inset 0px 0px 10px #000;
+}
+
+.dark-glow {
+    text-shadow:3px 3px 10px #00179d,0px 0px 5px #5f61ff;
+}
+
+.monkbg {
+    background-image: url('../assets/images/MonkBg.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: bottom; 
+}
+
+.firebg {
+    background-image: url('../assets/images/FireBg.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: bottom; 
+}
