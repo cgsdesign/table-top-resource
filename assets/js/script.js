@@ -57,13 +57,19 @@ for (var i = 0; i < diceTypes.length; i++) {
     //get the value of the range of each die from the dropdown
     var getChoiceValueAndRandomNumber = function() {
         var choiceValue = diceDropdownId.options[diceDropdownId.selectedIndex].value;
-    
+        
+        //temporary, I know we can't use alerts
+        if (choiceValue < 4) {
+            alert("Pick a die value");
+        }
+        else {
         //random number generator
         var randomNumber = Math.floor(Math.random() * choiceValue) + 1;
         console.log(randomNumber);
 
         //remove previous value and append generated random value to page
         randomNumberDisplay.textContent = "Roll Value: " + randomNumber;
+        }
     }
 };
 
