@@ -121,6 +121,7 @@ section {
     box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
     background-color: rgba(250, 250, 250, .7);
     margin:20px;
+    min-width: 150px;
 }
 .card-white {
     padding:15px;
