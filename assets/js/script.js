@@ -11,66 +11,59 @@ die values/remove dropdowns*/
 var diceTypes = [
 {
     "type": "",
-    "value": ""
+    "range": ""
 },
 {
     "type": "d4",
-    "value": 4
+    "range": 4
 },
 {
     "type": "d6",
-    "value": 6
+    "range": 6
 },
 {
     "type": "d8",
-    "value": 8
+    "range": 8
 },
 {
     "type": "d10",
-    "value": 10
+    "range": 10
 },
 {
     "type": "d12",
-    "value": 12
+    "range": 12
 },
 {
     "type": "d20",
-    "value": 20
+    "range": 20
 },
 {
     "type": "d100",
-    "value": 100
+    "range": 100
 }
 ];
 
-
-
-var diceDropdownClass = document.querySelector(".dice-dropdown");
+var diceDropdownId = document.querySelector("#dice-dropdown");
 var rollButton = document.querySelector("#roll-button");
 
 for (var i = 0; i < diceTypes.length; i++) {
+    //iterate through diceTypes array and append to dropdown
     var dropdownOptions = document.createElement("option");
     dropdownOptions.innerHTML = diceTypes[i].type;
-    dropdownOptions.value = diceTypes[i].value;
-    diceDropdownClass.appendChild(dropdownOptions);
-    var diceDropdownChoice = document.querySelector("#dice-dropdown-id");
-    /*I want this to grab the dropdown value, but this is getting the value of the
-    length of the array*/
-    var choiceValue = diceDropdownChoice.options[diceDropdownChoice.selectedIndex].value;
-    //console.log(choiceValue);
-
-    //need to iron out Math, doesn't want to activate on button click
-    /*
-    var getRandomNumber = function() {
-        return Math.floor(Math.random() * Math.floor());
-    };
-    */    
+    dropdownOptions.value = diceTypes[i].range;
+    diceDropdownId.appendChild(dropdownOptions);
+    
+    //get the 
+    var getChoiceValue = function() {
+        var choiceValue = diceDropdownId.options[diceDropdownId.selectedIndex].value;
+        console.log(choiceValue);
+    }
+    //random number generator
+    var getRandomNumber = function(choiceValue) {
+        var randomNumber = Math.floor(Math.random() * choiceValue) + 1;
+        console.log(randomNumber);
+    }
 };
 
-//testing buttons
-var ifClicked = function() {
-    console.log("button was clicked");
-};
-
-rollButton.addEventListener("click", ifClicked);
-//rollButton.addEventListener("click", getRandomNumber);
+rollButton.addEventListener("click", getChoiceValue);
+rollButton.addEventListener("click", getRandomNumber);
