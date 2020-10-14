@@ -43,8 +43,9 @@ var diceTypes = [
 }
 ];
 
-var diceDropdownId = document.querySelector("#dice-dropdown");
-var rollButton = document.querySelector("#roll-button");
+var diceDropdownId      = document.querySelector("#dice-dropdown");
+var randomNumberDisplay = document.querySelector(".random-number-display");
+var rollButton          = document.querySelector("#roll-button");
 
 for (var i = 0; i < diceTypes.length; i++) {
     //iterate through diceTypes array and append to dropdown
@@ -53,17 +54,16 @@ for (var i = 0; i < diceTypes.length; i++) {
     dropdownOptions.value = diceTypes[i].range;
     diceDropdownId.appendChild(dropdownOptions);
     
-    //get the 
+    //get the value of the range of each die from the dropdown
     var getChoiceValue = function() {
         var choiceValue = diceDropdownId.options[diceDropdownId.selectedIndex].value;
-        console.log(choiceValue);
-    }
-    //random number generator
-    var getRandomNumber = function(choiceValue) {
+    
+        //random number generator
         var randomNumber = Math.floor(Math.random() * choiceValue) + 1;
         console.log(randomNumber);
+
     }
 };
 
 rollButton.addEventListener("click", getChoiceValue);
-rollButton.addEventListener("click", getRandomNumber);
+//rollButton.addEventListener("click", getRandomNumber);
