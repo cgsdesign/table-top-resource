@@ -44,7 +44,7 @@ var diceTypes = [
 ];
 
 var diceDropdownId      = document.querySelector("#dice-dropdown");
-var randomNumberDisplay = document.querySelector(".random-number-display");
+var randomNumberDisplay = document.querySelector("#random-number-display");
 var rollButton          = document.querySelector("#roll-button");
 
 for (var i = 0; i < diceTypes.length; i++) {
@@ -55,15 +55,24 @@ for (var i = 0; i < diceTypes.length; i++) {
     diceDropdownId.appendChild(dropdownOptions);
     
     //get the value of the range of each die from the dropdown
-    var getChoiceValue = function() {
+    var getChoiceValueAndRandomNumber = function() {
         var choiceValue = diceDropdownId.options[diceDropdownId.selectedIndex].value;
     
         //random number generator
         var randomNumber = Math.floor(Math.random() * choiceValue) + 1;
         console.log(randomNumber);
 
+        //remove previous value and append generated random value to page
+        randomNumberDisplay.textContent = "Roll Value: " + randomNumber;
     }
 };
 
-rollButton.addEventListener("click", getChoiceValue);
-//rollButton.addEventListener("click", getRandomNumber);
+/*future plans:
+-append/remove dropdowns with +/- buttons above all dropdowns
+-add clear dice button to remove all appended dropdowns 
+    (still keeping one fixed to the page)
+-Roll! button will be set up to activate all dropdowns
+-seek feedback concerning function structure/layout
+*/
+
+rollButton.addEventListener("click", getChoiceValueAndRandomNumber);
