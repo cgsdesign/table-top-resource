@@ -3,10 +3,16 @@
 var catagoryInfo = ""
 var entrySelect = ""
 
-fetch("https://www.dnd5eapi.co/api/" + catagory + "/" + entry).then(function(response) {
-    response.json().then(function(data) {
-        console.log(data)
+var dndInfoCall = function() {
+    fetch("https://www.dnd5eapi.co/api/" + catagory + "/" + entry).then(function(response) {
+        response.json().then(function(data) {
+            console.log(data)
+        })
     })
-})
+}
 
-$(".catagory").on("click", )
+var createContextDrop = function() {
+    
+}
+
+$("#spellDrop").on("click", createContextDrop)
