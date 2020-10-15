@@ -21,10 +21,9 @@
     <body class="map-bg">
         <header>
             <h1>Maps</h1>
+            <h2 class="dark-glow" style="justify-items:right;">Chose your componants and drag to place them on the map.</h2>
         </header>
         <section class="section monkbg">
-            <h2 class="dark-glow" style="width:100%;">Chose your componants and drag to place them on the map.</h2>
-            <br>
             <div class="item-outer-box">
                     <div class="width20"> 
                         <div id="mymapdiv">
@@ -47,14 +46,15 @@
                         </div> 
                     </div> 
             </div>
-            <div class="item-outer-box">
-                    <div class="width20">
-                        <div id="mymapdiv4">    
-                            <img src="./assets/images/Tokens/monster.png"></div> 
+            <div  class="item-outer-box moster">
+                    <div class="width20" id="newMonster">
+                        <div id="mymapdiv4" class="mymapdiv">    
+                            <img src="./assets/images/Tokens/monster.png"><b>1</b></div> 
                         </div> 
-                        <div id="mymapdiv5">    
+                        <button onclick="createNewToken()">New Monster</button>
+                        <div id="mymapdiv5" class="mymapdiv">    
                             <img src="./assets/images/Tokens/boss.png"></div> 
-                        </div> 
+                        </div>                         
                     </div> 
             </div>
         </section>

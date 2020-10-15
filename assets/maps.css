@@ -10,11 +10,11 @@
     position: absolute;
     z-index: 9;
   }
-  #mymapdiv4 {
+  .mymapdiv4 {
     position: absolute;
     z-index: 9;
   }
-  #mymapdiv5 {
+  .mymapdiv {
     position: absolute;
     z-index: 9;
   }
@@ -25,11 +25,11 @@
   }
 
   img {
-    width:50px;
+    width:45px;
   }
 
   .width20{
-      width:100px;
+      width:60px;
       display: flex;
     flex:1;
     margin: 10px;

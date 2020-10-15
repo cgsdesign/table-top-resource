@@ -11,12 +11,15 @@
 
 
 
-dragElement(document.getElementById("mymapdiv"));
-dragElement(document.getElementById("mymapdiv2"));
-dragElement(document.getElementById("mymapdiv3"));
-dragElement(document.getElementById("mymapdiv4"));
-dragElement(document.getElementById("mymapdiv5"));
-console.log("argggggg")
+dragElement(document.getElementById("mymapdiv2"))
+dragElement(document.getElementById("mymapdiv3"))
+dragElement(document.getElementById("mymapdiv4"))
+dragElement(document.getElementById("mymapdiv5"))
+var allDrag = [
+    'dragElement(document.getElementById("mymapdiv"))'
+]
+//need to append new itens when make them - possibley with this
+
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   var thing=document.getElementById(elmnt.id + "item")
@@ -58,3 +61,23 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+var tokenNum = 6
+//started code to how to add css class to elements to make them be a drag token
+var createNewToken = function(){
+console.log(tokenNum)
+//make parent componant
+var parent = document.getElementById("newMonster")
+var style = document.createElement('div');
+style.classList.add("mymapdiv")
+style.setAttribute("id", `mymapdivM${tokenNum}`)
+style.innerHTML = `<img src="./assets/images/Tokens/monster.png"><b>${tokenNum}</b></div>`;
+parent.appendChild(style);
+dragElement(document.getElementById(`mymapdivM${tokenNum}`))
+console.log(allDrag)
+console.log(style)
+console.log(tokenNum)
+tokenNum = tokenNum +1
+return
+}
+
+createNewToken()
