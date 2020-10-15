@@ -67,7 +67,7 @@ for (var i = 0; i < diceTypes.length; i++) {
         var randomNumber = Math.floor(Math.random() * choiceValue) + 1;
         console.log(randomNumber);
 
-        //remove previous value and append generated random value to page
+        //remove previous value and add generated random value to page
         randomNumberDisplay.textContent = "Roll Value: " + randomNumber;
         }
     }
@@ -79,6 +79,9 @@ for (var i = 0; i < diceTypes.length; i++) {
     (still keeping one fixed to the page)
 -Roll! button will be set up to activate all dropdowns
 -seek feedback concerning function structure/layout
+-clone function?
+-javascript value this?
+-kanban board taskinator
 */
 
 rollButton.addEventListener("click", getChoiceValueAndRandomNumber);
