@@ -147,3 +147,10 @@ section {
     background-attachment: fixed;
     background-position: bottom; 
 }
+
+
+/*maps*/
+#mymapdiv {
+    position: absolute;
+    z-index: 9;
+  }
