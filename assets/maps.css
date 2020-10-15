@@ -1,49 +1,54 @@
 #mymapdiv {
     position: absolute;
     z-index: 9;
-    background: green;
   }
   #mymapdiv2 {
     position: absolute;
     z-index: 9;
-    background: green;
   }
   #mymapdiv3 {
     position: absolute;
     z-index: 9;
-    background: green;
   }
   #mymapdiv4 {
     position: absolute;
     z-index: 9;
-    background: green;
   }
   #mymapdiv5 {
     position: absolute;
     z-index: 9;
-    background: green;
   }
   
   #item {
-    padding: 10px;
     cursor: move;
     z-index: 10;
-    background-color: #2196F3;
-    color: #fff;
+  }
+
+  img {
+    width:50px;
   }
 
   .width20{
       width:100px;
       display: flex;
-flex:1;
-margin: 10px;
+    flex:1;
+    margin: 10px;
   }
 
-  .header{
-      min-height: 50px;
-      
+  .title {
+    background: black;
+    height:50px;
   }
+
   .item-outer-box {
       height:50px;
       min-width: 50px;
+  }
+
+  .map-bg {
+    background-image: url('../assets/images/grid3.jpg');
+    background-size: 150px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: left; 
   }
