@@ -107,6 +107,16 @@ header nav ul li:hover{
 /*hero style end*/
 
 /*main body start*/
+.ruleInfo {
+    font-family: 'Eagle Lake', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    list-style: none;
+    /*text-shadow:0px 0px 3px #00d5c6;*/
+    color: #00d5c6;
+    text-shadow:3px 3px 15px #00179d,5px 5px 15px #5f61ff;
+    padding:10px 0px;
+}
 
 /*About*/
 section {
