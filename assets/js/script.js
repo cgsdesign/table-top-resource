@@ -1,18 +1,25 @@
 // fetch api
 
-var catagoryInfo = ""
-var entrySelect = ""
+var catagory = ""
+var entry = ""
 
-var dndInfoCall = function() {
-    fetch("https://www.dnd5eapi.co/api/" + catagory + "/" + entry).then(function(response) {
+// var dndInfoCall = function() {
+//     fetch("https://www.dnd5eapi.co/api/" + catagory + "/" + entry).then(function(response) {
+//         response.json().then(function(data) {
+//             console.log(data)
+//         })
+//     })
+// }
+
+var createContextDrop = function() {
+    var rulesDropdownSelect = $("#rulesDropDown")
+    catagory = rulesDropdownSelect
+
+    fetch("https://www.dnd5eapi.co/api/" + catagory).then(function(response) {
         response.json().then(function(data) {
-            console.log(data)
+           console.log(data) 
         })
     })
 }
 
-var createContextDrop = function() {
-    
-}
-
-$("#spellDrop").on("click", createContextDrop)
+$("#spellDrop").on("change", createContextDrop())
