@@ -21,14 +21,7 @@ dragElement(document.getElementById("mymapdiv6"))
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  var thing=document.getElementById(elmnt.id + "item")
-  if (thing) {
-    /* if present, the header is where you move the DIV from:*/
-    thing.onmousedown = dragMouseDown;
-  } else {
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
     elmnt.onmousedown = dragMouseDown;
-  }
 
   function dragMouseDown(e) {
     e = e || window.event;
@@ -81,8 +74,8 @@ tokenNum = tokenNum +1
 return
 }
 
-var Monster = document.getElementById("newMonster")
-Monster.addEventListener("click", createNewToken);
+// var Monster = document.getElementById("newMonster")
+// Monster.addEventListener("click", createNewToken);
 
 //spon new boss monster to Drag
 var bossTokenNum = 2
@@ -102,13 +95,19 @@ bossTokenNum = bossTokenNum +1
 return
 }
 
-var bossMonster = document.getElementById("newBossMonster")
-bossMonster.addEventListener("click", createNewBossToken);
+// var bossMonster = document.getElementById("newBossMonster")
+// bossMonster.addEventListener("click", createNewBossToken);
 
 //spon new water to Drag
 var waterTokenNum = 2
-var createNewWaterToken = function(){
-console.log(waterTokenNum)
+var waterTrial = ""
+var createNewWaterToken = function(i){
+// console.log(waterTokenNum)
+// console.log(i)
+// if (waterTrial != IDINeed){
+//     console.log(waterTrial)
+//     console.log(IDIneed)
+// return}
 //make parent componant
 var parent = document.getElementById("newWater")
 var style = document.createElement('div');
@@ -117,11 +116,14 @@ style.setAttribute("id", `mymapdivW${waterTokenNum}`)
 style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
 parent.appendChild(style);
 dragElement(document.getElementById(`mymapdivW${waterTokenNum}`))
+waterTrial = document.getElementById(`mymapdivW${waterTokenNum}`)
+// waterTrial.addEventListener("click", createNewWaterToken);
+// console.log(waterTrial)
 console.log(style)
 console.log(waterTokenNum)
 waterTokenNum = waterTokenNum +1
 return
 }
 
-var water = document.getElementById("newWater")
-water.addEventListener("click", createNewWaterToken);
+//var water = document.getElementById("mymapdiv6")
+//water.addEventListener("click", createNewWaterToken);

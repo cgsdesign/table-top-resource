@@ -23,55 +23,57 @@
             <h1>Maps</h1>
             <h4 class="dark-glow" style="justify-items:right;">Chose your componants and drag to place them on the map.</h4>
         </header>
-        <section id="token-bar" class="section monkbg">
-
-            <div class="item-outer-box">
-                <div class="width20"> 
-                    <div id="mymapdiv1" class="mymapdiv">
-                        <img src="./assets/images/Tokens/archer.png">
-                    </div>
-                </div> 
-            </div>
-
-            <div class="item-outer-box">
-                <div class="width20"> 
-                    <div id="mymapdiv2" class="mymapdiv">       
-                        <img src="./assets/images/Tokens/mage.png">
+        <section class="section monkbg" style="padding-top: 10px; padding-bottom: 50px;">
+                <div class="item-outer-box">
+                    <div class="width20"> 
+                        <div id="mymapdiv1" class="mymapdiv">
+                            <img src="./assets/images/Tokens/archer.png">
+                        </div>
                     </div> 
-                </div> 
-            </div>
+                </div>
 
-            <div class="item-outer-box">
-                <div class="width20">
-                    <div id="mymapdiv3" class="mymapdiv">    
-                        <img src="./assets/images/Tokens/fighter.png"> 
+                <div class="item-outer-box">
+                    <div class="width20"> 
+                        <div id="mymapdiv2" class="mymapdiv">       
+                            <img src="./assets/images/Tokens/mage.png">
+                        </div> 
                     </div> 
-                </div> 
-            </div>
+                </div>
 
-            <div  class="item-outer-box">
-                <div class="width20" id="newMonster">
-                    <div id="mymapdiv4" class="mymapdiv">    
-                        <img src="./assets/images/Tokens/monster.png"><b>1</b> 
-                    </div>                        
-                </div> 
-            </div>
+                <div class="item-outer-box">
+                    <div class="width20">
+                        <div id="mymapdiv3" class="mymapdiv">    
+                            <img src="./assets/images/Tokens/fighter.png"> 
+                        </div> 
+                    </div> 
+                </div>
 
-            <div  class="item-outer-box-lg">
-                <div class="width40 big" id="newBossMonster">
-                    <div id="mymapdiv5" class="mymapdiv">    
-                        <img src="./assets/images/Tokens/boss.png"><b>1</b>
-                    </div>                         
-                </div> 
-            </div>
+                <div  class="item-outer-box">
+                    <div class="width20" id="newMonster">
+                        <button onclick="createNewToken()">Get New<br>Enemy</button>
+                        <div id="mymapdiv4" class="mymapdiv">    
+                            <img src="./assets/images/Tokens/monster.png"><b>1</b> 
+                        </div>                        
+                    </div> 
+                </div>
 
-            <div  class="item-outer-box-lg">
-                <div class="width40 big" id="newWater">
-                    <div id="mymapdiv6" class="mymapdiv">    
-                        <img src="./assets/images/Tokens/water.png"> 
-                    </div>                         
-                </div> 
-            </div>
+                <div  class="item-outer-box-lg">
+                    <div class="width40 big" id="newBossMonster">
+                        <button onclick="createNewBossToken()">Get New<br>Big Enemy</button> 
+                        <div id="mymapdiv5" class="mymapdiv">    
+                            <img src="./assets/images/Tokens/boss.png"><b>1</b>
+                        </div>                         
+                    </div> 
+                </div>
+
+                <div  class="item-outer-box-lg">
+                    <div class="width40 big" id="newWater">  
+                        <button onclick="createNewWaterToken()">Get New<br>Water</button> 
+                        <div id="mymapdiv6" class="mymapdiv"> 
+                            <img src="./assets/images/Tokens/water.png"> 
+                        </div>                         
+                    </div> 
+                </div>
         </section>
         <section class="map-zone">
 
