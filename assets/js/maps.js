@@ -15,6 +15,7 @@ dragElement(document.getElementById("mymapdiv2"))
 dragElement(document.getElementById("mymapdiv3"))
 dragElement(document.getElementById("mymapdiv4"))
 dragElement(document.getElementById("mymapdiv5"))
+dragElement(document.getElementById("mymapdiv6"))
 
 //need to append new itens when make them - possibley with this
 
@@ -71,7 +72,7 @@ var parent = document.getElementById("newMonster")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
 style.setAttribute("id", `mymapdivM${tokenNum}`)
-style.innerHTML = `<img src="./assets/images/Tokens/monster.png"><b>${tokenNum}</b></div>`;
+style.innerHTML = `<img src="./assets/images/Tokens/monster.png"><b>${tokenNum}</b>`;
 parent.appendChild(style);
 dragElement(document.getElementById(`mymapdivM${tokenNum}`))
 console.log(style)
@@ -92,7 +93,7 @@ var parent = document.getElementById("newBossMonster")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
 style.setAttribute("id", `mymapdivB${bossTokenNum}`)
-style.innerHTML = `<img src="./assets/images/Tokens/boss.png"><b>${bossTokenNum}</b></div>`;
+style.innerHTML = `<img src="./assets/images/Tokens/boss.png"><b>${bossTokenNum}</b>`;
 parent.appendChild(style);
 dragElement(document.getElementById(`mymapdivB${bossTokenNum}`))
 console.log(style)
@@ -103,3 +104,24 @@ return
 
 var bossMonster = document.getElementById("newBossMonster")
 bossMonster.addEventListener("click", createNewBossToken);
+
+//spon new water to Drag
+var waterTokenNum = 2
+var createNewWaterToken = function(){
+console.log(waterTokenNum)
+//make parent componant
+var parent = document.getElementById("newWater")
+var style = document.createElement('div');
+style.classList.add("mymapdiv")
+style.setAttribute("id", `mymapdivW${waterTokenNum}`)
+style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
+parent.appendChild(style);
+dragElement(document.getElementById(`mymapdivW${waterTokenNum}`))
+console.log(style)
+console.log(waterTokenNum)
+waterTokenNum = waterTokenNum +1
+return
+}
+
+var water = document.getElementById("newWater")
+water.addEventListener("click", createNewWaterToken);

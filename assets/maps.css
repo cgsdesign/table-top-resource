@@ -1,25 +1,27 @@
+.title {
+  background: black;
+  height:50px;
+}
 
-  #newBossMonster {
-    color: red;
-  }
-
+/*class to link movable items from*/
   .mymapdiv {
     position: absolute;
     z-index: 9;
   }
-  
-/*maps*/
-#mymapdiv {
-  position: absolute;
-  z-index: 9;
-}
-/*maps end*/
+/*token styling*/  
   img {
     width:45px;
   }
-.big  img {
-    width:100px;
+  .big  img {
+    width:90px;
   }
+
+  .big-blue-box{
+    background-color: darkblue;
+    min-width:100px;
+    min-height:100px;
+  }
+
   .width20{
       width:60px;
       display: flex;
@@ -33,16 +35,19 @@
   margin: 10px;
 }
 
-  .title {
-    background: black;
-    height:50px;
-  }
-
   .item-outer-box {
-      height: 100px;
+      height: 70px;
       min-width: 50px;
+      background-color: rgba(250, 250, 250, .7);
   }
+  .item-outer-box-lg {
+    height: 110px;
+    min-width: 50px;
+    background-color: rgba(250, 250, 250, .7);
+    margin-left:20px;
+}
 
+/*map area*/
   .map-bg {
     background-image: url('../assets/images/grid3.jpg');
     background-size: 150px;
@@ -50,5 +55,5 @@
     background-position: left; 
   }
   .map-zone {
-    min-height: 1500px;
+    min-height: 1000px;
   }
