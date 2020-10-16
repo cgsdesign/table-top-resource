@@ -1,0 +1,26 @@
+table {
+    border: 2px solid black;
+    table-layout: fixed;
+    width: 75%;
+    height: 300px;
+}
+
+td {
+    border: 2px solid black;
+}
+
+tr {
+    border: 2px solid black;
+
+}
+
+td.hour{
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+.calendar {
+    background-color: purple;
+    height: 500px;
+    width: 100%;
+}
+
