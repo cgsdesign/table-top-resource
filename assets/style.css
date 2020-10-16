@@ -107,6 +107,36 @@ header nav ul li:hover{
 /*hero style end*/
 
 /*main body start*/
+.infoDrop {
+    font-family: 'Eagle Lake', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    background: none;
+    border: none;
+    /*text-shadow:0px 0px 3px #00d5c6;*/
+    color: #00d5c6;
+    text-shadow:3px 3px 15px #00179d,5px 5px 15px #5f61ff;
+    padding:10px 0px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    padding:15px;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    background-color: rgba(250, 250, 250, .7);
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.twoRow {
+    padding: 10px;
+    text-align: center;
+}
 
 /*About*/
 section {
