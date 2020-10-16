@@ -33,12 +33,17 @@
             </section>
             <section>
                 <h2>Battle Dice Dice Baby!</h2>
+                <!--subtract remove by id, clear remove by class-->
                 <div id="dice-add-subtract-clear-buttons">
-
+                    <button type="submit" id="add-button">+</button>
+                    <button type="reset" id="subtract-button">-</button>
+                    <button type="reset" id="clear-button">clear</button>
                 </div>
+                <br>
                 <div id="dice-select-container">
-                    <select name="dice-dropdown" class="dice-dropdown" id="dice-dropdown"></select>
-                    <div id="random-number-display">Roll Value:</div>
+                    <select name="dice-dropdown" class="dice-dropdown"></select>
+                    <div class="random-number-display">Roll Value:</div>
+                    <div class="new-dropdown-container"></div>
                     <button type="submit" id="roll-button">Roll!</button>
                 </div>
             </section>

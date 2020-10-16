@@ -43,35 +43,69 @@ var diceTypes = [
 }
 ];
 
-var diceDropdownId      = document.querySelector("#dice-dropdown");
-var randomNumberDisplay = document.querySelector("#random-number-display");
-var rollButton          = document.querySelector("#roll-button");
+var diceDropdownClass    = document.querySelector(".dice-dropdown");
+var randomNumberDisplay  = document.querySelector(".random-number-display");
+var newDropdownContainer = document.querySelector(".new-dropdown-container");
+var rollButton           = document.querySelector("#roll-button");
+var addButton            = document.querySelector("#add-button");
+var subtractButton       = document.querySelector("#subtract-button");
+var clearButton          = document.querySelector("#clear-button");
 
 for (var i = 0; i < diceTypes.length; i++) {
     //iterate through diceTypes array and append to dropdown
     var dropdownOptions = document.createElement("option");
     dropdownOptions.innerHTML = diceTypes[i].type;
     dropdownOptions.value = diceTypes[i].range;
-    diceDropdownId.appendChild(dropdownOptions);
-    
-    //get the value of the range of each die from the dropdown
-    var getChoiceValueAndRandomNumber = function() {
-        var choiceValue = diceDropdownId.options[diceDropdownId.selectedIndex].value;
-        
-        //temporary, I know we can't use alerts
-        if (choiceValue < 4) {
-            alert("Pick a die value");
-        }
-        else {
-        //random number generator
-        var randomNumber = Math.floor(Math.random() * choiceValue) + 1;
-        console.log(randomNumber);
+    diceDropdownClass.appendChild(dropdownOptions);
+}
 
-        //remove previous value and add generated random value to page
-        randomNumberDisplay.textContent = "Roll Value: " + randomNumber;
-        }
+var clearDropdowns = function() {
+    newDropdownContainer.textContent = "";
+    randomNumberDisplay.textContent = "Roll Value:"
+}
+
+//do they actually have to have unique IDs?
+var addDropdown = function() {
+    var newDropdown  = document.createElement("select");
+    var newRollValue = document.createElement("div");
+    newRollValue.textContent = "Roll Value:"
+    newDropdown.setAttribute("class", "dice-dropdown");
+    newDropdown.setAttribute("name", "dice-dropdown");
+    newDropdown.appendChild(dropdownOptions);
+    newDropdownContainer.appendChild(newDropdown);
+    newDropdownContainer.appendChild(newRollValue);
+
+    subtractButton.onclick = function() {
+        newDropdownContainer.removeChild(newDropdown);
+        newDropdownContainer.removeChild(newRollValue);
     }
-};
+}
+
+
+//get the value of the range of each die from the dropdown
+var getChoiceValueAndRandomNumber = function() {
+    var choiceValue = diceDropdownClass.options[diceDropdownClass.selectedIndex].value;
+    /*var choiceValueCounter = diceCounterId.options
+    [diceCounterId.selectedIndex].value;*/
+
+    //temporary, I know we can't use alerts
+    if (choiceValue < 4) {
+        alert("Pick a die value");
+    }
+    else {
+    //random number generator
+    var randomNumber = Math.floor(Math.random() * choiceValue) + 1;
+    console.log(randomNumber);
+
+    //remove previous value and add generated random value to page
+    randomNumberDisplay.textContent = "Roll Value: " + randomNumber;
+    }
+
+    /*put append inside this function to keep button click acting on all
+    dropdowns simultaneously?
+    iterate through to give unique id and unique name?*/
+}
+
 
 /*future plans:
 -append/remove dropdowns with +/- buttons above all dropdowns
@@ -85,3 +119,5 @@ for (var i = 0; i < diceTypes.length; i++) {
 */
 
 rollButton.addEventListener("click", getChoiceValueAndRandomNumber);
+addButton.addEventListener("click", addDropdown);
+clearButton.addEventListener("click", clearDropdowns);
