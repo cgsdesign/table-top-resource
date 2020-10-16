@@ -1,39 +1,37 @@
-#mymapdiv {
-    position: absolute;
-    z-index: 9;
+
+  #newBossMonster {
+    color: red;
   }
-  #mymapdiv2 {
-    position: absolute;
-    z-index: 9;
-  }
-  #mymapdiv3 {
-    position: absolute;
-    z-index: 9;
-  }
-  .mymapdiv4 {
-    position: absolute;
-    z-index: 9;
-  }
+
   .mymapdiv {
     position: absolute;
     z-index: 9;
   }
   
-  #item {
-    cursor: move;
-    z-index: 10;
-  }
-
+/*maps*/
+#mymapdiv {
+  position: absolute;
+  z-index: 9;
+}
+/*maps end*/
   img {
     width:45px;
   }
-
+.big  img {
+    width:100px;
+  }
   .width20{
       width:60px;
       display: flex;
     flex:1;
     margin: 10px;
   }
+  .width40{
+    width:100px;
+    display: flex;
+  flex:1;
+  margin: 10px;
+}
 
   .title {
     background: black;
@@ -41,7 +39,7 @@
   }
 
   .item-outer-box {
-      height:50px;
+      height: 100px;
       min-width: 50px;
   }
 
@@ -49,6 +47,8 @@
     background-image: url('../assets/images/grid3.jpg');
     background-size: 150px;
     background-repeat: repeat;
-    background-attachment: fixed;
     background-position: left; 
+  }
+  .map-zone {
+    min-height: 1500px;
   }

@@ -134,7 +134,7 @@ section {
 .dark-glow {
     text-shadow:3px 3px 10px #00179d,0px 0px 5px #5f61ff;
 }
-
+/*backgrounds*/
 .monkbg {
     background-image: url('../assets/images/MonkBg.jpg');
     background-size: 100%;
@@ -148,10 +148,3 @@ section {
     background-attachment: fixed;
     background-position: bottom; 
 }
-
-
-/*maps*/
-#mymapdiv {
-    position: absolute;
-    z-index: 9;
-  }

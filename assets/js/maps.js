@@ -10,14 +10,12 @@
     // 1-4 prebuilt maps hosted on main page
 
 
-
+dragElement(document.getElementById("mymapdiv1"))
 dragElement(document.getElementById("mymapdiv2"))
 dragElement(document.getElementById("mymapdiv3"))
 dragElement(document.getElementById("mymapdiv4"))
 dragElement(document.getElementById("mymapdiv5"))
-var allDrag = [
-    'dragElement(document.getElementById("mymapdiv"))'
-]
+
 //need to append new itens when make them - possibley with this
 
 function dragElement(elmnt) {
@@ -61,7 +59,10 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
-var tokenNum = 6
+
+
+//spon new monster to Drag
+var tokenNum = 2
 //started code to how to add css class to elements to make them be a drag token
 var createNewToken = function(){
 console.log(tokenNum)
@@ -73,11 +74,32 @@ style.setAttribute("id", `mymapdivM${tokenNum}`)
 style.innerHTML = `<img src="./assets/images/Tokens/monster.png"><b>${tokenNum}</b></div>`;
 parent.appendChild(style);
 dragElement(document.getElementById(`mymapdivM${tokenNum}`))
-console.log(allDrag)
 console.log(style)
 console.log(tokenNum)
 tokenNum = tokenNum +1
 return
 }
 
-createNewToken()
+var Monster = document.getElementById("newMonster")
+Monster.addEventListener("click", createNewToken);
+
+//spon new boss monster to Drag
+var bossTokenNum = 2
+var createNewBossToken = function(){
+console.log(bossTokenNum)
+//make parent componant
+var parent = document.getElementById("newBossMonster")
+var style = document.createElement('div');
+style.classList.add("mymapdiv")
+style.setAttribute("id", `mymapdivB${bossTokenNum}`)
+style.innerHTML = `<img src="./assets/images/Tokens/boss.png"><b>${bossTokenNum}</b></div>`;
+parent.appendChild(style);
+dragElement(document.getElementById(`mymapdivB${bossTokenNum}`))
+console.log(style)
+console.log(bossTokenNum)
+bossTokenNum = bossTokenNum +1
+return
+}
+
+var bossMonster = document.getElementById("newBossMonster")
+bossMonster.addEventListener("click", createNewBossToken);
