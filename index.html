@@ -30,18 +30,25 @@
                 <h2>Crunchy Elements - build maps</h2>
             </section>
             <section class="calendar">
-                <!-- <table class="shedule">
-                    <tr>Pick a time you want to play</tr>
-                    <tr>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thurs</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                        <th>Sun</th>
-                    </tr>
-                </table> -->
+                <select id="time">
+                    <option value="" >--select game time --</option>
+                    <option value="8to12pm">8AM - 12PM</option>
+                    <option value="12to4pm">12PM - 4PM</option>
+                    <option value="4to8pm">4PM - 8PM</option>
+                    <option value="8to12am">8PM - 12AM</option>
+                </select>
+                <select id="days">
+                    <option>--select game days --</option>
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                    <option>Sunday</option>
+                </select>
+                <input type="text" name="name" id="name" placeholder="please enter gamer name"/>
+                <button type="button" id="btnSubmit">Book</button>
                 <table>
                     <thead>
                       <tr>
@@ -72,16 +79,7 @@
                     <tbody>
                       <tr>
                         <td class="hour" rowspan="4"><span>8AM-12PM</span></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td></td>
+                        <td id="eightammon">ddd</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -90,7 +88,7 @@
                         <td></td>
                       </tr>
                       <tr>
-                        <td></td>
+                        <td>ddd</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -99,7 +97,16 @@
                         <td></td>
                       </tr>
                       <tr>
+                        <td>ddd</td>
                         <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>ssss</td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -222,7 +229,6 @@
                       
                     </tbody>
                   </table>
-                  <button class="btn">Shedule Play Time</button>
             </section>
             <section>
                 <h2>Battle Ice Dice Baby!</h2>
@@ -230,7 +236,7 @@
 
         </main>
 
-
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="./assets/js/script.js" async defer></script>
     </body>
 </html>
