@@ -169,6 +169,7 @@ section {
     background-size: 100%;
     background-attachment: fixed;
     background-position: bottom; 
+    position: relative;
 }
 
 .firebg {
@@ -181,17 +182,40 @@ section {
 /*ImageSearch*/
 #imageInput {
     font-size: 18px;
-    min-height:30px;
+    min-height:35px;
     padding:5px;
-    background-color:blue;
+    background-color:#00179d;
     color:white;
     border: 2px black solid;
     font-family: 'Commissioner','Gill Sans', sans-serif;
-    flex:1;
+    margin-left:0px;
+}
+.blackbg {
+    background:black;
+    max-width:360px;
+}
+#image-search-button {
+    min-height:35px;
+    max-height:35px;
+    padding:5px;
+    font-size: 16px;
+    background-color: black;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    color:white;
+    font-family: 'Eagle Lake', sans-serif;
+    margin:0px 0px;
+    border:none;
+    
 }
 .pixbay-logo-link{
-    height:30px;
-    width:30px;
+    max-width:120px;
+    max-height:40px;
+    position: absolute;
+    padding:5px;
+    bottom: 0;
+    right:0;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    background-color: rgba(250, 250, 250, .7);
 }
 
 .placeImages {
@@ -205,4 +229,6 @@ section {
     max-height:200px;
     flex:1;
     margin:10px;
+    z-index: 9;
+
 }
