@@ -19,6 +19,9 @@ dragElement(document.getElementById("mymapdiv4"))
 dragElement(document.getElementById("mymapdiv5"))
 dragElement(document.getElementById("mymapdiv6"))
 
+// var dragElement = $( function() {
+//     $( "#mymapdiv2" ).draggable();
+//   } );
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -43,13 +46,12 @@ function dragElement(elmnt) {
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
-    // set the element's new position:
+    //element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
   }
 
   function closeDragElement() {
-    /* stop moving when mouse button is released:*/
     document.onmouseup = null;
     document.onmousemove = null;
   }
@@ -96,8 +98,8 @@ bossTokenNum = bossTokenNum +1
 return
 }
 
-// var bossMonster = document.getElementById("newBossMonster")
-// bossMonster.addEventListener("click", createNewBossToken);
+ var bossMonster = document.getElementById("newBossMonster")
+ bossMonster.addEventListener("click", createNewBossToken);
 
 //spon new water to Drag
 var waterTokenNum = 2
@@ -105,6 +107,7 @@ var waterTrial = ""
 var createNewWaterToken = function(i){
 // console.log(waterTokenNum)
 // console.log(i)
+console.log(this.value + "this is being called")// try to get object key via value
 // if (waterTrial != IDINeed){
 //     console.log(waterTrial)
 //     console.log(IDIneed)
