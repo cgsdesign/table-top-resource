@@ -2,6 +2,12 @@
   background: black;
   height:50px;
 }
+h4{
+  color:white;
+}
+.flex1 {
+  flex: 1;
+}
 .item-outer-box {
   height: 70px;
   margin: 5px;
@@ -72,15 +78,7 @@ background-color: rgba(250, 250, 250, .7);
     min-height: 800px;
   }
 
-  /*buttons*/
- /*button{
-  font-family: 'Eagle Lake', sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  text-shadow:0px 0px 3px #00d5c6;
-  color: white;
-  text-shadow:3px 3px 15px #00179d,0px 0px 5px #00179d,5px 5px 15px #5f61ff;
- }*/
+  /*Token buttons*/
   button{
     background:rgba(0, 0, 0, .5);
     border:1px rgba(250, 250, 250, .7) solid;

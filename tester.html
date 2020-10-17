@@ -4,25 +4,153 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Draggable - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+
   <style>
   #draggable { width: 150px; height: 150px; padding: 0.5em; }
   </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#draggable" ).draggable();
-  } );
-  </script>
 </head>
 <body>
  
 <div id="draggable" class="ui-widget-content">
   <p>Drag me around</p>
 </div>
+<div id="draggable" class="ui-widget-content">
+  <p>Drag me around</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$( function() {
+  $( ".ui-widget-content" ).draggable();
+  var someArray = [];
+} );
+</script>
  
  
 </body>
 </html>
+
+
+
+<!--var dragses = [
+ $( function() {
+     $( "#mymapdiv2" ).draggable();
+   } ),
+   $( function() {
+    $( "#mymapdiv6" ).draggable();
+  } ),
+  $( function() {
+    $( "#mymapdivW2" ).draggable();
+  } )
+]
+
+ 
+// function dragElement(elmnt) {
+//   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+//     elmnt.onmousedown = dragMouseDown;
+
+//   function dragMouseDown(e) {
+//     e = e || window.event;
+//     e.preventDefault();
+//     // get the mouse cursor position at startup:
+//     pos3 = e.clientX;
+//     pos4 = e.clientY;
+//     document.onmouseup = closeDragElement;
+//     // call a function whenever the cursor moves:
+//     document.onmousemove = elementDrag;
+//   }
+
+//   function elementDrag(e) {
+//     e = e || window.event;
+//     e.preventDefault();
+//     // calculate the new cursor position:
+//     pos1 = pos3 - e.clientX;
+//     pos2 = pos4 - e.clientY;
+//     pos3 = e.clientX;
+//     pos4 = e.clientY;
+//     //element's new position:
+//     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+//     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+//   }
+
+//   function closeDragElement() {
+//     document.onmouseup = null;
+//     document.onmousemove = null;
+//   }
+// }
+
+
+// //spon new monster to Drag
+// var tokenNum = 2
+// //started code to how to add css class to elements to make them be a drag token
+// var createNewToken = function(){
+// console.log(tokenNum)
+// //make parent componant
+// var parent = document.getElementById("newMonster")
+// var style = document.createElement('div');
+// style.classList.add("mymapdiv")
+// style.setAttribute("id", `mymapdivM${tokenNum}`)
+// style.innerHTML = `<img src="./assets/images/Tokens/monster.png"><b>${tokenNum}</b>`;
+// parent.appendChild(style);
+// dragElement(document.getElementById(`mymapdivM${tokenNum}`))
+// console.log(style)
+// console.log(tokenNum)
+// tokenNum = tokenNum +1
+// return
+// }
+
+// // var Monster = document.getElementById("newMonster")
+// // Monster.addEventListener("click", createNewToken);
+
+// //spon new boss monster to Drag
+// var bossTokenNum = 2
+// var createNewBossToken = function(){
+// console.log(bossTokenNum)
+// //make parent componant
+// var parent = document.getElementById("newBossMonster")
+// var style = document.createElement('div');
+// style.classList.add("mymapdiv")
+// style.setAttribute("id", `mymapdivB${bossTokenNum}`)
+// style.innerHTML = `<img src="./assets/images/Tokens/boss.png"><b>${bossTokenNum}</b>`;
+// parent.appendChild(style);
+// dragElement(document.getElementById(`mymapdivB${bossTokenNum}`))
+// console.log(style)
+// console.log(bossTokenNum)
+// bossTokenNum = bossTokenNum +1
+// return
+// }
+
+//  var bossMonster = document.getElementById("newBossMonster")
+//  bossMonster.addEventListener("click", createNewBossToken);
+
+// //spon new water to Drag
+ var waterTokenNum = 2
+ var waterTrial = ""
+var createNewWaterToken = function(i){
+    
+// //make parent componant
+ var parent = document.getElementById("newWater")
+ var style = document.createElement('div');
+ style.classList.add("mymapdiv")
+ style.setAttribute("id", `mymapdivW${waterTokenNum}`)
+ style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
+ parent.appendChild(style);
+// dragElement(document.getElementById(`mymapdivW${waterTokenNum}`))
+// var testvar =$( function() { $( `mymapdivW${waterTokenNum}` ).draggable();} )
+// dragses.push(testvar)
+   console.log(dragses)
+waterTrial = document.getElementById(`mymapdivW${waterTokenNum}`)
+// // waterTrial.addEventListener("click", createNewWaterToken);
+// // console.log(waterTrial)
+ console.log(style)
+ console.log(waterTokenNum)
+ waterTokenNum = waterTokenNum +1
+ return dragses
+ }
+
+var trials = $( function() {
+    $( "#mymapdivW2" ).draggable();
+  } )
+var water = document.getElementById("mymapdiv3")
+water.addEventListener("click", trials);-->
