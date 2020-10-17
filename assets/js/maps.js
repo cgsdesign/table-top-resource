@@ -13,11 +13,12 @@
 dragElement(document.getElementById("mymapdiv1"))
 dragElement(document.getElementById("mymapdiv2"))
 dragElement(document.getElementById("mymapdiv3"))
+dragElement(document.getElementById("demon"))
+dragElement(document.getElementById("barbarian"))
 dragElement(document.getElementById("mymapdiv4"))
 dragElement(document.getElementById("mymapdiv5"))
 dragElement(document.getElementById("mymapdiv6"))
 
-//need to append new itens when make them - possibley with this
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -127,3 +128,22 @@ return
 
 //var water = document.getElementById("mymapdiv6")
 //water.addEventListener("click", createNewWaterToken);
+
+
+
+//screenshot to save maps
+var takeshot = function() { 
+    let div = 
+        document.getElementById('makeMap'); 
+
+    // Use the html2canvas 
+    // function to take a screenshot 
+    // and append it 
+    // to the output div 
+    html2canvas(div).then( 
+        function (canvas) { 
+            document 
+            .getElementById('output') 
+            .appendChild(canvas); 
+        }) 
+    }

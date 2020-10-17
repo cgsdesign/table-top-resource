@@ -18,12 +18,19 @@
     <!-- Notes Minimum Established GM Resource-->
   
     </head>
-    <body class="map-bg">
+    <body>
         <header>
             <h1>Maps</h1>
-            <h4 class="dark-glow" style="justify-items:right;">Chose your componants and drag to place them on the map.</h4>
+            <h4 class="dark-glow" style="justify-items:right;">Chose your componants and drag to place them on the map.<br> Saved Maps are located at the bottom of the screen.</h4>
+            <!--Print Button-->
+            <button class="bottom-right" onclick="takeshot()" style="float: right;"> 
+                SAVE MAP 
+            </button> 
         </header>
+        <!--below custom styling needed for buttons-->
+      <div id="makeMap"> 
         <section class="section monkbg" style="padding-top: 10px; padding-bottom: 50px;">
+            <!--Archer-->
                 <div class="item-outer-box">
                     <div class="width20"> 
                         <div id="mymapdiv1" class="mymapdiv">
@@ -31,7 +38,7 @@
                         </div>
                     </div> 
                 </div>
-
+            <!--Sorceress-->
                 <div class="item-outer-box">
                     <div class="width20"> 
                         <div id="mymapdiv2" class="mymapdiv">       
@@ -39,7 +46,7 @@
                         </div> 
                     </div> 
                 </div>
-
+            <!--Fighter-->
                 <div class="item-outer-box">
                     <div class="width20">
                         <div id="mymapdiv3" class="mymapdiv">    
@@ -47,7 +54,23 @@
                         </div> 
                     </div> 
                 </div>
-
+            <!--Demon-->
+                <div class="item-outer-box">
+                    <div class="width20">
+                        <div id="demon" class="mymapdiv">    
+                            <img src="./assets/images/Tokens/demon.png"> 
+                        </div> 
+                    </div> 
+                </div>
+            <!--Barbarian-->
+                    <div class="item-outer-box">
+                        <div class="width20">
+                            <div id="barbarian" class="mymapdiv">    
+                                <img src="./assets/images/Tokens/barbarian.png"> 
+                            </div> 
+                        </div> 
+                    </div>    
+            <!--SM Monster-->
                 <div  class="item-outer-box">
                     <div class="width20" id="newMonster">
                         <button onclick="createNewToken()">Get New<br>Enemy</button>
@@ -56,7 +79,7 @@
                         </div>                        
                     </div> 
                 </div>
-
+            <!--LG Monster-->
                 <div  class="item-outer-box-lg">
                     <div class="width40 big" id="newBossMonster">
                         <button onclick="createNewBossToken()">Get New<br>Big Enemy</button> 
@@ -65,7 +88,7 @@
                         </div>                         
                     </div> 
                 </div>
-
+            <!--LG Water-->
                 <div  class="item-outer-box-lg">
                     <div class="width40 big" id="newWater">  
                         <button onclick="createNewWaterToken()">Get New<br>Water</button> 
@@ -75,13 +98,21 @@
                     </div> 
                 </div>
         </section>
-        <section class="map-zone">
-
+        <!--Map Zone-->
+        <section class="map-bg map-zone">
         </section>
-
+    </div>  
+        <section>
+            <h2>Maps You Made:</h2>
+            <h3>Right Click to Save to Your Computer</h3> 
+            <div id="output"></div> 
+        </section>
 
         </div>
         <script src="./assets/js/maps.js"></script>
+        <script src= 
+        "https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"> 
+        </script> 
     </body>
 </html>
 
