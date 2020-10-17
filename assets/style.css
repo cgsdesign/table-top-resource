@@ -189,6 +189,7 @@ section {
     border: 2px black solid;
     font-family: 'Commissioner','Gill Sans', sans-serif;
     margin-left:0px;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
 }
 .blackbg {
     background:black;
@@ -207,6 +208,19 @@ section {
     border:none;
     
 }
+#image-search-clear {
+    min-height:35px;
+    max-height:35px;
+    padding:5px;
+    font-size: 16px;
+    background-color: rgb(97, 0, 0);
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    color:white;
+    font-family: 'Eagle Lake', sans-serif;
+    margin:0px 0px;
+    border:none;
+    
+}
 .pixbay-logo-link{
     max-width:120px;
     max-height:40px;
@@ -216,6 +230,10 @@ section {
     right:0;
     box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
     background-color: rgba(250, 250, 250, .7);
+}
+.pixbay-logo-link img{
+    max-width: 110px;
+    max-height:30px;
 }
 
 .placeImages {
