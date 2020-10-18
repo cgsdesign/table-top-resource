@@ -15,7 +15,7 @@ $( function() {
     var someArray = [];
   } );
 
-
+//SPAWNING MONSTERS-----------------------------------------------------
 
 //spon new monster to Drag
 var tokenNum = 2
@@ -74,10 +74,6 @@ return
  var bossMonster = document.getElementById("newBossMonster")
  bossMonster.addEventListener("click", createNewBossToken);
 
-
-
-
-
 //spon new water to Drag
 var waterTokenNum = 2
 var waterTrial = ""
@@ -102,17 +98,81 @@ waterTokenNum = waterTokenNum +1
 return
 }
 
+//spon new small water to Drag
+var waterTokenNumS = 2
+var createNewWaterTokenS = function(i){
+//make parent componant
+var parent = document.getElementById("newWaterS")
+var style = document.createElement('div');
+style.classList.add("mymapdiv")
+style.setAttribute("id", `mymapdivW${waterTokenNumS}`)
+style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
+parent.appendChild(style);
+//make dragable
+$( function() {
+    $( ".mymapdiv" ).draggable();
+    var someArray = [];
+  } );
+//end
+console.log(style)
+console.log(waterTokenNumS)
+waterTokenNumS = waterTokenNumS +1
+return
+}
 
+//spon new wrough terain to Drag
+var wroughTokenNum = 2
+var createNewWroughToken = function(i){
+//make parent componant
+var parent = document.getElementById("newWrough")
+var style = document.createElement('div');
+style.classList.add("mymapdiv")
+style.setAttribute("id", `mymapdivWr${wroughTokenNum}`)
+style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
+parent.appendChild(style);
+//make dragable
+$( function() {
+    $( ".mymapdiv" ).draggable();
+    var someArray = [];
+  } );
+//end
+wroughTrial = document.getElementById(`mymapdivWr${waterTokenNum}`)
+console.log(style)
+console.log(wroughTokenNum)
+wroughTokenNum = wroughTokenNum +1
+return
+}
 
-//screenshot to save maps
+//spon new wrough terain SM to Drag
+var wroughTokenNumS = 2
+var createNewWroughTokenS = function(i){
+//make parent componant
+var parent = document.getElementById("newWroughS")
+var style = document.createElement('div');
+style.classList.add("mymapdiv")
+style.setAttribute("id", `mymapdivWr${wroughTokenNumS}`)
+style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
+parent.appendChild(style);
+//make dragable
+$( function() {
+    $( ".mymapdiv" ).draggable();
+    var someArray = [];
+  } );
+//end
+wroughTrial = document.getElementById(`mymapdivWr${waterTokenNumS}`)
+console.log(style)
+console.log(wroughTokenNumS)
+wroughTokenNumS = wroughTokenNumS +1
+return
+}
+
+//SAVE MAP------------------------------------------------------------
 var takeshot = function() { 
     let div = 
         document.getElementById('makeMap'); 
 
-    // Use the html2canvas 
-    // function to take a screenshot 
-    // and append it 
-    // to the output div 
+    // Use the html2canvas to take a screenshot 
+    // and append it* note button must be at top of screen
     html2canvas(div).then( 
         function (canvas) { 
             document 
