@@ -73,8 +73,8 @@ bossTokenNum = bossTokenNum +1
 return
 }
 
- var bossMonster = document.getElementById("newBossMonster")
- bossMonster.addEventListener("click", createNewBossToken);
+//  var bossMonster = document.getElementById("newBossMonster")
+//  bossMonster.addEventListener("click", createNewBossToken);
 
 //spon new water to Drag
 var waterTokenNum = 2
@@ -215,5 +215,15 @@ var takeshot = function() {
             document 
             .getElementById('output') 
             .appendChild(canvas); 
+
         }) 
     }
+
+        //flash alert map was made
+  var clickerFlash = function() {
+    $(".map-made-alert").fadeIn(500);
+    $(".map-made-alert").fadeOut(600);
+    console.log("flash")
+};
+var mapMadeAlrt = document.getElementById("save-map")
+mapMadeAlrt.addEventListener("click", clickerFlash);

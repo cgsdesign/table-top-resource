@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .map-made-alert{
+            display: none;
+        }
+    </style>
+    <div class="map-made-alert">Alert! Watch me before it's too late!</div>
+
+
+<button id="map">
+    testing flash
+</button>
+
+<div id="clickme">
+    Click here
+  </div>
+  <div id="book" class="map-made-alert">TEst book</div>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+var clickerFlash = function() {
+        $(".map-made-alert").fadeIn(100);
+        $(".map-made-alert").fadeOut(600);
+};
+var mapMadeAlrt = document.getElementById("map")
+mapMadeAlrt.addEventListener("click", clickerFlash);
+
+// With the element initially hidden, we can show it slowly:
+$( "#clickme" ).click(function() {
+  $( "#book" ).fadeIn( "slow", function() {
+    // Animation complete
+  });
+});
+
+</script>
+</body>
+</html>

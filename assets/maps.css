@@ -57,6 +57,12 @@ display:none;
   margin:10px;
   text-align:left;
 }
+
+.map-made-alert{
+  display: none;
+  color:white;
+  font-size: 13px;;
+}
 /*class to link movable items from- I changed changed my drag function so now only in use to keep buttons below matching tokens*/
   .mymapdiv {
     position: absolute;
