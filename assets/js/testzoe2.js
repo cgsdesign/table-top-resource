@@ -25,6 +25,7 @@ console.log(tokenNum)
 var parent = document.getElementById("newMonster")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
+style.classList.add("charTop")
 style.setAttribute("id", `mymapdivM${tokenNum}`)
 style.innerHTML = `<img src="./assets/images/Tokens/monster.png"><b>${tokenNum}</b>`;
 parent.appendChild(style);
@@ -43,7 +44,7 @@ return
 // var Monster = document.getElementById("newMonster")
 // Monster.addEventListener("click", createNewToken);
 
-//spon new boss monster to Drag
+//spon new boss monster to Drag-----------------------test Icon
 var bossTokenNum = 2
 var Trial = ""
 var createNewBossToken = function(){
@@ -56,6 +57,7 @@ console.log(bossTokenNum)
 var parent = document.getElementById("newBossMonster")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
+style.classList.add("charTop")
 style.setAttribute("id", `mymapdivB${bossTokenNum}`)
 style.innerHTML = `<img src="./assets/images/Tokens/boss.png"><b>${bossTokenNum}</b>`;
 parent.appendChild(style);
@@ -76,7 +78,6 @@ return
 
 //spon new water to Drag
 var waterTokenNum = 2
-var waterTrial = ""
 var createNewWaterToken = function(i){
 //make parent componant
 var parent = document.getElementById("newWater")
