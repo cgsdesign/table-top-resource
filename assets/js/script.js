@@ -43,7 +43,12 @@ var diceTypes = [
     }
 ];
 
-var dropDownIdCounter    = 0;
+var diceIdCounter        = 0;
+//change rollIdCounter to a different number?
+var rollIdCounter        = 0;
+var dropdownOptionsArr   = [];
+var diceIdCounterArr     = [];
+var rollIdCounterArr     = [];
 var diceDropdownClass    = document.querySelector(".dice-dropdown");
 var randomNumberDisplay  = document.querySelector(".random-number-display");
 var newDropdownContainer = document.querySelector(".new-dropdown-container");
@@ -62,59 +67,96 @@ for (var i = 0; i < diceTypes.length; i++) {
 
 var clearDropdowns = function() {
     newDropdownContainer.textContent = "";
-    randomNumberDisplay.textContent = "Roll Value:"
+    randomNumberDisplay.textContent = "Roll Value:";
+    //reset the dice types dropdown?
 }
 
 //do they actually have to have unique IDs?
 var addDropdown = function() {
     var newDropdown  = document.createElement("select");
-    var newRollValue = document.createElement("div");
-    newRollValue.textContent = "Roll Value:"
     newDropdown.setAttribute("class", "dice-dropdown");
     newDropdown.setAttribute("name", "dice-dropdown");
+    newDropdown.setAttribute("id", diceIdCounter);
+    diceIdCounter++
+    var newRollValue = document.createElement("div");
+    newRollValue.setAttribute("id", rollIdCounter);
+    rollIdCounter++
+    newRollValue.textContent = "Roll Value:"
     for (var i = 0; i < diceTypes.length; i++) {
         //iterate through diceTypes array and append to dropdown
         var dropdownOptions = document.createElement("option");
         dropdownOptions.innerHTML = diceTypes[i].type;
         dropdownOptions.value = diceTypes[i].range;
         newDropdown.appendChild(dropdownOptions);
+        dropdownOptionsArr.push(dropdownOptions);
+        console.log(dropdownOptionsArr);
     }
-    
-    console.log("dropDownOptions:" + dropdownOptions);
-    //newDropdown assign individual IDs?
-    newDropdown.appendChild(dropdownOptions);
+
+    //append dropdown and roll value output
     newDropdownContainer.appendChild(newDropdown);
     newDropdownContainer.appendChild(newRollValue);
+    
+    //push dropdown and roll value output to an array
+    //may have to adjust to apply array
+    /*
+    dropdownOptionsArr.push(newDropdown);
+    rollIdCounterArr.push(newRollValue);
 
-    //array.pop mdn
-    subtractButton.onclick = function() {
-        newDropdownContainer.removeChild(newDropdown);
-        newDropdownContainer.removeChild(newRollValue);
-    };
+    console.log(dropdownOptionsArr);
+    console.log(rollIdCounterArr);
+    */
 }
 
+/*
+//array.pop mdn?
+//creating counter arrays, subtract by id?
+var subtractDropdown = function() {
+    dropdownOptionsArr.pop();
+    rollIdCounterArr.pop();
+    console.log(dropdownOptionsArr);
+    console.log(rollIdCounterArr);
+};
+*/
+
 //get the value of the range of each die from the dropdown
+//assign another for loop here?
 var getChoiceValueAndRandomNumber = function() {
+    //.value is undefined
+
     var choiceValue = diceDropdownClass.options[diceDropdownClass.selectedIndex].value;
-    /*var choiceValueCounter = diceCounterId.options
-    [diceCounterId.selectedIndex].value;*/
 
     //temporary, I know we can't use alerts
     if (choiceValue < 4) {
         alert("Pick a die value");
     }
     else {
-    //random number generator
-    var randomNumber = Math.floor(Math.random() * choiceValue) + 1;
-    console.log(randomNumber);
+        //random number generator
+        var randomNumber = Math.floor(Math.random() * choiceValue) + 1;
 
-    //remove previous value and add generated random value to page
-    randomNumberDisplay.textContent = "Roll Value: " + randomNumber;
+        //remove previous value and add generated random value to page
+        randomNumberDisplay.textContent = "Roll Value: " + randomNumber;
     }
 
-    /*put append inside this function to keep button click acting on all
-    dropdowns simultaneously?
-    iterate through to give unique id and unique name?*/
+    console.log(dropdownOptionsArr.options);
+
+    /*
+    for (var i = 0; i < diceIdCounter.length; i++) {
+        var choiceValueCounter = dropdownOptionsArr[i].options
+        [dropdownOptionsArr[i].selectedIndex].value;
+        
+        console.log(choiceValueCounter);
+
+        console.log(dropdownOptionsArr[i]);
+
+        if (choiceValueCounter < 4) {
+            alert("Pick a die value");
+        }
+        else {
+            var appendedRandomNumber = Math.floor(Math.random() * choiceValueCounter) + 1;
+            console.log(appendedRandomNumber);
+        }
+    }
+    */
 }
 
 /*future plans:
@@ -130,4 +172,5 @@ var getChoiceValueAndRandomNumber = function() {
 
 rollButton.addEventListener("click", getChoiceValueAndRandomNumber);
 addButton.addEventListener("click", addDropdown);
+//subtractButton.addEventListener("click", subtractDropdown);
 clearButton.addEventListener("click", clearDropdowns);
