@@ -11,12 +11,12 @@ $("#classBarb").on("click", function() {
     fetchCatagory()
 })
 
+//IMAGES -----------------------------------------------------
 var ImageSearch = function() {
     var searchImageInput = document.getElementById('imageInput').value
     var placeImagesEl = document.getElementById('placeImages')
-   // var clearImageInput = document.getElementById('imageInput').value
     placeImagesEl.innerHTML=""
-   // clearImageInput.innerHTML=""
+
 //fetch pictures with PIXBAY 
 var API_KEY = '18746508-966e8434b1d9d133d03bfb9ac';
 var URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(`${searchImageInput}`);
@@ -63,3 +63,4 @@ var clearImageSearch = function() {
 
 var clearImageEl = document.querySelector("#image-search-clear");
 clearImageEl.addEventListener("click", clearImageSearch);
+//IMAGES END-------------------------------------------------------
