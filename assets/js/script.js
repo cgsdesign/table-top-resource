@@ -9,40 +9,41 @@ value at the top to request more or less dice, append dropdowns with
 die values/remove dropdowns*/
 
 var diceTypes = [
-{
-    "type": "",
-    "range": ""
-},
-{
-    "type": "d4",
-    "range": 4
-},
-{
-    "type": "d6",
-    "range": 6
-},
-{
-    "type": "d8",
-    "range": 8
-},
-{
-    "type": "d10",
-    "range": 10
-},
-{
-    "type": "d12",
-    "range": 12
-},
-{
-    "type": "d20",
-    "range": 20
-},
-{
-    "type": "d100",
-    "range": 100
-}
+    {
+        "type": "",
+        "range": ""
+    },
+    {
+        "type": "d4",
+        "range": 4
+    },
+    {
+        "type": "d6",
+        "range": 6
+    },
+    {
+        "type": "d8",
+        "range": 8
+    },
+    {
+        "type": "d10",
+        "range": 10
+    },
+    {
+        "type": "d12",
+        "range": 12
+    },
+    {
+        "type": "d20",
+        "range": 20
+    },
+    {
+        "type": "d100",
+        "range": 100
+    }
 ];
 
+var dropDownIdCounter    = 0;
 var diceDropdownClass    = document.querySelector(".dice-dropdown");
 var randomNumberDisplay  = document.querySelector(".random-number-display");
 var newDropdownContainer = document.querySelector(".new-dropdown-container");
@@ -71,16 +72,26 @@ var addDropdown = function() {
     newRollValue.textContent = "Roll Value:"
     newDropdown.setAttribute("class", "dice-dropdown");
     newDropdown.setAttribute("name", "dice-dropdown");
+    for (var i = 0; i < diceTypes.length; i++) {
+        //iterate through diceTypes array and append to dropdown
+        var dropdownOptions = document.createElement("option");
+        dropdownOptions.innerHTML = diceTypes[i].type;
+        dropdownOptions.value = diceTypes[i].range;
+        newDropdown.appendChild(dropdownOptions);
+    }
+    
+    console.log("dropDownOptions:" + dropdownOptions);
+    //newDropdown assign individual IDs?
     newDropdown.appendChild(dropdownOptions);
     newDropdownContainer.appendChild(newDropdown);
     newDropdownContainer.appendChild(newRollValue);
 
+    //array.pop mdn
     subtractButton.onclick = function() {
         newDropdownContainer.removeChild(newDropdown);
         newDropdownContainer.removeChild(newRollValue);
-    }
+    };
 }
-
 
 //get the value of the range of each die from the dropdown
 var getChoiceValueAndRandomNumber = function() {
@@ -105,7 +116,6 @@ var getChoiceValueAndRandomNumber = function() {
     dropdowns simultaneously?
     iterate through to give unique id and unique name?*/
 }
-
 
 /*future plans:
 -append/remove dropdowns with +/- buttons above all dropdowns
