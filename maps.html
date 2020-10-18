@@ -29,11 +29,11 @@
         </header>
         <!--below custom styling needed for buttons-->
       <div id="makeMap"> 
-        <section class="section monkbg" style="padding-top: 10px; padding-bottom: 50px;">
+        <section class="section monkbg"style="padding: 5px;">
             <!--Archer-->
                 <div class="item-outer-box">
                     <div class="width20"> 
-                        <div id="mymapdiv1" class="mymapdiv">
+                        <div id="mymapdiv1" class="mymapdiv charTop">
                             <img src="./assets/images/Tokens/archer.png">
                         </div>
                     </div> 
@@ -41,7 +41,7 @@
             <!--Sorceress-->
                 <div class="item-outer-box">
                     <div class="width20"> 
-                        <div id="mymapdiv2" class="mymapdiv">       
+                        <div id="mymapdiv2" class="mymapdiv charTop">       
                             <img src="./assets/images/Tokens/mage.png">
                         </div> 
                     </div> 
@@ -49,7 +49,7 @@
             <!--Fighter-->
                 <div class="item-outer-box">
                     <div class="width20">
-                        <div id="mymapdiv3" class="mymapdiv">    
+                        <div id="mymapdiv3" class="mymapdiv charTop">    
                             <img src="./assets/images/Tokens/fighter.png"> 
                         </div> 
                     </div> 
@@ -57,7 +57,7 @@
             <!--Demon-->
                 <div class="item-outer-box">
                     <div class="width20">
-                        <div id="demon" class="mymapdiv">    
+                        <div id="demon" class="mymapdiv charTop">    
                             <img src="./assets/images/Tokens/demon.png"> 
                         </div> 
                     </div> 
@@ -65,25 +65,43 @@
             <!--Barbarian-->
                     <div class="item-outer-box">
                         <div class="width20">
-                            <div id="barbarian" class="mymapdiv">    
+                            <div id="barbarian" class="mymapdiv charTop">    
                                 <img src="./assets/images/Tokens/barbarian.png"> 
                             </div> 
                         </div> 
                     </div>    
             <!--SM Monster-->
-                <div  class="item-outer-box">
+                <div  class="item-outer-box2 ">
                     <div class="width20" id="newMonster">
                         <button onclick="createNewToken()">Get New<br>Enemy</button>
-                        <div id="mymapdiv4" class="mymapdiv">    
+                        <div id="mymapdiv4" class="mymapdiv charTop">    
                             <img src="./assets/images/Tokens/monster.png"><b>1</b> 
                         </div>                        
+                    </div> 
+                </div>
+            <!--S Water-->
+                <div  class="item-outer-box2">
+                    <div class="width20" id="newWaterS">  
+                        <button onclick="createNewWaterTokenS()">Get New<br>Water</button> 
+                        <div id="mymapdiv7" class="mymapdiv"> 
+                            <img src="./assets/images/Tokens/water.png"> 
+                        </div>                         
+                    </div> 
+                </div>
+            <!--S Wrough Terrain-->
+                <div  class="item-outer-box2">
+                    <div class="width20" id="newWroughS">  
+                        <button onclick="createNewWroughTokenS()">Get New<br>Terrain</button> 
+                        <div id="mymapdiv7" class="mymapdiv"> 
+                            <img src="./assets/images/Tokens/wroughTerain.png"> 
+                        </div>                         
                     </div> 
                 </div>
             <!--LG Monster-->
                 <div  class="item-outer-box-lg">
                     <div class="width40 big" id="newBossMonster">
-                        <button onclick="createNewBossToken()">Get New<br>Big Enemy</button> 
-                        <div id="mymapdiv5" class="mymapdiv">    
+                        <button onclick="createNewBossToken()">Get New<br>Enemy</button> 
+                        <div id="mymapdiv5" class="mymapdiv charTop">    
                             <img src="./assets/images/Tokens/boss.png"><b>1</b>
                         </div>                         
                     </div> 
@@ -97,29 +115,11 @@
                         </div>                         
                     </div> 
                 </div>
-            <!--S Water-->
-                <div  class="item-outer-box">
-                    <div class="width20" id="newWaterS">  
-                        <button onclick="createNewWaterTokenS()">Get New<br>Water</button> 
-                        <div id="mymapdiv7" class="mymapdiv"> 
-                            <img src="./assets/images/Tokens/water.png"> 
-                        </div>                         
-                    </div> 
-                </div>
             <!--LG Wrough Terain-->
                 <div  class="item-outer-box-lg">
                     <div class="width40 big" id="newWrough">  
-                        <button onclick="createNewWroughToken()">Get New<br>Water</button> 
+                        <button onclick="createNewWroughToken()">Get New<br>Terrain</button> 
                         <div id="mymapdiv6" class="mymapdiv"> 
-                            <img src="./assets/images/Tokens/wroughTerain.png"> 
-                        </div>                         
-                    </div> 
-                </div>
-            <!--S Wrough Terain-->
-                <div  class="item-outer-box">
-                    <div class="width20" id="newWroughS">  
-                        <button onclick="createNewWroughTokenS()">Get New<br>Water</button> 
-                        <div id="mymapdiv7" class="mymapdiv"> 
                             <img src="./assets/images/Tokens/wroughTerain.png"> 
                         </div>                         
                     </div> 

@@ -8,18 +8,28 @@ h4{
 .flex1 {
   flex: 1;
 }
+/*sets sizes for grey boxes*/
 .item-outer-box {
-  height: 70px;
+  height: 50px;
   margin: 5px;
   min-width: 50px;
   background-color: rgba(250, 250, 250, .7);
+
+}
+.item-outer-box2 {
+  height: 102px;
+  margin: 5px;
+  min-width: 50px;
+  background-color: rgba(250, 250, 250, .7);
+
 }
 .item-outer-box-lg {
-height: 110px;
+height: 129px;
 margin:5px;
 min-width: 50px;
 background-color: rgba(250, 250, 250, .7);
 }
+
 /*save map button*/
 .bottom-right {
   font-size: 16px;
@@ -36,28 +46,32 @@ background-color: rgba(250, 250, 250, .7);
   max-height: 200px;
   margin:10px;
 }
-/*class to link movable items from*/
+/*class to link movable items from- changes how moving so now only in use to keep buttons below matching tokens*/
   .mymapdiv {
     position: absolute;
     z-index: 9;
   }
+/*class to keep characters on top*/
+  .charTop {
+    z-index: 999;
+  }
 /*token styling*/  
   img {
-    width:48px;
+    width:35px;
   }
   .big img {
-    width:90px;
+    width:70px;
   }
 
   .width20{
-      width:60px;
+      width:40px;
       display: flex;
     flex:1;
-    margin: 10px 0px 0px 10px;
+    margin: 8px 0px 0px 8px;
     text-align: center;
   }
   .width40{
-    width:100px;
+    width:80px;
     display: flex;
   flex:1;
   margin: 10px 0px 0px 10px;
@@ -69,7 +83,7 @@ background-color: rgba(250, 250, 250, .7);
 /*map area*/
   .map-bg {
     background-image: url('../assets/images/grid3.jpg');
-    background-size: 150px;
+    background-size: 380px;
     background-repeat: repeat;
     background-position:top left; 
 
@@ -80,25 +94,26 @@ background-color: rgba(250, 250, 250, .7);
 
   /*Token buttons*/
   button{
-    background:rgba(0, 0, 0, .5);
+    background:rgba(0, 0, 0, .7);
     border:1px rgba(250, 250, 250, .7) solid;
     font-weight: 700;
     font-size: 12px;
     color:white;
     padding:5px;
 
+
   }
   button:hover{
     background:rgba(0, 0, 0, 1);
   }
   .big button{
-    min-width:110px;
+    min-width:90px;
     margin-left: -10px;
     font-size: 12px;
-    margin-top: 100px;
+    margin-top: 80px;
   }
   .width20 button{
-    min-width:70px;
-    margin-left: -10px;
-    margin-top: 60px;
+    min-width:50px;
+    margin-left: -8px;
+    margin-top: 42px;
   }
