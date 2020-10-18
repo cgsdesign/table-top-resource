@@ -1,13 +1,13 @@
 //nesisary Componants MVP
     //print screen
     //5 componants types w/ 3-5 of each to pull- water, rough terain, building, moster, player
-    //Players Monster Terain - needs to be in tabs/ not take up all the space
+    //Players Monster Terain - needs to be in tabs/ not take up all the space-- can not do with print screen
     //write in componants    
     //for monster and player, need to be color coded, numbered, or have editable text
 //Componants to shoot for as have time
-    //auto spawning element of the same type when one is dragged
-    //3 map sizes and hex option based fixed bottom optoin bar
-    // 1-4 prebuilt maps hosted on main page
+    //auto spawning element of the same type when one is dragged--- need TA
+    //3 map sizes and hex option based fixed bottom option bar
+    // 1-4 prebuilt maps hosted on main page --- priority
 
 //drag
 $( function() {
