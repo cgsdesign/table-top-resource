@@ -35,7 +35,11 @@ margin:5px;
 min-width: 50px;
 background-color: rgba(250, 250, 250, .7);
 }
-
+@media only screen and (max-width: 700px){
+.item-outer-box-lg{
+display:none;
+}
+}
 /*save map button*/
 .bottom-right {
   font-size: 16px;
