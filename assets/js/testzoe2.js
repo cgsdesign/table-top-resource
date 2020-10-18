@@ -11,7 +11,7 @@
 
 //drag
 $( function() {
-    $( ".mymapdiv" ).draggable();
+    $( ".mymapdiv" ).sortable();
     var someArray = [];
   } );
 
@@ -54,13 +54,13 @@ var createNewBossToken = function(){
 //      return}
 console.log(bossTokenNum)
 //make parent componant
-var parent = document.getElementById("newBossMonster")
+var parent = $("#mapZone");
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
 style.classList.add("charTop")
 style.setAttribute("id", `mymapdivB${bossTokenNum}`)
 style.innerHTML = `<img src="./assets/images/Tokens/boss.png"><b>${bossTokenNum}</b>`;
-parent.appendChild(style);
+parent.append(style);
 //make dragable
 $( function() {
     $( ".mymapdiv" ).draggable();
