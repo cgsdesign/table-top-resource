@@ -83,7 +83,6 @@ var createNewWaterToken = function(i){
 var parent = document.getElementById("newWater")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
-style.setAttribute("id", `mymapdivW${waterTokenNum}`)
 style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
 parent.appendChild(style);
 //make dragable
@@ -106,7 +105,6 @@ var createNewWaterTokenS = function(i){
 var parent = document.getElementById("newWaterS")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
-style.setAttribute("id", `mymapdivW${waterTokenNumS}`)
 style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
 parent.appendChild(style);
 //make dragable
@@ -128,7 +126,6 @@ var createNewWroughToken = function(i){
 var parent = document.getElementById("newWrough")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
-style.setAttribute("id", `mymapdivWr${wroughTokenNum}`)
 style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
 parent.appendChild(style);
 //make dragable
@@ -137,7 +134,6 @@ $( function() {
     var someArray = [];
   } );
 //end
-wroughTrial = document.getElementById(`mymapdivWr${waterTokenNum}`)
 console.log(style)
 console.log(wroughTokenNum)
 wroughTokenNum = wroughTokenNum +1
@@ -151,7 +147,6 @@ var createNewWroughTokenS = function(i){
 var parent = document.getElementById("newWallS")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
-style.setAttribute("id", `mymapdivWr${wroughTokenNumS}`)
 style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
 parent.appendChild(style);
 //make dragable
@@ -160,7 +155,6 @@ $( function() {
     var someArray = [];
   } );
 //end
-wroughTrial = document.getElementById(`mymapdivWr${waterTokenNumS}`)
 console.log(style)
 console.log(wroughTokenNumS)
 wroughTokenNumS = wroughTokenNumS +1
@@ -174,7 +168,6 @@ var createNewWallToken = function(i){
 var parent = document.getElementById("newWall")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
-style.setAttribute("id", `mymapdivWa${wallTokenNum}`)
 style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
 parent.appendChild(style);
 //make dragable
@@ -196,7 +189,6 @@ var createNewWallTokenS = function(i){
 var parent = document.getElementById("newWallS")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
-style.setAttribute("id", `mymapdivWa${wallTokenNumS}`)
 style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
 parent.appendChild(style);
 //make dragable
