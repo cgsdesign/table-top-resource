@@ -148,11 +148,11 @@ return
 var wroughTokenNumS = 2
 var createNewWroughTokenS = function(i){
 //make parent componant
-var parent = document.getElementById("newWroughS")
+var parent = document.getElementById("newWallS")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
 style.setAttribute("id", `mymapdivWr${wroughTokenNumS}`)
-style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
+style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
 parent.appendChild(style);
 //make dragable
 $( function() {
@@ -164,6 +164,50 @@ wroughTrial = document.getElementById(`mymapdivWr${waterTokenNumS}`)
 console.log(style)
 console.log(wroughTokenNumS)
 wroughTokenNumS = wroughTokenNumS +1
+return
+}
+
+//spon new wall to Drag
+var wallTokenNum = 2
+var createNewWallToken = function(i){
+//make parent componant
+var parent = document.getElementById("newWall")
+var style = document.createElement('div');
+style.classList.add("mymapdiv")
+style.setAttribute("id", `mymapdivWa${wallTokenNum}`)
+style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
+parent.appendChild(style);
+//make dragable
+$( function() {
+    $( ".mymapdiv" ).draggable();
+    var someArray = [];
+  } );
+//end
+console.log(style)
+console.log(wallTokenNum)
+wallTokenNum = wallTokenNum +1
+return
+}
+
+//spon new wall SM to Drag
+var wallTokenNumS = 2
+var createNewWallTokenS = function(i){
+//make parent componant
+var parent = document.getElementById("newWallS")
+var style = document.createElement('div');
+style.classList.add("mymapdiv")
+style.setAttribute("id", `mymapdivWa${wallTokenNumS}`)
+style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
+parent.appendChild(style);
+//make dragable
+$( function() {
+    $( ".mymapdiv" ).draggable();
+    var someArray = [];
+  } );
+//end
+console.log(style)
+console.log(wallTokenNumS)
+wallTokenNumS = wallTokenNumS +1
 return
 }
 
