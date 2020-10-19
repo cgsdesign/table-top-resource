@@ -11,7 +11,9 @@
 
 //drag
 $( function() {
-    $( ".mymapdiv" ).sortable();
+    $( ".mymapdiv" ).draggable({
+      containment: "document"
+    });
     var someArray = [];
   } );
 
@@ -31,7 +33,9 @@ style.innerHTML = `<img src="./assets/images/Tokens/monster.png"><b>${tokenNum}<
 parent.appendChild(style);
 //make dragable
 $( function() {
-    $( ".mymapdiv" ).draggable();
+    $( ".mymapdiv" ).draggable({
+      containment: "document"
+    });
     var someArray = [];
   } );
   //end
@@ -54,7 +58,7 @@ var createNewBossToken = function(){
 //      return}
 console.log(bossTokenNum)
 //make parent componant
-var parent = $("#mapZone");
+var parent = $("#newBossMonster");
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
 style.classList.add("charTop")
@@ -63,7 +67,10 @@ style.innerHTML = `<img src="./assets/images/Tokens/boss.png"><b>${bossTokenNum}
 parent.append(style);
 //make dragable
 $( function() {
-    $( ".mymapdiv" ).draggable();
+    $( ".mymapdiv" ).draggable({
+      containment: "document"
+    });
+    
     var someArray = [];
   } );
 //end
@@ -87,7 +94,9 @@ style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
 parent.appendChild(style);
 //make dragable
 $( function() {
-    $( ".mymapdiv" ).draggable();
+    $( ".mymapdiv" ).draggable({
+      containment: "document"
+    });
     var someArray = [];
   } );
 //end
@@ -109,7 +118,9 @@ style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
 parent.appendChild(style);
 //make dragable
 $( function() {
-    $( ".mymapdiv" ).draggable();
+    $( ".mymapdiv" ).draggable({
+      containment: "document"
+    });
     var someArray = [];
   } );
 //end
@@ -130,7 +141,9 @@ style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
 parent.appendChild(style);
 //make dragable
 $( function() {
-    $( ".mymapdiv" ).draggable();
+    $( ".mymapdiv" ).draggable({
+      containment: "document"
+    });
     var someArray = [];
   } );
 //end
@@ -144,14 +157,16 @@ return
 var wroughTokenNumS = 2
 var createNewWroughTokenS = function(i){
 //make parent componant
-var parent = document.getElementById("newWallS")
+var parent = document.getElementById("newWroughS")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
-style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
+style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
 parent.appendChild(style);
 //make dragable
 $( function() {
-    $( ".mymapdiv" ).draggable();
+    $( ".mymapdiv" ).draggable({
+      containment: "document"
+    });
     var someArray = [];
   } );
 //end
@@ -172,7 +187,9 @@ style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
 parent.appendChild(style);
 //make dragable
 $( function() {
-    $( ".mymapdiv" ).draggable();
+    $( ".mymapdiv" ).draggable({
+      containment: "document"
+    });
     var someArray = [];
   } );
 //end
@@ -193,7 +210,9 @@ style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
 parent.appendChild(style);
 //make dragable
 $( function() {
-    $( ".mymapdiv" ).draggable();
+    $( ".mymapdiv" ).draggable({
+      containment: "document"
+    });
     var someArray = [];
   } );
 //end
