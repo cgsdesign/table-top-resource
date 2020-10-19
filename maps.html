@@ -21,20 +21,26 @@
     <body>
         <header>
             <h1>Maps</h1>
-            <h4 class="dark-glow" style="justify-items:right;">
-                Chose your componants and drag to place them on the map.<br> 
-                Saved Maps are located at the bottom of the screen.<br>
-                Character and Monster tokens designed for live play.
-            </h4>
             <!--Print Button-->
-            <button id="save-map" class="bottom-right" onclick="takeshot()" style="float: right;"> 
+            </button> 
+            <h4 class="dark-glow" style="justify-items:right;">
+                Chose your componants and drag to place them on the map.<br>
+                Saved Maps are located at the bottom of the screen.<br>
+                Character and Monster tokens are intended for live play only.
+            </h4>
+            <div>
+            <button id="save-map" class="bottom-right" onclick="takeshot()"> 
                 SAVE MAP 
                 <div class="map-made-alert">Map Saved Below</div>
             </button> 
+            <button class="bottom-right clearmap" id="clearmap"> 
+                CLEAR MAP 
+            </button>
+            </div>
         </header>
         <!--below custom styling needed for buttons-->
         <div id="makeMap"> 
-        <section class="section monkbg"style="padding: 5px;">
+        <section id="reload-map" class="section monkbg"style="padding: 5px;">
             <!--Archer-->
                 <div class="item-outer-box">
                     <div class="width20"> 
@@ -87,8 +93,8 @@
             <!--S Water-->
                 <div  class="item-outer-box2">
                     <div class="width20" id="newWaterS">  
-                        <button onclick="createNewWaterTokenS()">Get New<br>Water</button> 
-                        <div id="small-water" class="mymapdiv"> 
+                        <button>Get New<br>Water</button> 
+                        <div id="small-water" class="mymapdiv terrain"> 
                             <img src="./assets/images/Tokens/water.png"> 
                         </div>                         
                     </div> 
@@ -96,8 +102,8 @@
             <!--S Wrough Terrain-->
                 <div  class="item-outer-box2">
                     <div class="width20" id="newWroughS">  
-                        <button onclick="createNewWroughTokenS()">Get New<br>Terrain</button> 
-                        <div id="small-terrain" class="mymapdiv"> 
+                        <button>Get New<br>Terrain</button> 
+                        <div id="small-terrain" class="mymapdiv terrain"> 
                             <img src="./assets/images/Tokens/wroughTerain.png"> 
                         </div>                         
                     </div> 
@@ -105,8 +111,8 @@
             <!--S Wall-->
                 <div  class="item-outer-box2">
                     <div class="width20" id="newWallS">  
-                        <button onclick="createNewWallTokenS()">Get New<br>Wall</button> 
-                        <div id="small-wall" class="mymapdiv"> 
+                        <button>Get New<br>Wall</button> 
+                        <div id="small-wall" class="mymapdiv terrain"> 
                             <img src="./assets/images/Tokens/wall.png"> 
                         </div>                         
                     </div> 
@@ -114,7 +120,7 @@
             <!--LG Monster-->
                 <div  class="item-outer-box-lg">
                     <div class="width40 big" id="newBossMonster">
-                        <button onclick="createNewBossToken()">Get New<br>Enemy</button> 
+                        <button onclick="createNewBossToken()">Get New<br>Big Enemy</button> 
                         <div id="large-monster" class="mymapdiv charTop">    
                             <img src="./assets/images/Tokens/boss.png"><b>1</b>
                         </div>                         
@@ -123,7 +129,7 @@
             <!--LG Water-->
                 <div  class="item-outer-box-lg">
                     <div class="width40 big" id="newWater">  
-                        <button onclick="createNewWaterToken()">Get New<br>Water</button> 
+                        <button>Get New<br>Big Water</button> 
                         <div id="large-water" class="mymapdiv"> 
                             <img src="./assets/images/Tokens/water.png"> 
                         </div>                         
@@ -132,7 +138,7 @@
             <!--LG Wrough Terrain-->
                 <div  class="item-outer-box-lg">
                     <div class="width40 big" id="newWrough">  
-                        <button onclick="createNewWroughToken()">Get New<br>Terrain</button> 
+                        <button>Get New<br>Big Terrain</button> 
                         <div id="large-terrain" class="mymapdiv"> 
                             <img src="./assets/images/Tokens/wroughTerain.png"> 
                         </div>                         
@@ -141,11 +147,15 @@
             <!--Large Wall-->
                 <div  class="item-outer-box-lg">
                     <div class="width40 big" id="newWall">  
-                        <button onclick="createNewWallToken()">Get New<br>Wall</button> 
+                        <button>Get New<br>Big Wall</button> 
                         <div id="large-wall" class="mymapdiv"> 
                             <img src="./assets/images/Tokens/wall.png"> 
                         </div>                         
                     </div> 
+                </div>
+            <!--Large Wall-->
+                <div class="grave">
+                    <img src="./assets/images/Tokens/grave-yard.png"> 
                 </div>
         </section>
         <!--Map Zone-->

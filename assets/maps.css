@@ -18,21 +18,21 @@ h4{
 .item-outer-box {
   height: 50px;
   margin: 5px;
-  min-width: 50px;
+  min-width: 51px;
   background-color: rgba(250, 250, 250, .7);
 
 }
 .item-outer-box2 {
   height: 102px;
   margin: 5px;
-  min-width: 50px;
+  min-width: 51px;
   background-color: rgba(250, 250, 250, .7);
 
 }
 .item-outer-box-lg {
 height: 129px;
 margin:5px;
-min-width: 50px;
+min-width: 91px;
 background-color: rgba(250, 250, 250, .7);
 }
 @media only screen and (max-width: 700px){
@@ -51,6 +51,12 @@ display:none;
   font-weight: 400;
   padding: 10px 20px;
 }
+
+.clearmap {
+  color: #cd0000;
+  border: solid 3px #cd0000;
+
+}
 #output canvas{
   max-width: 200px;
   max-height: 200px;
@@ -63,40 +69,56 @@ display:none;
   color:white;
   font-size: 13px;;
 }
-/*class to link movable items from- I changed changed my drag function so now only in use to keep buttons below matching tokens*/
+/*terain tokens*/
   .mymapdiv {
     position: absolute;
     z-index: 9;
+    opacity: .7;
   }
-/*class to keep characters on top*/
+  
+/*class to keep characters tokenson top*/
   .charTop {
     z-index: 999;
+    position: absolute;
+    opacity: 1;
   }
 /*token styling*/  
   img {
-    width:35px;
+    width:40px;
   }
   .big img {
-    width:70px;
+    width:80px;
   }
 
   .width20{
       width:40px;
       display: flex;
     flex:1;
-    margin: 8px 0px 0px 8px;
+    margin: 5px 0px 0px 6px;
     text-align: center;
   }
   .width40{
     width:80px;
     display: flex;
   flex:1;
-  margin: 10px 0px 0px 10px;
+  margin: 5px 0px 0px 5px;
   text-align: center;
 }
 
-
-
+.grave {
+  padding: 0px 20px;
+}
+.grave img{
+min-width:120px;
+min-height:129x;
+max-width:120px;
+max-height:129px;
+padding:10px;
+background:#00d5c6;
+margin-top:5px;
+border-radius: 25px;
+box-shadow:inset 0px 0px 20px #000,0px 0px 20px #000,inset 0px 0px 40px #000;
+}
 /*map area*/
   .map-bg {
     background-image: url('../assets/images/grid3.jpg');
@@ -117,20 +139,18 @@ display:none;
     font-size: 12px;
     color:white;
     padding:5px;
-
-
   }
   button:hover{
     background:rgba(0, 0, 0, 1);
   }
   .big button{
-    min-width:90px;
-    margin-left: -10px;
+    min-width:91px;
+    margin-left: -5px;
     font-size: 12px;
-    margin-top: 80px;
+    margin-top: 85px;
   }
   .width20 button{
-    min-width:50px;
-    margin-left: -8px;
-    margin-top: 42px;
+    min-width:51px;
+    margin-left: -6px;
+    margin-top: 44px;
   }

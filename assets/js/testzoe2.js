@@ -13,7 +13,8 @@
 $( function() {
     $( ".mymapdiv" ).draggable({
       containment: "document"
-    });
+    }
+    );
     var someArray = [];
   } );
 
@@ -106,8 +107,10 @@ console.log(waterTokenNum)
 waterTokenNum = waterTokenNum +1
 return
 }
+var WaterBG = document.getElementById("newWater")
+WaterBG.addEventListener("click", createNewWaterToken);
 
-//spon new small water to Drag
+//spon new small water to Drag--------------------------------
 var waterTokenNumS = 2
 var createNewWaterTokenS = function(i){
 //make parent componant
@@ -129,8 +132,10 @@ console.log(waterTokenNumS)
 waterTokenNumS = waterTokenNumS +1
 return
 }
+var WaterS = document.getElementById("newWaterS")
+WaterS.addEventListener("click", createNewWaterTokenS);
 
-//spon new wrough terain to Drag
+//spon new wrough terain to Drag-----------------------------
 var wroughTokenNum = 2
 var createNewWroughToken = function(i){
 //make parent componant
@@ -152,8 +157,9 @@ console.log(wroughTokenNum)
 wroughTokenNum = wroughTokenNum +1
 return
 }
-
-//spon new wrough terain SM to Drag
+var WroughBG = document.getElementById("newWrough")
+WroughBG.addEventListener("click", createNewWroughToken);
+//spon new wrough terain SM to Drag------------------------
 var wroughTokenNumS = 2
 var createNewWroughTokenS = function(i){
 //make parent componant
@@ -175,8 +181,9 @@ console.log(wroughTokenNumS)
 wroughTokenNumS = wroughTokenNumS +1
 return
 }
-
-//spon new wall to Drag
+var WroughBG = document.getElementById("newWroughS")
+WroughBG.addEventListener("click", createNewWroughTokenS);
+//spon new wall to Drag----------------------------------------------------
 var wallTokenNum = 2
 var createNewWallToken = function(i){
 //make parent componant
@@ -198,8 +205,9 @@ console.log(wallTokenNum)
 wallTokenNum = wallTokenNum +1
 return
 }
-
-//spon new wall SM to Drag
+var WallBG = document.getElementById("newWall")
+WallBG.addEventListener("click", createNewWallToken);
+//spon new wall SM to Drag-------------------------------------------------
 var wallTokenNumS = 2
 var createNewWallTokenS = function(i){
 //make parent componant
@@ -221,7 +229,8 @@ console.log(wallTokenNumS)
 wallTokenNumS = wallTokenNumS +1
 return
 }
-
+var WallS = document.getElementById("newWallS")
+WallS.addEventListener("click", createNewWallTokenS);
 //SAVE MAP------------------------------------------------------------
 var takeshot = function() { 
     let div = 
@@ -234,7 +243,7 @@ var takeshot = function() {
             document 
             .getElementById('output') 
             .appendChild(canvas); 
-
+           // localStorage.setItem(canvas, canvas.toDataURL());-unusable with these types of layered graphics
         }) 
     }
 
@@ -246,3 +255,12 @@ var takeshot = function() {
 };
 var mapMadeAlrt = document.getElementById("save-map")
 mapMadeAlrt.addEventListener("click", clickerFlash);
+mapMadeAlrt.addEventListener("click", takeshot);
+//RELOAD MAP------------------------------------------------------------
+//looking at error code, should work when live on https
+var ReloadMap = function() {
+  $("#reload-map").load(location.href+" #reload-map>*","");
+  }
+
+var mapClearAlrt = document.getElementById("clearmap")
+mapClearAlrt.addEventListener("click", ReloadMap);

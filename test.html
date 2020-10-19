@@ -6,41 +6,43 @@
     <title>Document</title>
 </head>
 <body>
-    <style>
-        .map-made-alert{
-            display: none;
-        }
-    </style>
-    <div class="map-made-alert">Alert! Watch me before it's too late!</div>
-
 
 <button id="map">
-    testing flash
+    testing img
 </button>
 
-<div id="clickme">
-    Click here
-  </div>
-  <div id="book" class="map-made-alert">TEst book</div>
+  <img id="bannerImage" src="http://tierraplants.com/wp-content/uploads/2017/05/final-monsteraplant.jpg">
 
+  <img src="" id="tableBanner">
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-var clickerFlash = function() {
-        $(".map-made-alert").fadeIn(100);
-        $(".map-made-alert").fadeOut(600);
-};
-var mapMadeAlrt = document.getElementById("map")
-mapMadeAlrt.addEventListener("click", clickerFlash);
 
-// With the element initially hidden, we can show it slowly:
-$( "#clickme" ).click(function() {
-  $( "#book" ).fadeIn( "slow", function() {
-    // Animation complete
-  });
-});
 
+var getBase64Image = function(img) {
+    console.log("image get base starting")
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    var dataURL = canvas.toDataURL("image/png");
+    localStorage.setItem("imgData", imgData);
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+bannerImage = document.getElementById('bannerImage');
+bannerImage.addEventListener("click", getBase64Image);
+
+var getImageWant = function() {
+    console.log("image place starting")
+var dataImage = localStorage.getItem('imgData');
+bannerImg = document.getElementById('tableBanner');
+bannerImg.src = "data:image/png;base64," + dataImage;
+}
+
+GetImage = document.getElementById('map');
+GetImage.addEventListener("click", getImageWant);
 </script>
 </body>
 </html>
