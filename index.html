@@ -58,7 +58,7 @@
                 <h2>Dungeons and Dragons 5th Edition Rules and References</h2>
                 <div class="col-sm-11">
                     <div class="row around-sm">
-                        <div class="dropdown">
+                        <div class="dropdown" id="character">
                             <button class="infoDrop">Characters</button>
                             <div class="dropdown-content">
                                 <p>Abilities</p>
@@ -67,7 +67,7 @@
                                 <p>Languages</p>
                             </div>
                         </div>
-                        <div class="dropdown">
+                        <div class="dropdown" id="classes">
                             <button class="infoDrop">Classes</button>
                             <div class="dropdown-content">
                                 <p id="classBarb">Barbarian</p>
@@ -84,7 +84,7 @@
                                 <p>Wizard</p>
                             </div>
                         </div>
-                        <div class="dropdown">
+                        <div class="dropdown" id="races">
                             <button class="infoDrop">Races</button>
                             <div class="dropdown-content">
                                 <p>Dragonborn</p>
@@ -98,17 +98,16 @@
                                 <p>Tiefling</p>
                             </div>
                         </div>
-                        <div class="dropdown">
+                        <div class="dropdown" id="equipment">
                             <button class="infoDrop">Equipment</button>
                             <div class="dropdown-content">
                                 <p>Weapons</p>
                                 <p>Armor</p>
                                 <p>Adventuring Gear</p>
-                                <p>Equipment Packs</p>
                                 <p>Magic Items</p>
                             </div>
                         </div>
-                        <div class="dropdown">
+                        <div class="dropdown" id="spells">
                             <button class="infoDrop">Spells</button>
                             <div class="dropdown-content">
                                 <div class="row">
@@ -135,7 +134,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="dropdown">
+                        <div class="dropdown" id="monsters">
                             <button class="infoDrop">Monsters</button>
                             <div class="dropdown-content">
                                 <div class="row">
@@ -196,7 +195,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-11 card">
+                <div class="col-sm-11 card" id="referenceContainer">
+                    <p class="contHeader"></p>
+                    <div class="col-sm-12" id="charContainer"></div>
+                    <div class="row">
+                        <div class="col-sm-6" id="levelContainer"></div>
+                        <div class="col-sm-3" id="abilityContainer"></div>
+                    </div>
                 </div>               
             </section>
 
