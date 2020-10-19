@@ -14,10 +14,7 @@ var classesCategory = function(charClass) {
             
             $("#referenceContainer").append($mainCont)
             $("#mainInfoContainer").append($rowCont)
-            $("#rowCont").append($statBlock)
-            $("#rowCont").append($levelBlock)
-            $("#rowCont").append($profBonusBlock)
-            $("#rowCont").append($classFeatBlock)
+            $("#rowCont").append($statBlock, $levelBlock, $profBonusBlock, $classFeatBlock)
             
             $("#statBlock").append(data.name)
 
@@ -78,15 +75,31 @@ var classesCategory = function(charClass) {
 var racesCategory = function(raceSelect) {
     $("#mainInfoContainer").remove();
     var raceSearch = raceSelect.toLowerCase();
-    fetch("http://www.dnd5eapi.co/api/classes/" + raceSearch).then(function(response) {
+    fetch("http://www.dnd5eapi.co/api/races/" + raceSearch).then(function(response) {
         response.json().then(function(data) {
             var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
             var $rowCont = $("<div class='row' id='rowCont'></div>")
             var $baseInfo = $("<div class='col-sm-6' id='infoCont'></div>")
             var $sizeCont = $("<div class='col-sm-6' id='sizeCont'></div>")
-            var $rowCont2 = $("<div class='row' id='rowCont'></div>")
+            var $rowCont2 = $("<div class='row' id='rowSecCont'></div>")
             var $traitCont = $("<div class='col-sm-6' id='traitCont'></div>")
             var $subraceCont = $("<div class='col-sm-6' id='subraceCont'></div>")
+
+            $("#referenceContainer").append($mainCont);
+            $("#mainInfoContainer").append($rowCont, $rowCont2);
+            $("#rowCont").append($baseInfo, $sizeCont);
+            $("#rowSecCont").append($traitCont, $subraceCont);
+
+            $("#infoCont").append("<p>" + data.name + "</p>")
+            $("#infoCont").append("<p>Speed: " + data.speed + "</p>")
+
+            var abilityBonus = data.ability_bonuses[0]
+            $("#infoCont").append("Ability Bonus: ")
+            $("#infoCont").append("<p>" + abilityBonus.name + " +" + abilityBonus.bonus + "</p>")
+
+            var racialprofs = data.starting_proficiencies[0]
+            $("#infoCont").append("Proficiencies: ")
+            $("#infoCont").append("<p>" + racialprofs.name + "</p>")
         })
     })
 }
@@ -123,7 +136,7 @@ $("#races").on("click", "p", function() {
     var selectText = $(this)
         .text()
         .trim();
-    console.log(selectText)
+    racesCategory(selectText)
 });
 
 $("#equipment").on("click", "p", function() {
