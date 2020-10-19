@@ -32,22 +32,22 @@
             <section class="calendar">
                 <select id="time">
                     <option value="" >--select game time --</option>
-                    <option value="8to12pm">8AM - 12PM</option>
+                    <option value="8to12pm" id="8am">8AM - 12PM</option>
                     <option value="12to4pm">12PM - 4PM</option>
                     <option value="4to8pm">4PM - 8PM</option>
                     <option value="8to12am">8PM - 12AM</option>
                 </select>
                 <select id="days">
-                    <option>--select game days --</option>
-                    <option>Monday</option>
-                    <option>Tuesday</option>
-                    <option>Wednesday</option>
-                    <option>Thursday</option>
-                    <option>Friday</option>
-                    <option>Saturday</option>
-                    <option>Sunday</option>
+                    <option>--select days to play --</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
                 </select>
-                <input type="text" name="name" id="name" placeholder="please enter gamer name"/>
+                <input type="text" name="name" id="name" placeholder="Enter your name"/>
                 <button type="button" id="btnSubmit">Book</button>
                 <table>
                     <thead>
@@ -79,7 +79,7 @@
                     <tbody>
                       <tr>
                         <td class="hour" rowspan="4" colspan="1"><span>8AM-12PM</span></td>
-                        <td id="eightam-mon" rowspan="4" colspan="1">ddd</td>
+                        <td id="eightam-mon" rowspan="4" colspan="1"></td>
                         <td id="eightam-tue" rowspan="4" colspan="1"></td>
                         <td id="eightam-wed" rowspan="4" colspan="1"></td>
                         <td id="eightam-thur" rowspan="4" colspan="1"></td>
