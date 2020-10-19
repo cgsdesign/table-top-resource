@@ -1,31 +1,52 @@
 //Getting and appending information to the infobox based on character class
 var classesCategory = function(charClass) {
+    $("#mainInfoContainer").remove();
     var charSearch = charClass.toLowerCase();
     fetch("http://www.dnd5eapi.co/api/classes/" + charSearch).then(function(response) {
         response.json().then(function(data) {
-            $("#contHeader").append(data.name)
-
-            $("#charContainer").append("Hit Die: " + data.hit_die)
-
-                var skills = data.proficiency_choices[0].from
             
-                for(i = 0; i < skills.length; i++) {
-                    $("#charContainer").append(skills[i].name)
-                }
-                
-                var proficiencies = data.proficiencies
-                $("#charContainer").append("Proficiencies: ")
-                
-                for(i = 0; i < proficiencies.length; i++) {
-                    $("#charContainer").append(proficiencies[i].name)
-                }
+            var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+            var $rowCont = $("<div class='row' id='rowCont'></div>")
+            var $statBlock = $("<div class='col-sm-4' id='statBlock'></div>")
+            var $levelBlock = $("<div class='col-sm-2' id='levelBlock'></div>")
+            var $profBonusBlock = $("<div class='col-sm-2' id='profBonusBlock'></div>")
+            var $classFeatBlock = $("<div class='col-sm-4' id='classFeatBlock'></div>")
+            
+            $("#referenceContainer").append($mainCont)
+            $("#mainInfoContainer").append($rowCont)
+            $("#rowCont").append($statBlock)
+            $("#rowCont").append($levelBlock)
+            $("#rowCont").append($profBonusBlock)
+            $("#rowCont").append($classFeatBlock)
+            
+            $("#statBlock").append(data.name)
 
-                var savingThrows = data.saving_throws
-                $("#charContainer").append("Saving Throws: ")
+            $("#statBlock").append($statBlock, "<p>Hit Die: " + data.hit_die + "</p>")
+            
+            var savingThrows = data.saving_throws
+            $("#statBlock").append("Saving Throws: ")
 
-                for(i = 0; i < savingThrows.length; i++) {
-                    $("#charContainer").append(savingThrows[i].name)
-                }
+            for(i = 0; i < savingThrows.length; i++) {
+                $("#statBlock").append("<p>" + savingThrows[i].name + "</p>")
+                
+            }
+            
+            var skills = data.proficiency_choices[0].from
+
+            for(i = 0; i < skills.length; i++) {
+                $("#statBlock").append("<p>" + skills[i].name + "</p>")
+            }
+                
+            var proficiencies = data.proficiencies
+                $("#statBlock").append("Proficiencies: ")
+                
+            for(i = 0; i < proficiencies.length; i++) {
+                    $("#statBlock").append("<p>" + proficiencies[i].name + "</p>")
+                }   
+            
+            $("#levelBlock").append("Level")
+            $("#profBonusBlock").append("Proficiency")
+            $("#classFeatBlock").append("Class Features")
 
             fetch("http://www.dnd5eapi.co/api/classes/" + charSearch + "/levels").then(function(response) {
                 response.json().then(function(data) {
@@ -34,14 +55,15 @@ var classesCategory = function(charClass) {
                     for(i = 0; i < data.length; i++) {
                         if(data[i].level >= charLevel) {
                             charLevel++
-                            $("#levelContainer").append("Character Level: ")
-                                .append(data[i].level)
-                            $("#levelContainer").append("Proficiency Bonus: ")
-                                .append(data[i].prof_bonus)
+                            $("#levelBlock").append("<p>" + data[i].level + "</p>")
+                            $("#profBonusBlock").append("<p>" + data[i].prof_bonus + "</p>")
                             var classFeatures = data[i].features
                             console.log(classFeatures)
                             for(j = 0; j < classFeatures.length; j++) {
-                                $("#abilityContainer").append(classFeatures[j].name)
+                                if(classFeatures.length === 0) {
+                                    $("#classFeatBlock").append("<p>-</p>")
+                                }
+                                $("#classFeatBlock").append("<p>" + classFeatures[j].name + "</p>")
                             }
 
                         }
@@ -49,6 +71,22 @@ var classesCategory = function(charClass) {
                     }
                 })
             })
+        })
+    })
+}
+
+var racesCategory = function(raceSelect) {
+    $("#mainInfoContainer").remove();
+    var raceSearch = raceSelect.toLowerCase();
+    fetch("http://www.dnd5eapi.co/api/classes/" + raceSearch).then(function(response) {
+        response.json().then(function(data) {
+            var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+            var $rowCont = $("<div class='row' id='rowCont'></div>")
+            var $baseInfo = $("<div class='col-sm-6' id='infoCont'></div>")
+            var $sizeCont = $("<div class='col-sm-6' id='sizeCont'></div>")
+            var $rowCont2 = $("<div class='row' id='rowCont'></div>")
+            var $traitCont = $("<div class='col-sm-6' id='traitCont'></div>")
+            var $subraceCont = $("<div class='col-sm-6' id='subraceCont'></div>")
         })
     })
 }
