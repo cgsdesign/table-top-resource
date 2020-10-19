@@ -44,8 +44,7 @@ var diceTypes = [
 ];
 
 var diceIdCounter        = 0;
-//change rollIdCounter to a different number?
-var rollIdCounter        = 0;
+var rollIdCounter        = 100;
 var dropdownOptionsArr   = [];
 var diceIdCounterArr     = [];
 var rollIdCounterArr     = [];
@@ -78,10 +77,13 @@ var addDropdown = function() {
     newDropdown.setAttribute("name", "dice-dropdown");
     newDropdown.setAttribute("id", diceIdCounter);
     diceIdCounter++
+    diceIdCounterArr.push(newDropdown);
     var newRollValue = document.createElement("div");
     newRollValue.setAttribute("id", rollIdCounter);
     rollIdCounter++
+    rollIdCounterArr.push(newRollValue);
     newRollValue.textContent = "Roll Value:"
+    //changing diceTypes.length to a number breaks diceTypes[i].type
     for (var i = 0; i < diceTypes.length; i++) {
         //iterate through diceTypes array and append to dropdown
         var dropdownOptions = document.createElement("option");
@@ -89,34 +91,20 @@ var addDropdown = function() {
         dropdownOptions.value = diceTypes[i].range;
         newDropdown.appendChild(dropdownOptions);
         dropdownOptionsArr.push(dropdownOptions);
-        console.log(dropdownOptionsArr);
     }
 
     //append dropdown and roll value output
     newDropdownContainer.appendChild(newDropdown);
     newDropdownContainer.appendChild(newRollValue);
-    
-    //push dropdown and roll value output to an array
-    //may have to adjust to apply array
-    /*
-    dropdownOptionsArr.push(newDropdown);
-    rollIdCounterArr.push(newRollValue);
-
-    console.log(dropdownOptionsArr);
-    console.log(rollIdCounterArr);
-    */
 }
 
-/*
+
 //array.pop mdn?
 //creating counter arrays, subtract by id?
 var subtractDropdown = function() {
-    dropdownOptionsArr.pop();
+    diceIdCounterArr.pop();
     rollIdCounterArr.pop();
-    console.log(dropdownOptionsArr);
-    console.log(rollIdCounterArr);
 };
-*/
 
 //get the value of the range of each die from the dropdown
 //assign another for loop here?
@@ -137,26 +125,20 @@ var getChoiceValueAndRandomNumber = function() {
         randomNumberDisplay.textContent = "Roll Value: " + randomNumber;
     }
 
-    console.log(dropdownOptionsArr.options);
-
-    /*
-    for (var i = 0; i < diceIdCounter.length; i++) {
-        var choiceValueCounter = dropdownOptionsArr[i].options
-        [dropdownOptionsArr[i].selectedIndex].value;
+    /*random number generation and appending to page for 
+    dynamically created select elements*/
+    for (var i = 0; i < diceIdCounterArr.length; i++) {        
+        var choiceValueCounter = diceIdCounterArr[i].options
+        [diceIdCounterArr[i].selectedIndex].value;
         
-        console.log(choiceValueCounter);
-
-        console.log(dropdownOptionsArr[i]);
-
         if (choiceValueCounter < 4) {
             alert("Pick a die value");
         }
         else {
             var appendedRandomNumber = Math.floor(Math.random() * choiceValueCounter) + 1;
-            console.log(appendedRandomNumber);
+            rollIdCounterArr[i].textContent = "Roll Value: " + appendedRandomNumber;
         }
     }
-    */
 }
 
 /*future plans:
@@ -172,5 +154,5 @@ var getChoiceValueAndRandomNumber = function() {
 
 rollButton.addEventListener("click", getChoiceValueAndRandomNumber);
 addButton.addEventListener("click", addDropdown);
-//subtractButton.addEventListener("click", subtractDropdown);
+subtractButton.addEventListener("click", subtractDropdown);
 clearButton.addEventListener("click", clearDropdowns);
