@@ -46,17 +46,10 @@ tokenNum = tokenNum +1
 return
 }
 
-// var Monster = document.getElementById("newMonster")
-// Monster.addEventListener("click", createNewToken);
-
 //spon new boss monster to Drag-----------------------test Icon
 var bossTokenNum = 2
 var Trial = ""
 var createNewBossToken = function(){
-    // if (waterTrial != IDINeed){
-//     console.log(Trial)
-//     console.log(IDIneed)
-//      return}
 console.log(bossTokenNum)
 //make parent componant
 var parent = $("#newBossMonster");
@@ -84,152 +77,167 @@ return
 //  var bossMonster = document.getElementById("newBossMonster")
 //  bossMonster.addEventListener("click", createNewBossToken);
 
-//spon new water to Drag
+//spon new water to Drag---------------------------------------------------
 var waterTokenNum = 2
-var createNewWaterToken = function(i){
+var createNewWaterToken = function(){
 //make parent componant
-var parent = document.getElementById("newWater")
-var style = document.createElement('div');
-style.classList.add("mymapdiv")
-style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
-parent.appendChild(style);
-//make dragable
-$( function() {
-    $( ".mymapdiv" ).draggable({
-      containment: "document"
-    });
-    var someArray = [];
-  } );
-//end
-waterTrial = document.getElementById(`mymapdivW${waterTokenNum}`)
-console.log(style)
-console.log(waterTokenNum)
-waterTokenNum = waterTokenNum +1
-return
+  for (i=0; i<10;i++){
+    var parent = document.getElementById("newWater")
+    var style = document.createElement('div');
+    style.classList.add("mymapdiv")
+    style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
+    parent.appendChild(style);
+    //make dragable
+    $( function() {
+        $( ".mymapdiv" ).draggable({
+          containment: "document"
+        });
+        var someArray = [];
+      } );
+    //end
+    waterTrial = document.getElementById(`mymapdivW${waterTokenNum}`)
+
+    console.log(style)
+    console.log(waterTokenNum)
+    waterTokenNum = waterTokenNum +1
+  }
+  return
 }
-var WaterBG = document.getElementById("newWater")
+var WaterBG = document.getElementById("createNewWaterToken")
 WaterBG.addEventListener("click", createNewWaterToken);
 
 //spon new small water to Drag--------------------------------
 var waterTokenNumS = 2
 var createNewWaterTokenS = function(i){
-//make parent componant
-var parent = document.getElementById("newWaterS")
-var style = document.createElement('div');
-style.classList.add("mymapdiv")
-style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
-parent.appendChild(style);
-//make dragable
-$( function() {
-    $( ".mymapdiv" ).draggable({
-      containment: "document"
-    });
-    var someArray = [];
-  } );
-//end
-console.log(style)
-console.log(waterTokenNumS)
-waterTokenNumS = waterTokenNumS +1
-return
+  //make parent componant
+  for (i=0; i<10;i++){
+    var parent = document.getElementById("newWaterS")
+    var style = document.createElement('div');
+    style.classList.add("mymapdiv")
+    style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
+    parent.appendChild(style);
+    //make dragable
+    $( function() {
+        $( ".mymapdiv" ).draggable({
+          containment: "document"
+        });
+        var someArray = [];
+      } );
+    //end
+    console.log(style)
+    console.log(waterTokenNumS)
+    waterTokenNumS = waterTokenNumS +1
+  }
+  return
 }
-var WaterS = document.getElementById("newWaterS")
+var WaterS = document.getElementById("createNewWaterTokenS")
 WaterS.addEventListener("click", createNewWaterTokenS);
 
 //spon new wrough terain to Drag-----------------------------
 var wroughTokenNum = 2
 var createNewWroughToken = function(i){
-//make parent componant
-var parent = document.getElementById("newWrough")
-var style = document.createElement('div');
-style.classList.add("mymapdiv")
-style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
-parent.appendChild(style);
-//make dragable
-$( function() {
-    $( ".mymapdiv" ).draggable({
-      containment: "document"
-    });
-    var someArray = [];
-  } );
-//end
-console.log(style)
-console.log(wroughTokenNum)
-wroughTokenNum = wroughTokenNum +1
-return
+    for (i=0; i<10;i++){
+      //make parent componant
+      var parent = document.getElementById("newWrough")
+      var style = document.createElement('div');
+      style.classList.add("mymapdiv")
+      style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
+      parent.appendChild(style);
+      //make dragable
+      $( function() {
+          $( ".mymapdiv" ).draggable({
+            containment: "document"
+          });
+          var someArray = [];
+        } );
+      //end
+      console.log(style)
+      console.log(wroughTokenNum)
+      wroughTokenNum = wroughTokenNum +1
+    }
+  return
 }
-var WroughBG = document.getElementById("newWrough")
+var WroughBG = document.getElementById("createNewWroughToken")
 WroughBG.addEventListener("click", createNewWroughToken);
 //spon new wrough terain SM to Drag------------------------
 var wroughTokenNumS = 2
 var createNewWroughTokenS = function(i){
-//make parent componant
-var parent = document.getElementById("newWroughS")
-var style = document.createElement('div');
-style.classList.add("mymapdiv")
-style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
-parent.appendChild(style);
-//make dragable
-$( function() {
-    $( ".mymapdiv" ).draggable({
-      containment: "document"
-    });
-    var someArray = [];
-  } );
-//end
-console.log(style)
-console.log(wroughTokenNumS)
-wroughTokenNumS = wroughTokenNumS +1
+  for (i=0; i<10;i++){
+    //make parent componant
+    var parent = document.getElementById("newWroughS")
+    var style = document.createElement('div');
+    style.classList.add("mymapdiv")
+    style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
+    parent.appendChild(style);
+    //make dragable
+    $( function() {
+        $( ".mymapdiv" ).draggable({
+          containment: "document"
+        });
+        var someArray = [];
+      } );
+    //end
+    console.log(style)
+    console.log(wroughTokenNumS)
+    wroughTokenNumS = wroughTokenNumS +1
+  }
 return
 }
-var WroughBG = document.getElementById("newWroughS")
+var WroughBG = document.getElementById("createNewWroughTokenS")
 WroughBG.addEventListener("click", createNewWroughTokenS);
 //spon new wall to Drag----------------------------------------------------
 var wallTokenNum = 2
 var createNewWallToken = function(i){
-//make parent componant
-var parent = document.getElementById("newWall")
-var style = document.createElement('div');
-style.classList.add("mymapdiv")
-style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
-parent.appendChild(style);
-//make dragable
-$( function() {
-    $( ".mymapdiv" ).draggable({
-      containment: "document"
-    });
-    var someArray = [];
-  } );
-//end
-console.log(style)
-console.log(wallTokenNum)
-wallTokenNum = wallTokenNum +1
-return
+  for (i=0; i<10;i++){
+      //make parent componant
+      console.log("spawn")
+    var parent = document.getElementById("newWall")
+    var style = document.createElement('div');
+    style.classList.add("mymapdiv")
+    style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
+    parent.appendChild(style);
+    //make dragable
+    $( function() {
+        $( ".mymapdiv" ).draggable({
+          containment: "document"
+        });
+        var someArray = [];
+      } );
+    //end
+    console.log(style)
+    console.log(wallTokenNum)
+    wallTokenNum = wallTokenNum +1
+  }
+  return
 }
-var WallBG = document.getElementById("newWall")
+
+var WallBG = document.getElementById("createNewWallToken")
 WallBG.addEventListener("click", createNewWallToken);
 //spon new wall SM to Drag-------------------------------------------------
 var wallTokenNumS = 2
 var createNewWallTokenS = function(i){
-//make parent componant
-var parent = document.getElementById("newWallS")
-var style = document.createElement('div');
-style.classList.add("mymapdiv")
-style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
-parent.appendChild(style);
-//make dragable
-$( function() {
-    $( ".mymapdiv" ).draggable({
-      containment: "document"
-    });
-    var someArray = [];
-  } );
-//end
-console.log(style)
-console.log(wallTokenNumS)
-wallTokenNumS = wallTokenNumS +1
-return
+    for (i=0; i<10;i++){
+      //make parent componant
+      var parent = document.getElementById("newWallS")
+      var style = document.createElement('div');
+      style.classList.add("mymapdiv")
+      style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
+      parent.appendChild(style);
+      //make dragable
+      $( function() {
+          $( ".mymapdiv" ).draggable({
+            containment: "document"
+          });
+          var someArray = [];
+        } );
+      //end
+      console.log(style)
+      console.log(wallTokenNumS)
+      wallTokenNumS = wallTokenNumS +1
+    }
+  return
 }
-var WallS = document.getElementById("newWallS")
+var WallS = document.getElementById("createNewWallTokenS")
 WallS.addEventListener("click", createNewWallTokenS);
 //SAVE MAP------------------------------------------------------------
 var takeshot = function() { 
@@ -243,10 +251,9 @@ var takeshot = function() {
             document 
             .getElementById('output') 
             .appendChild(canvas); 
-           // localStorage.setItem(canvas, canvas.toDataURL());-unusable with these types of layered graphics
+           // localStorage.setItem(canvas, canvas.toDataURL());-unusable with these types of layered graphics or possible just becasue not really live at https
         }) 
     }
-
         //flash alert map was made
   var clickerFlash = function() {
     $(".map-made-alert").fadeIn(500);
@@ -262,5 +269,6 @@ var ReloadMap = function() {
   $("#reload-map").load(location.href+" #reload-map>*","");
   }
 
+  $( ".selector" ).checkboxradio( "refresh" );
 var mapClearAlrt = document.getElementById("clearmap")
 mapClearAlrt.addEventListener("click", ReloadMap);
