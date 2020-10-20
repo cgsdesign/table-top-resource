@@ -18,7 +18,7 @@ $(document).ready(function(){
 
         if (time == '8to12pm') {
             if(day == 'monday'){
-                $('#eightam-mon').append(name);
+                $('#eightam-mon').append("<ul><li>" + name + "</ul></li>");
             }
             else if (day == 'tuesday') {
                 $('#eightam-tue').append(name);
