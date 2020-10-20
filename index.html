@@ -316,10 +316,19 @@
             </section>
             
             <section class="section firebg">
-                <h2 class="dark-glow col-sm-11">Battle Ice Dice Baby!</h2>
-                <div class="card">
-                    <h3>filler text</h3> 
-                    <p>filler text</p>
+                <h2>Battle Dice Dice Baby!</h2>
+                <!--subtract remove by id, clear remove by class-->
+                <div id="dice-add-subtract-clear-buttons">
+                    <button type="submit" id="add-button">+</button>
+                    <button type="reset" id="subtract-button">-</button>
+                    <button type="reset" id="clear-button">clear</button>
+                </div>
+                <br>
+                <div id="dice-select-container">
+                    <select name="dice-dropdown" class="dice-dropdown"></select>
+                    <div class="random-number-display">Roll Value:</div>
+                    <div class="new-dropdown-container"></div>
+                    <button type="submit" id="roll-button">Roll!</button>
                 </div>
             </section>
 
