@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+    <!--   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>DnD Map Builder</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> --> 
+        <link rel="stylesheet" href="./assets/maps.css">
+        <link rel="stylesheet" href="./assets/style.css">
+        <link rel="stylesheet" href="./assets/style/flexboxgrid.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Eagle+Lake&family=Fondamento:ital@0;1&family=Forum&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">     </head>
+        <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@200;400;500;700&display=swap" rel="stylesheet">   
+    <!-- Notes Minimum Established GM Resource-->
+  
+    </head>
+    <body>
+        <header>
+            <h1>Maps</h1>
+            <!--Print Button-->
+            </button> 
+            <h4 class="dark-glow" style="justify-items:right;">
+                Chose your componants and drag to place them on the map.<br>
+                Saved Maps are located at the bottom of the screen.<br>
+                Character and Monster tokens are intended for live play only.
+            </h4>
+            <div>
+            <button id="save-map" class="bottom-right"> 
+                SAVE MAP 
+                <div class="map-made-alert">Map Saved Below</div>
+            </button> 
+            <button class="bottom-right clearmap" id="clearmap"> 
+                CLEAR MAP 
+            </button>
+            <a href="./index.html">
+                <button class="bottom-right clearmap" id="clearmap"> 
+                    RETURN TO SITE
+                </button>
+            </a>
+            </div>
+        </header>
+        <!--below custom styling needed for buttons-->
+        <div id="makeMap"> 
+        <section id="reload-map" class="section monkbg"style="padding: 5px;">
+            <!--Archer-->
+                <div class="item-outer-box">
+                    <div class="width20"> 
+                        <div id="archer" class="mymapdiv charTop">
+                            <img src="./assets/images/Tokens/archer.png">
+                        </div>
+                    </div> 
+                </div>
+            <!--Sorceress-->
+                <div class="item-outer-box">
+                    <div class="width20"> 
+                        <div id="sorceress" class="mymapdiv charTop">       
+                            <img src="./assets/images/Tokens/mage.png">
+                        </div> 
+                    </div> 
+                </div>
+            <!--Fighter-->
+                <div class="item-outer-box">
+                    <div class="width20">
+                        <div id="fighter" class="mymapdiv charTop">    
+                            <img src="./assets/images/Tokens/fighter.png"> 
+                        </div> 
+                    </div> 
+                </div>
+            <!--Demon-->
+                <div class="item-outer-box">
+                    <div class="width20">
+                        <div id="demon" class="mymapdiv charTop">    
+                            <img src="./assets/images/Tokens/demon.png"> 
+                        </div> 
+                    </div> 
+                </div>
+            <!--Barbarian-->
+                    <div class="item-outer-box">
+                        <div class="width20">
+                            <div id="barbarian" class="mymapdiv charTop">    
+                                <img src="./assets/images/Tokens/barbarian.png"> 
+                            </div> 
+                        </div> 
+                    </div>    
+            <!--SM Monster-->
+                <div  class="item-outer-box2 ">
+                    <div class="width20" id="newMonster">
+                        <button onclick="createNewMonsterToken()">Get New<br>Enemy</button>
+                        <div id="small-monster" class="mymapdiv charTop">    
+                            <img src="./assets/images/Tokens/monster.png"><b>1</b> 
+                        </div>                        
+                    </div> 
+                </div>
+            <!--S Water-->
+                <div  class="item-outer-box2">
+                    <div class="width20" id="newWaterS">  
+                        <button id="createNewWaterTokenS">Get New<br>Water Set</button> 
+                        <div id="small-water" class="mymapdiv terrain"> 
+                            <img src="./assets/images/Tokens/water.png"> 
+                        </div>                         
+                    </div> 
+                </div>
+            <!--S Wrough Terrain-->
+                <div  class="item-outer-box2">
+                    <div class="width20" id="newWroughS">  
+                        <button id="createNewWroughTokenS">Get New<br>Terrain Set</button> 
+                        <div id="small-terrain" class="mymapdiv terrain"> 
+                            <img src="./assets/images/Tokens/wroughTerain.png"> 
+                        </div>                         
+                    </div> 
+                </div>
+            <!--S Wall-->
+                <div  class="item-outer-box2">
+                    <div class="width20" id="newWallS">  
+                        <button id="createNewWallTokenS">Get New<br>Wall Set</button> 
+                        <div id="small-wall" class="mymapdiv terrain"> 
+                            <img src="./assets/images/Tokens/wall.png"> 
+                        </div>                         
+                    </div> 
+                </div>
+            <!--LG Monster-->
+                <div  class="item-outer-box-lg">
+                    <div class="width40 big" id="newBossMonster">
+                        <button onclick="createNewBossToken()">Get New<br>Big Enemy</button> 
+                        <div id="large-monster" class="mymapdiv charTop">    
+                            <img src="./assets/images/Tokens/boss.png"><b>1</b>
+                        </div>                         
+                    </div> 
+                </div>
+            <!--LG Water-->
+                <div  class="item-outer-box-lg">
+                    <div class="width40 big" id="newWater">  
+                        <button id="createNewWaterToken">Get New Big<br>Water Set</button> 
+                        <div id="large-water" class="mymapdiv"> 
+                            <img src="./assets/images/Tokens/water.png"> 
+                        </div>                         
+                    </div> 
+                </div>
+            <!--LG Wrough Terrain-->
+                <div  class="item-outer-box-lg">
+                    <div class="width40 big" id="newWrough">  
+                        <button id="createNewWroughToken">Get New Big<br>Terrain Set</button> 
+                        <div id="large-terrain" class="mymapdiv"> 
+                            <img src="./assets/images/Tokens/wroughTerain.png"> 
+                        </div>                         
+                    </div> 
+                </div>
+            <!--Large Wall-->
+                <div  class="item-outer-box-lg">
+                    <div class="width40 big" id="newWall">  
+                        <button id="createNewWallToken">Get New Big<br>Wall Set</button> 
+                        <div id="large-wall" class="mymapdiv"> 
+                            <img src="./assets/images/Tokens/wall.png"> 
+                        </div>                         
+                    </div> 
+                </div>
+            <!--Large Wall-->
+                <div class="grave">
+                    <img src="./assets/images/Tokens/grave-yard.png"> 
+                </div>
+        </section>
+        <!--Map Zone-->
+        <section id="mapZone" class="map-bg map-zone">
+        </section>
+      </div>  
+        <section>
+            <h2 class="flex1">Maps You Made:</h2>
+            <h4 class="dark-glow flex3">Right Click on a Map to Save to Your Computer</h4> 
+            <div id="output"></div> 
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"> 
+        </script> 
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="./assets/js/testzoe2.js"></script>
+    </body>
+</html>
+
+
