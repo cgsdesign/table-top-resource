@@ -99,6 +99,7 @@ var racesCategory = function(raceSelect) {
 
             var racialprofs = data.starting_proficiencies[0]
             $("#infoCont").append("Proficiencies: ")
+            for()
             $("#infoCont").append("<p>" + racialprofs.name + "</p>")
         })
     })
