@@ -1,50 +1,325 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>Table Top Resources</title>
+        <meta name="description" content="Resources for GMs playing Dungeons and Dragons">
         <meta name="TableTop Resource" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./assets/style/dice.css">
+        <link rel="stylesheet" href="./assets/style.css">
+        <link rel="stylesheet" href="./assets/style/flexboxgrid.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Eagle+Lake&family=Fondamento:ital@0;1&family=Forum&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">     </head>
+        <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@200;400;500;700&display=swap" rel="stylesheet">   
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      />
+        <link rel="stylesheet" href="./assets/style/styleCal.css">
     </head>
     <!-- Notes Minimum Established GM Resource-->
-    <!-- Notes Minimum Mideum Expireinced GM Resource - Flavor Notes-->
+    <!-- If have time mideum Expireinced GM Resource - Flavor Notes-->
     <!-- Other resources or Downloadable Componants-->
     <body>
-        <div>Nav</div>
         <header>
-            Cool Image of DnD
-            <p>title , leader text</p>
+            <!--Logo/ Name of Site-->
+            <h1>
+            TableTop Rulers
+            </h1>
+            <!--Menu-->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#Creation">CREATION</a>
+                    </li>
+                    <li>
+                        <a href="#Maps">MAPS</a>
+                    </li>
+                    <li>
+                        <a href="#Music">MUSIC</a>
+                    </li>
+                    <li>
+                        <a href="#Dice">DICE</a>
+                    </li>
+                </ul>  
+            </nav>
         </header>
-        <main>
-            <section>
-                <h2>Crunchy Elements - build characters and enemies</h2>
-            </section>
-            <section>
-                <h2>Crunchy Elements - build maps</h2>
-            </section>
-            <section>
-                <h2>create your flavor for the world - images and music</h2>
-            </section>
-            <section>
-                <h2>Battle Dice Dice Baby!</h2>
-                <!--subtract remove by id, clear remove by class-->
-                <div id="dice-add-subtract-clear-buttons">
-                    <button type="submit" id="add-button">+</button>
-                    <button type="reset" id="subtract-button">-</button>
-                    <button type="reset" id="clear-button">clear</button>
+    
+    <!--Hero-->    
+        <section class="hero">
+            <div class="col-sm-6">
+                <div class="card">
+                    <h3>Intro Text here.</h3>  
+                    <p>Welcome to the tabletop resource website. Here you can find resources to build and run your D&D campaign. </p> 
                 </div>
-                <br>
-                <div id="dice-select-container">
-                    <select name="dice-dropdown" class="dice-dropdown"></select>
-                    <div class="random-number-display">Roll Value:</div>
-                    <div class="new-dropdown-container"></div>
-                    <button type="submit" id="roll-button">Roll!</button>
+            </div>
+        </section>
+    
+    <!--MAIN BODY-->
+        <main>
+            <section class="section">
+                <h2>Dungeons and Dragons 5th Edition Rules and References</h2>
+                <div class="col-sm-11">
+                    <div class="row around-sm">
+                        <div class="dropdown" id="character">
+                            <button class="infoDrop">Characters</button>
+                            <div class="dropdown-content">
+                                <p>Abilities</p>
+                                <p>Skills</p>
+                                <p>Proficiencies</p>
+                                <p>Languages</p>
+                            </div>
+                        </div>
+                        <div class="dropdown" id="classes">
+                            <button class="infoDrop">Classes</button>
+                            <div class="dropdown-content">
+                                <p id="classBarb">Barbarian</p>
+                                <p>Bard</p>
+                                <p>Cleric</p>
+                                <p>Druid</p>
+                                <p>Fighter</p>
+                                <p>Monk</p>
+                                <p>Paladin</p>
+                                <p>Ranger</p>
+                                <p>Rogue</p>
+                                <p>Sorcerer</p>
+                                <p>Warlock</p>
+                                <p>Wizard</p>
+                            </div>
+                        </div>
+                        <div class="dropdown" id="races">
+                            <button class="infoDrop">Races</button>
+                            <div class="dropdown-content">
+                                <p>Dragonborn</p>
+                                <p>Dwarf</p>
+                                <p>Elf</p>
+                                <p>Gnome</p>
+                                <p>Half-Elf</p>
+                                <p>Half-Orc</p>
+                                <p>Halfling</p>
+                                <p>Human</p>
+                                <p>Tiefling</p>
+                            </div>
+                        </div>
+                        <div class="dropdown" id="equipment">
+                            <button class="infoDrop">Equipment</button>
+                            <div class="dropdown-content">
+                                <p>Weapons</p>
+                                <p>Armor</p>
+                                <p>Adventuring Gear</p>
+                                <p>Magic Items</p>
+                            </div>
+                        </div>
+                        <div class="dropdown" id="spells">
+                            <button class="infoDrop">Spells</button>
+                            <div class="dropdown-content">
+                                <div class="row">
+                                    <div class="twoRow">
+                                        <p>Abjuration</p>
+                                        <p>Conjuration</p>
+                                        <p>Divination</p>
+                                        <p>Enchantment</p>
+                                        <p>Evocation</p>
+                                        <p>Illusion</p>
+                                        <p>Necromancy</p>
+                                        <p>Transmutation</p>
+                                    </div>
+                                    <div class="twoRow">
+                                        <p>Bard</p>
+                                        <p>Cleric</p>
+                                        <p>Druid</p>
+                                        <p>Paladin</p>
+                                        <p>Ranger</p>
+                                        <p>Sorcerer</p>
+                                        <p>Warlock</p>
+                                        <p>Wizard</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown" id="monsters">
+                            <button class="infoDrop">Monsters</button>
+                            <div class="dropdown-content">
+                                <div class="row">
+                                    <div class="twoRow">
+                                        <p>Challenge Rating 0</p>
+                                        <p>Challenge Rating 1</p>
+                                        <p>Challenge Rating 2</p>
+                                        <p>Challenge Rating 3</p>
+                                        <p>Challenge Rating 4</p>
+                                        <p>Challenge Rating 5</p>
+                                        <p>Challenge Rating 6</p>
+                                        <p>Challenge Rating 7</p>
+                                        <p>Challenge Rating 8</p>
+                                        <p>Challenge Rating 9</p>
+                                        <p>Challenge Rating 10</p>
+                                        <p>Challenge Rating 11</p>
+                                        <p>Challenge Rating 12</p>
+                                        <p>Challenge Rating 13</p>
+                                        <p>Challenge Rating 14</p>
+                                        <p>Challenge Rating 15</p>
+                                        <p>Challenge Rating 16</p>
+                                        <p>Challenge Rating 17</p>
+                                        <p>Challenge Rating 18</p>
+                                        <p>Challenge Rating 19</p>
+                                        <p>Challenge Rating 20</p>
+                                    </div>
+                                    <div class="twoRow">
+                                        <p>Alphabetical</p>
+                                        <p>A</p>
+                                        <p>B</p>
+                                        <p>C</p>
+                                        <p>D</p>
+                                        <p>E</p>
+                                        <p>F</p>
+                                        <p>G</p>
+                                        <p>H</p>
+                                        <p>I</p>
+                                        <p>J</p>
+                                        <p>K</p>
+                                        <p>L</p>
+                                        <p>M</p>
+                                        <p>N</p>
+                                        <p>O</p>
+                                        <p>P</p>
+                                        <p>Q</p>
+                                        <p>R</p>
+                                        <p>S</p>
+                                        <p>T</p>
+                                        <p>U</p>
+                                        <p>V</p>
+                                        <p>W</p>
+                                        <p>X</p>
+                                        <p>Y</p>
+                                        <p>Z</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-11 card" id="referenceContainer"></div>               
+            </section>
+
+            <section class="section monkbg">
+                <h2 class="dark-glow col-sm-11">Crunchy Elements - build maps</h2>
+                <div class="card"> 
+                    <h3>filler text</h3>                  
+                    <p>filler text</p>
+                </div>
+            </section>
+            <section class="calendar">
+                <select id="time">
+                    <option value="" >--select game time --</option>
+                    <option value="8to12pm" id="8am">8AM - 12PM</option>
+                    <option value="12to4pm">12PM - 4PM</option>
+                    <option value="4to8pm">4PM - 8PM</option>
+                    <option value="8to12am">8PM - 12AM</option>
+                </select>
+                <select id="days">
+                    <option>--select days to play --</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                </select>
+                <input type="text" name="name" id="name" placeholder="Enter your name"/>
+                <button type="button" id="btnSubmit">Book</button>
+                <table>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>
+                          <span class="days">Monday</span>
+                        </th>
+                        <th>
+                          <span class="days">Tuesday</span>
+                        </th>
+                        <th>
+                          <span class="days">Wendsday</span>
+                        </th>
+                        <th>
+                          <span class="days">Thursday</span>
+                        </th>
+                        <th>
+                          <span class="days">Friday</span>
+                        </th>
+                        <th>
+                          <span class="days">Saturday</span>
+                        </th>
+                        <th>
+                          <span class="days">Sunday</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="hour" rowspan="4" colspan="1"><span>8AM-12PM</span></td>
+                        <td id="eightam-mon" rowspan="4" colspan="1"></td>
+                        <td id="eightam-tue" rowspan="4" colspan="1"></td>
+                        <td id="eightam-wed" rowspan="4" colspan="1"></td>
+                        <td id="eightam-thur" rowspan="4" colspan="1"></td>
+                        <td id="eightam-fri" rowspan="4" colspan="1"></td>
+                        <td id="eightam-sat" rowspan="4" colspan="1"></td>
+                        <td id="eightam-sun" rowspan="4" colspan="1"></td>
+                      </tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr>
+                        <td class="hour" rowspan="4"><span>12PM-4PM</span></td>
+                        <td id="twelve-mon" rowspan="4" colspan="1"></td>
+                        <td id="twelve-tue" rowspan="4" colspan="1"></td>
+                        <td id="twelve-wed" rowspan="4" colspan="1"></td>
+                        <td id="twelve-thur" rowspan="4" colspan="1"></td>
+                        <td id="twelve-fri" rowspan="4" colspan="1"></td>
+                        <td id="twelve-sat" rowspan="4" colspan="1"></td>
+                        <td id="twelve-sun" rowspan="4" colspan="1"></td>
+                      </tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr></tr>
+                      
+                      <tr>
+                        <td class="hour" rowspan="4"><span>4PM-8PM</span></td>
+                        <td id="four-mon" rowspan="4" colspan="1"></td>
+                        <td id="four-tue" rowspan="4" colspan="1"></td>
+                        <td id="four-wed" rowspan="4" colspan="1"></td>
+                        <td id="four-thur" rowspan="4" colspan="1"></td>
+                        <td id="four-fri" rowspan="4" colspan="1"></td>
+                        <td id="four-sat" rowspan="4" colspan="1"></td>
+                        <td id="four-sun" rowspan="4" colspan="1"></td>
+                      </tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr>
+                        <td class="hour" rowspan="4"><span>8PM-12AM</span></td>
+                        <td id="eightpm-mon" rowspan="4" colspan="1"></td>
+                        <td id="eightpm-tue" rowspan="4" colspan="1"></td>
+                        <td id="eightpm-wed" rowspan="4" colspan="1"></td>
+                        <td id="eightpm-thur" rowspan="4" colspan="1"></td>
+                        <td id="eightpm-fri" rowspan="4" colspan="1"></td>
+                        <td id="eightpm-sat" rowspan="4" colspan="1"></td>
+                        <td id="eightpm-sun" rowspan="4" colspan="1"></td>
+                      </tr>
+                      <tr></tr>
+                      <tr></tr>
+                      <tr></tr>
+                      
+                      
+                    </tbody>
+                  </table>
+            </section>
+            
+            <section class="section firebg">
+                <h2 class="dark-glow col-sm-11">Battle Ice Dice Baby!</h2>
+                <div class="card">
+                    <h3>filler text</h3> 
+                    <p>filler text</p>
                 </div>
             </section>
 
@@ -53,6 +328,14 @@
 
 
 
+        <script src="./assets/js/dice.js" async defer></script>
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous">
+        </script>
+        <script src="assets/js/script.js" async defer></script>
+        <script src="./assets/js/script.js"></script>
         <script src="./assets/js/dice.js" async defer></script>
     </body>
 </html>
