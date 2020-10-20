@@ -101,6 +101,7 @@ var addDropdown = function() {
 
 //array.pop mdn?
 //creating counter arrays, subtract by id?
+//populate
 var subtractDropdown = function() {
     diceIdCounterArr.pop();
     rollIdCounterArr.pop();
