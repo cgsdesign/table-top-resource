@@ -70,7 +70,7 @@ var clearDropdowns = function() {
     //reset the dice types dropdown?
 }
 
-//do they actually have to have unique IDs?
+//do they actually have to have unique IDs? yes
 var addDropdown = function() {
     var newDropdown  = document.createElement("select");
     newDropdown.setAttribute("class", "dice-dropdown");
