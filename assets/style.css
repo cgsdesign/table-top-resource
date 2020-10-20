@@ -169,6 +169,7 @@ section {
     background-size: 100%;
     background-attachment: fixed;
     background-position: bottom; 
+    position: relative;
 }
 
 .firebg {
@@ -176,4 +177,76 @@ section {
     background-size: 100%;
     background-attachment: fixed;
     background-position: bottom; 
+}
+
+/*ImageSearch*/
+#imageInput {
+    font-size: 18px;
+    min-height:35px;
+    padding:5px;
+    background-color:#00179d;
+    color:white;
+    border: 2px black solid;
+    font-family: 'Commissioner','Gill Sans', sans-serif;
+    margin-left:0px;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+}
+.blackbg {
+    background:black;
+    max-width:360px;
+}
+#image-search-button {
+    min-height:35px;
+    max-height:35px;
+    padding:5px;
+    font-size: 16px;
+    background-color: black;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    color:white;
+    font-family: 'Eagle Lake', sans-serif;
+    margin:0px 0px;
+    border:none;
+    
+}
+#image-search-clear {
+    min-height:35px;
+    max-height:35px;
+    padding:5px;
+    font-size: 16px;
+    background-color: rgb(97, 0, 0);
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    color:white;
+    font-family: 'Eagle Lake', sans-serif;
+    margin:0px 0px;
+    border:none;
+    
+}
+.pixbay-logo-link{
+    max-width:120px;
+    max-height:40px;
+    position: absolute;
+    padding:5px;
+    bottom: 0;
+    right:0;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    background-color: rgba(250, 250, 250, .7);
+}
+.pixbay-logo-link img{
+    max-width: 110px;
+    max-height:30px;
+}
+
+.placeImages {
+    font-size:18px;
+    color: white;
+    padding-left: 20px;
+}
+
+#placeImages img{
+    max-width:200px;
+    max-height:200px;
+    flex:1;
+    margin:10px;
+    z-index: 9;
+
 }
