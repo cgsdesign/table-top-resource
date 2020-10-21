@@ -160,11 +160,6 @@ $("#monsters").on("click", "p", function() {
     console.log(selectText)
 });
 
-//able to select a time block and day and add it to table
-//saves name day and block to local storage
-//button to open the schedule module to schedule a block
-//able to clear your time or reschedule a day
-
 
 $(document).ready(function(){
     $('#btnSubmit').click(function(){
@@ -176,104 +171,113 @@ $(document).ready(function(){
             time: time,
             day: day
         })
-        // $('#eightam-mon').append(name);
 
         if (time == '8to12pm') {
             if(day == 'monday'){
-                $('#eightam-mon').append("<ul><li>" + name + "</ul></li>");
+                $('#eightam-mon-list').append("<li>" + name + "</li>");
             }
             else if (day == 'tuesday') {
-                $('#eightam-tue').append(name);
+                $('#eightam-tue-list').append("<li>" + name + "</li>");
             }
             else if (day == 'wednesday') {
-                $('#eightam-wed').append(name);
+                $('#eightam-wed-list').append("<li>" + name + "</li>");
             }
             else if (day == 'thursday') {
-                $('#eightam-thur').append(name);
+                $('#eightam-thur-list').append("<li>" + name + "</li>");
             }
             else if (day == 'friday') {
-                $('#eightam-fri').append(name);
+                $('#eightam-fri-list').append("<li>" + name + "</li>");
             }
             else if (day == 'saturday') {
-                $('#eightam-sat').append(name);
+                $('#eightam-sat-list').append("<li>" + name + "</li>");
             }
             else if (day == 'sunday') {
-                $('#eightam-sun').append(name);
+                $('#eightam-sun-list').append("<li>" + name + "</li>");
             }
         }
         else if(time == '12to4pm'){
             // console.log('nope');
             if(day == 'monday'){
-                $('#twelve-mon').append(name);
+                $('#twelve-mon-list').append("<li>" + name + "</li>");
             }
             else if (day == 'tuesday') {
-                $('#twelve-tue').append(name);
+                $('#twelve-tue-list').append("<li>" + name + "</li>");
             }
             else if (day == 'wednesday') {
-                $('#twelve-wed').append(name);
+                $('#twelve-wed-list').append("<li>" + name + "</li>");
             }
             else if (day == 'thursday') {
-                $('#twelve-thur').append(name);
+                $('#twelve-thur-list').append("<li>" + name + "</li>");
             }
             else if (day == 'friday') {
-                $('#twelve-fri').append(name);
+                $('#twelve-fri-list').append("<li>" + name + "</li>");
             }
             else if (day == 'saturday') {
-                $('#twelve-sat').append(name);
+                $('#twelve-sat-list').append("<li>" + name + "</li>");
             }
             else if (day == 'sunday') {
-                $('#twelve-sun').append(name);
+                $('#twelve-sun-list').append("<li>" + name + "</li>");
             }
         }
         else if(time == '4to8pm'){
             // console.log('nope');
             if(day == 'monday'){
-                $('#four-mon').append(name);
+                $('#four-mon-list').append("<li>" + name + "</li>");
             }
             else if (day == 'tuesday') {
-                $('#four-tue').append(name);
+                $('#four-tue-list').append("<li>" + name + "</li>");
             }
             else if (day == 'wednesday') {
-                $('#four-wed').append(name);
+                $('#four-wed-list').append("<li>" + name + "</li>");
             }
             else if (day == 'thursday') {
-                $('#four-thur').append(name);
+                $('#four-thur-list').append("<li>" + name + "</li>");
             }
             else if (day == 'friday') {
-                $('#four-fri').append(name);
+                $('#four-fri-list').append("<li>" + name + "</li>");
             }
             else if (day == 'saturday') {
-                $('#four-sat').append(name);
+                $('#four-sat-list').append("<li>" + name + "</li>");
             }
             else if (day == 'sunday') {
-                $('#four-sun').append(name);
+                $('#four-sun-list').append("<li>" + name + "</li>");
             }
         }
         else if(time == '8to12am'){
             // console.log('nope');
             if(day == 'monday'){
-                $('#eightpm-mon').append(name);
+                $('#eightpm-mon-list').append("<li>" + name + "</li>");
             }
             else if (day == 'tuesday') {
-                $('#eightpm-tue').append(name);
+                $('#eightpm-tue-list').append("<li>" + name + "</li>");
             }
             else if (day == 'wednesday') {
-                $('#eightpm-wed').append(name);
+                $('#eightpm-wed-list').append("<li>" + name + "</li>");
             }
             else if (day == 'thursday') {
-                $('#eightpm-thur').append(name);
+                $('#eightpm-thur-list').append("<li>" + name + "</li>");
             }
             else if (day == 'friday') {
-                $('#eightpm-fri').append(name);
+                $('#eightpm-fri-list').append("<li>" + name + "</li>");
             }
             else if (day == 'saturday') {
-                $('#eightpm-sat').append(name);
+                $('#eightpm-sat-list').append("<li>" + name + "</li>");
             }
             else if (day == 'sunday') {
-                $('#eightpm-sun').append(name);
+                $('#eightpm-sun-list').append("<li>" + name + "</li>");
             }
         }
-        
+         // var storageId = time + day;
+        // var getStoredText = JSON.parse(localStorage.getItem(storageId));
+        // console.log(storageId);
+
+        // $('tr').find(name)(getStoredText);
+
+
+        locationId = time + ", " + day;
+        localStorage.setItem(locationId, JSON.stringify(name));
+        console.log(locationId);
+
 
     })
 })
