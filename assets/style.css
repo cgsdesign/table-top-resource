@@ -321,3 +321,32 @@ header nav ul li:hover{
     z-index: 9;
 
 }
+
+
+@media only screen and (max-width: 900px){
+    .card{
+    min-width:100%;
+    max-width: 100%;
+    margin-left:0px;
+    }
+
+    #Images{
+        padding-bottom: 60px;
+    }
+
+    .col-sm-11{
+        width:100%;
+    }
+
+    .card2 {
+        min-width:45%;
+        margin-left: 0px;
+    }
+
+    header nav ul li{
+        margin: 2px 2px;
+    }
+    .dropdown {
+        margin: 2px auto;
+    }
+    }
