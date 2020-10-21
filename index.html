@@ -6,8 +6,8 @@
         <title>Table Top Resources</title>
         <meta name="description" content="Resources for GMs playing Dungeons and Dragons">
         <meta name="TableTop Resource" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/style/dice.css">
         <link rel="stylesheet" href="./assets/style.css">
+        <link rel="stylesheet" href="./assets/style/dice.css">
         <link rel="stylesheet" href="./assets/style/flexboxgrid.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Eagle+Lake&family=Fondamento:ital@0;1&family=Forum&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">     </head>
         <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@200;400;500;700&display=swap" rel="stylesheet">   
@@ -263,7 +263,9 @@
                     <button type="reset" id="subtract-button">-</button>
                     <button type="reset" id="clear-button">clear</button>
                 </div>
-                <br>
+                <div id="total-dice-container">
+                    <div id="total-dice">Total Dice: 1</div>
+                </div>
                 <div id="dice-select-container">
                     <select name="dice-dropdown" class="dice-dropdown"></select>
                     <div class="random-number-display">Roll Value:</div>

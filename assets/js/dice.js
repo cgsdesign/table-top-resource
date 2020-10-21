@@ -44,6 +44,7 @@ var diceTypes = [
 ];
 
 var diceIdCounter        = 0;
+var totalDiceCounter     = 2;
 var rollIdCounter        = 100;
 var dropdownOptionsArr   = [];
 var diceIdCounterArr     = [];
@@ -51,6 +52,7 @@ var rollIdCounterArr     = [];
 var diceDropdownClass    = document.querySelector(".dice-dropdown");
 var randomNumberDisplay  = document.querySelector(".random-number-display");
 var newDropdownContainer = document.querySelector(".new-dropdown-container");
+var totalDice            = document.querySelector("#total-dice");
 var rollButton           = document.querySelector("#roll-button");
 var addButton            = document.querySelector("#add-button");
 var subtractButton       = document.querySelector("#subtract-button");
@@ -67,7 +69,9 @@ for (var i = 0; i < diceTypes.length; i++) {
 var clearDropdowns = function() {
     newDropdownContainer.textContent = "";
     randomNumberDisplay.textContent = "Roll Value:";
-    //reset the dice types dropdown?
+    var totalDiceReset = 1;
+    totalDice.textContent = "Total Dice: " + totalDiceReset;
+    
 }
 
 //do they actually have to have unique IDs? yes
@@ -80,6 +84,7 @@ var addDropdown = function() {
     diceIdCounterArr.push(newDropdown);
     var newRollValue = document.createElement("div");
     newRollValue.setAttribute("id", rollIdCounter);
+    newRollValue.setAttribute("class", "random-number-display");
     rollIdCounter++
     rollIdCounterArr.push(newRollValue);
     newRollValue.textContent = "Roll Value:"
@@ -92,6 +97,10 @@ var addDropdown = function() {
         newDropdown.appendChild(dropdownOptions);
         dropdownOptionsArr.push(dropdownOptions);
     }
+    
+    //increase total dice count
+    totalDice.textContent = "Total Dice: " + totalDiceCounter;
+    totalDiceCounter++;
 
     //append dropdown and roll value output
     newDropdownContainer.appendChild(newDropdown);
