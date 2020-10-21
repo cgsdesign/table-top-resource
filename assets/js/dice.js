@@ -140,7 +140,7 @@ var subtractDropdown = function() {
 //assign another for loop here?
 var getChoiceValueAndRandomNumber = function() {
     var randomInsult = insultsArr[Math.floor(Math.random() * insultsArr.length)];
-    
+
     var choiceValue = diceDropdownClass.options[diceDropdownClass.selectedIndex].value;
 
     //temporary, I know we can't use alerts
@@ -184,5 +184,5 @@ var getChoiceValueAndRandomNumber = function() {
 
 rollButton.addEventListener("click", getChoiceValueAndRandomNumber);
 addButton.addEventListener("click", addDropdown);
-subtractButton.addEventListener("click", subtractDropdown);
+//subtractButton.addEventListener("click", subtractDropdown);
 clearButton.addEventListener("click", clearDropdowns);
