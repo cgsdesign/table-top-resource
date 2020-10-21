@@ -1,3 +1,83 @@
+var abilityScores = function() {
+    $("#mainInfoContainer").remove();
+    
+    var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+    var $rowCont = $("<div class='row' id='rowCont'></div>")
+    var $statsCol = $("<div class='col-sm-2' id='statsCol'></div>")
+    var $infoBlockCol = $("<div class='col-sm-10' id='infoBlockCol'></div>")
+
+    $("#referenceContainer").append($mainCont)
+    $("#mainInfoContainer").append($rowCont)
+    $("#rowCont").append($statsCol)
+    $("#rowCont").append($infoBlockCol)
+
+    $("#statsCol").append("<p id='strCont'>Strength (STR): </p>")
+    $("#statsCol").append("<p id='dexCont'>Dexterity (DEX): </p>")
+    $("#statsCol").append("<p id='conCont'>Constitution (CON): </p>")
+    $("#statsCol").append("<p id='intCont'>Intelligence (INT): </p>")
+    $("#statsCol").append("<p id='wisCont'>Wisdom (WIS): </p>")
+    $("#statsCol").append("<p id='chaCont'>Charisma (CHA): </p>")
+
+    $("#strCont").on("click", function() {
+        
+        var selectText = "str"
+
+        abilityDescriptions(selectText);
+    })
+    $("#dexCont").on("click", function() {
+        
+        var selectText = "dex"
+
+        abilityDescriptions(selectText);
+    })
+    $("#conCont").on("click", function() {
+        
+        var selectText = "con"
+
+        abilityDescriptions(selectText);
+    })
+    $("#intCont").on("click", function() {
+        
+        var selectText = "int"
+
+        abilityDescriptions(selectText);
+    })
+    $("#wisCont").on("click", function() {
+        
+        var selectText = "wis"
+
+        abilityDescriptions(selectText);
+    })
+    $("#chaCont").on("click", function() {
+        
+        var selectText = "cha"
+
+        abilityDescriptions(selectText);
+    })
+
+}
+
+var abilityDescriptions = function(ability) {
+    $("#infoBlockCol").remove();
+    var $infoBlockCol = $("<div class='col-sm-10' id='infoBlockCol'></div>")
+    $("#rowCont").append($infoBlockCol)
+
+    fetch("http://www.dnd5eapi.co/api/ability-scores/" + ability).then(function(response) {
+        response.json().then(function(data) {
+
+            $("#infoBlockCol").append("<p>" + data.full_name + ": </p>")
+            $("#infoBlockCol").append("<p>" + data.desc + "</p>")
+
+            var skillArr = data.skills
+            $("#infoBlockCol").append("<p>Skills: </p>")
+            for(i = 0; i < skillArr.length; i++) {
+                $("#infoBlockCol").append("<p>" + skillArr[i].name + "</p>")
+            } 
+        })
+    })
+    
+}
+
 //Logic for appending all class information to the information box
 var classesCategory = function(charClass) {
     $("#mainInfoContainer").remove();
@@ -153,6 +233,38 @@ var spellsCategory = function(spells) {
             var listSpells = data.results
 
             var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+            var $rowCont = $("<div class='row' id='rowCont'></div>")
+            var $spellResults = $("<div class='col-sm-2' id='spellResults'></div>")
+            var $spellInfo = $("<div class='col-sm-10' id='spellInfo'></div>")
+            
+            $("#referenceContainer").append($mainCont);
+            $("#mainInfoContainer").append($rowCont)
+            $("#rowCont").append($spellResults);
+            $("#rowCont").append($spellInfo);
+
+            for(i = 0; i < listSpells.length; i++) {
+            $("#spellResults").append("<p id='spellChoice'>" + listSpells[i].name + "</p>")
+            }
+
+            $("#spellResults").on("click", "p", function() {
+                var selectText = $(this)
+                    .text()
+                    .trim();
+                    console.log(selectText)
+                showSpell(selectText)
+            });
+        })
+    })
+};
+
+var spellLevelCat = function(spells) {
+    $("#mainInfoContainer").remove();
+    fetch("http://www.dnd5eapi.co/api/spells?level=" + spells).then(function(response) {
+        response.json().then(function(data) {
+
+            var listSpells = data.results
+
+            var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
             var $spellResults = $("<div class='col-sm-2' id='spellResults'></div>")
             var $spellInfo = $("<div class='col-sm-10' id='spellInfo'></div>")
             
@@ -160,29 +272,34 @@ var spellsCategory = function(spells) {
             $("#mainInfoContainer").append($spellResults);
             $("#mainInfoContainer").append($spellInfo);
 
-            for(i = 0; i < listSpells.length; i++)
-            $("spellResults").append("<p id='spellChoice'>" + listSpells[i].name + "</p>")
+            for(i = 0; i < listSpells.length; i++) {
+            $("#spellResults").append("<p id='spellChoice'>" + listSpells[i].name + "</p>")
+            }
         })
     })
 };
 
-var showSpell = function(selection) {
-    fetch("http://www.dnd5eapi.co/api/spells/" + selection).then(function(response) {
+var showSpell = function(spellInfo) {
+    var spellselect = spellInfo.toLowerCase();
+    fetch("http://www.dnd5eapi.co/api/spells/" + spellselect).then(function(response) {
         response.json().then(function(data) {
             $("#spellInfo").append("<p>" + data.name + "</p>")
             $("#spellInfo").append("<p>" + data.desc[0] + "</p>")
-            $("#spellInfo").append("<p>" + data.higher_level[0] + "</p>")
-            $("#spellInfo").append("<p>" + data.range + "</p>")
+            $("#spellInfo").append("<p>At Higher Levels: " + data.higher_level[0] + "</p>")
+            $("#spellInfo").append("<p>Range: " + data.range + "</p>")
+            $("#spellInfo").append("<p>Duration: " + data.duration + "</p>")
+            $("#spellInfo").append("<p>Casting Time: " + data.casting_time + "</p>")
+            $("#spellInfo").append("<p>Spell Level: " + data.level + "</p>")
         })
     })
 };
 
 // Selecting the click option and feeding it into the call
-$("#character").on("click", "p", function() {
+$("#abilitiesInfo").on("click", function() {
     var selectText = $(this)
         .text()
         .trim();
-    
+    abilityScores(selectText)
 });
 
 $("#classes").on("click", "p", function() {
@@ -210,7 +327,15 @@ $("#spellSchool").on("click", "p", function() {
     var selectText = $(this)
         .text()
         .trim();
+        console.log(selectText)
     spellsCategory(selectText)
+});
+
+$("#spellLevel").on("click", "p", function() {
+    var selectText = $(this)
+        .text()
+        .trim();
+    spellLevelCat(selectText)
 });
 
 $("#monsters").on("click", "p", function() {
@@ -220,12 +345,6 @@ $("#monsters").on("click", "p", function() {
     console.log(selectText)
 });
 
-$("#spellChoice").on("click", "p", function() {
-    var selectText = $(this)
-        .text()
-        .trim();
-    showSpell(selectText)
-});
 
 //able to select a time block and day and add it to table
 //saves name day and block to local storage
