@@ -43,6 +43,29 @@ var diceTypes = [
     }
 ];
 
+var insultsArr = [
+    "When wizards cast detect thoughts on you do they wonder why it didn't work?",
+    "Your stupidity would give an illithid indigestion.",
+    "You couldn't pour water out of a boot with instructions on the heel.",
+    "Do you work hard to be such a mungy moron?",
+    "It's pointless to insult you because you'll die before you figure it out.",
+    "Everyone makes mistakes but you're really abusing the privilege.",
+    "You're as dumb as a troll and half as charming.",
+    "If being a dullard was a crime you'd have already been sentenced to death.",
+    "I don't usually engage in mental combat with the unarmed, but I'll make an exception for you.",
+    "You aren't nearly pretty enough to be this stupid.",
+    "If ignorance is bliss, then why aren't you happier?",
+    "If I wanted to hear something from a mouth like yours, I'd fart.",
+    "You rancid dim-witted whelp.",
+    "I'd say you think like a baboon, but that's an insult to baboons!",
+    "I'd give you a helmet, but nothing that gets through your thick skull will be stopped by metal, and there's nothing to damage anyway.",
+    "At first I thought you're brave, but then I realized you're just stupid.",
+    "Why don’t you give me your weapon so I can hit myself with it, that'd be more effective than you trying.",
+    "You clueless plague-sored worm.",
+    "I've heard more witty banter from zombies.",
+    "You're not a complete idiot, some parts are clearly missing."
+];
+
 var diceIdCounter        = 0;
 var totalDiceCounter     = 2;
 var rollIdCounter        = 100;
@@ -69,9 +92,8 @@ for (var i = 0; i < diceTypes.length; i++) {
 var clearDropdowns = function() {
     newDropdownContainer.textContent = "";
     randomNumberDisplay.textContent = "Roll Value:";
-    var totalDiceReset = 1;
-    totalDice.textContent = "Total Dice: " + totalDiceReset;
-    
+    totalDice.textContent = "Total Dice: " + 1;
+    totalDiceCounter = 2;
 }
 
 //do they actually have to have unique IDs? yes
@@ -87,7 +109,7 @@ var addDropdown = function() {
     newRollValue.setAttribute("class", "random-number-display");
     rollIdCounter++
     rollIdCounterArr.push(newRollValue);
-    newRollValue.textContent = "Roll Value:"
+    newRollValue.textContent = "Roll Value:";
     //changing diceTypes.length to a number breaks diceTypes[i].type
     for (var i = 0; i < diceTypes.length; i++) {
         //iterate through diceTypes array and append to dropdown
@@ -99,14 +121,12 @@ var addDropdown = function() {
     }
     
     //increase total dice count
-    totalDice.textContent = "Total Dice: " + totalDiceCounter;
-    totalDiceCounter++;
+    totalDice.textContent = "Total Dice: " + totalDiceCounter++;
 
     //append dropdown and roll value output
     newDropdownContainer.appendChild(newDropdown);
     newDropdownContainer.appendChild(newRollValue);
 }
-
 
 //array.pop mdn?
 //creating counter arrays, subtract by id?
@@ -119,13 +139,13 @@ var subtractDropdown = function() {
 //get the value of the range of each die from the dropdown
 //assign another for loop here?
 var getChoiceValueAndRandomNumber = function() {
-    //.value is undefined
-
+    var randomInsult = insultsArr[Math.floor(Math.random() * insultsArr.length)];
+    
     var choiceValue = diceDropdownClass.options[diceDropdownClass.selectedIndex].value;
 
     //temporary, I know we can't use alerts
-    if (choiceValue < 4) {
-        alert("Pick a die value");
+    if (choiceValue < 1) {
+        randomNumberDisplay.textContent = "Pick a die value - " + randomInsult;
     }
     else {
         //random number generator
@@ -141,8 +161,8 @@ var getChoiceValueAndRandomNumber = function() {
         var choiceValueCounter = diceIdCounterArr[i].options
         [diceIdCounterArr[i].selectedIndex].value;
         
-        if (choiceValueCounter < 4) {
-            alert("Pick a die value");
+        if (choiceValueCounter < 1) {
+            rollIdCounterArr[i].textContent = "Pick a die value - " + randomInsult;
         }
         else {
             var appendedRandomNumber = Math.floor(Math.random() * choiceValueCounter) + 1;

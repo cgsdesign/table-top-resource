@@ -1,4 +1,5 @@
-.random-number-display, #total-dice {
+.random-number-display, 
+#total-dice-container {
     font-family: 'Eagle Lake', sans-serif;
     font-size: 18px;
     font-weight: 400;
