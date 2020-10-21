@@ -1,4 +1,84 @@
-//Getting and appending information to the infobox based on character class
+var abilityScores = function() {
+    $("#mainInfoContainer").remove();
+    
+    var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+    var $rowCont = $("<div class='row' id='rowCont'></div>")
+    var $statsCol = $("<div class='col-sm-2' id='statsCol'></div>")
+    var $infoBlockCol = $("<div class='col-sm-10' id='infoBlockCol'></div>")
+
+    $("#referenceContainer").append($mainCont)
+    $("#mainInfoContainer").append($rowCont)
+    $("#rowCont").append($statsCol)
+    $("#rowCont").append($infoBlockCol)
+
+    $("#statsCol").append("<p id='strCont'>Strength (STR): </p>")
+    $("#statsCol").append("<p id='dexCont'>Dexterity (DEX): </p>")
+    $("#statsCol").append("<p id='conCont'>Constitution (CON): </p>")
+    $("#statsCol").append("<p id='intCont'>Intelligence (INT): </p>")
+    $("#statsCol").append("<p id='wisCont'>Wisdom (WIS): </p>")
+    $("#statsCol").append("<p id='chaCont'>Charisma (CHA): </p>")
+
+    $("#strCont").on("click", function() {
+        
+        var selectText = "str"
+
+        abilityDescriptions(selectText);
+    })
+    $("#dexCont").on("click", function() {
+        
+        var selectText = "dex"
+
+        abilityDescriptions(selectText);
+    })
+    $("#conCont").on("click", function() {
+        
+        var selectText = "con"
+
+        abilityDescriptions(selectText);
+    })
+    $("#intCont").on("click", function() {
+        
+        var selectText = "int"
+
+        abilityDescriptions(selectText);
+    })
+    $("#wisCont").on("click", function() {
+        
+        var selectText = "wis"
+
+        abilityDescriptions(selectText);
+    })
+    $("#chaCont").on("click", function() {
+        
+        var selectText = "cha"
+
+        abilityDescriptions(selectText);
+    })
+
+}
+
+var abilityDescriptions = function(ability) {
+    $("#infoBlockCol").remove();
+    var $infoBlockCol = $("<div class='col-sm-10' id='infoBlockCol'></div>")
+    $("#rowCont").append($infoBlockCol)
+
+    fetch("http://www.dnd5eapi.co/api/ability-scores/" + ability).then(function(response) {
+        response.json().then(function(data) {
+
+            $("#infoBlockCol").append("<p>" + data.full_name + ": </p>")
+            $("#infoBlockCol").append("<p>" + data.desc + "</p>")
+
+            var skillArr = data.skills
+            $("#infoBlockCol").append("<p>Skills: </p>")
+            for(i = 0; i < skillArr.length; i++) {
+                $("#infoBlockCol").append("<p>" + skillArr[i].name + "</p>")
+            } 
+        })
+    })
+    
+}
+
+//Logic for appending all class information to the information box
 var classesCategory = function(charClass) {
     $("#mainInfoContainer").remove();
     var charSearch = charClass.toLowerCase();
@@ -45,6 +125,7 @@ var classesCategory = function(charClass) {
             $("#profBonusBlock").append("Proficiency")
             $("#classFeatBlock").append("Class Features")
 
+                // checking that each line is an actual increase to the class level to keep the 1-20 format
             fetch("http://www.dnd5eapi.co/api/classes/" + charSearch + "/levels").then(function(response) {
                 response.json().then(function(data) {
                     
@@ -72,6 +153,7 @@ var classesCategory = function(charClass) {
     })
 }
 
+// handler for creating and appending race information to the main info box
 var racesCategory = function(raceSelect) {
     $("#mainInfoContainer").remove();
     var raceSearch = raceSelect.toLowerCase();
@@ -97,10 +179,35 @@ var racesCategory = function(raceSelect) {
             $("#infoCont").append("Ability Bonus: ")
             $("#infoCont").append("<p>" + abilityBonus.name + " +" + abilityBonus.bonus + "</p>")
 
-            var racialprofs = data.starting_proficiencies[0]
-            $("#infoCont").append("Proficiencies: ")
-            for()
-            $("#infoCont").append("<p>" + racialprofs.name + "</p>")
+            var racialprofs = data.starting_proficiencies
+            $("#infoCont").append("Starting Proficiencies: ")
+
+            for(i = 0; i < racialprofs.length; i++) {
+                $("#infoCont").append("<p>" + racialprofs[i].name + "</p>")
+            }
+
+            var languagesSpoken = data.languages
+            $("#infoCont").append("Languages: ")
+            for(i = 0; i < languagesSpoken.length; i++) {
+                $("#infoCont").append("<p>" + languagesSpoken[i].name + "</p>")
+            }
+
+            $("#sizeCont").append("<p>Age: " + data.age + "</p>")
+            $("#sizeCont").append("Alignment: " + data.alignment + "</p>")
+            $("#sizeCont").append("Size: " + data.size + "</p>")
+            $("#sizeCont").append(data.size_description)
+
+            var traitsList = data.traits
+            $("#traitCont").append("<p>Racial Traits: </p>")
+            for(i = 0; i < traitsList.length; i++) {
+                $("#traitCont").append("<p>" + traitsList[i].name + "</p>")
+            }
+
+            var subraces = data.subraces
+            $("#subraceCont").append("<p>Subraces: </p>")
+            for(i = 0; i < subraces.length; i++) {
+                $("#subraceCont").append("<p>" + subraces[i].name + "</p>")
+            }
         })
     })
 }
@@ -118,12 +225,81 @@ var equipmentCategory = function(category) {
     })        
 };
 
+var spellsCategory = function(spells) {
+    $("#mainInfoContainer").remove();
+    fetch("http://www.dnd5eapi.co/api/spells?school=" + spells).then(function(response) {
+        response.json().then(function(data) {
+
+            var listSpells = data.results
+
+            var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+            var $rowCont = $("<div class='row' id='rowCont'></div>")
+            var $spellResults = $("<div class='col-sm-2' id='spellResults'></div>")
+            var $spellInfo = $("<div class='col-sm-10' id='spellInfo'></div>")
+            
+            $("#referenceContainer").append($mainCont);
+            $("#mainInfoContainer").append($rowCont)
+            $("#rowCont").append($spellResults);
+            $("#rowCont").append($spellInfo);
+
+            for(i = 0; i < listSpells.length; i++) {
+            $("#spellResults").append("<p id='spellChoice'>" + listSpells[i].name + "</p>")
+            }
+
+            $("#spellResults").on("click", "p", function() {
+                var selectText = $(this)
+                    .text()
+                    .trim();
+                    console.log(selectText)
+                showSpell(selectText)
+            });
+        })
+    })
+};
+
+var spellLevelCat = function(spells) {
+    $("#mainInfoContainer").remove();
+    fetch("http://www.dnd5eapi.co/api/spells?level=" + spells).then(function(response) {
+        response.json().then(function(data) {
+
+            var listSpells = data.results
+
+            var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+            var $spellResults = $("<div class='col-sm-2' id='spellResults'></div>")
+            var $spellInfo = $("<div class='col-sm-10' id='spellInfo'></div>")
+            
+            $("#referenceContainer").append($mainCont);
+            $("#mainInfoContainer").append($spellResults);
+            $("#mainInfoContainer").append($spellInfo);
+
+            for(i = 0; i < listSpells.length; i++) {
+            $("#spellResults").append("<p id='spellChoice'>" + listSpells[i].name + "</p>")
+            }
+        })
+    })
+};
+
+var showSpell = function(spellInfo) {
+    var spellselect = spellInfo.toLowerCase();
+    fetch("http://www.dnd5eapi.co/api/spells/" + spellselect).then(function(response) {
+        response.json().then(function(data) {
+            $("#spellInfo").append("<p>" + data.name + "</p>")
+            $("#spellInfo").append("<p>" + data.desc[0] + "</p>")
+            $("#spellInfo").append("<p>At Higher Levels: " + data.higher_level[0] + "</p>")
+            $("#spellInfo").append("<p>Range: " + data.range + "</p>")
+            $("#spellInfo").append("<p>Duration: " + data.duration + "</p>")
+            $("#spellInfo").append("<p>Casting Time: " + data.casting_time + "</p>")
+            $("#spellInfo").append("<p>Spell Level: " + data.level + "</p>")
+        })
+    })
+};
+
 // Selecting the click option and feeding it into the call
-$("#character").on("click", "p", function() {
+$("#abilitiesInfo").on("click", function() {
     var selectText = $(this)
         .text()
         .trim();
-    
+    abilityScores(selectText)
 });
 
 $("#classes").on("click", "p", function() {
@@ -147,11 +323,19 @@ $("#equipment").on("click", "p", function() {
     equipmentCategory(selectText)
 });
 
-$("#spells").on("click", "p", function() {
+$("#spellSchool").on("click", "p", function() {
     var selectText = $(this)
         .text()
         .trim();
-    console.log(selectText)
+        console.log(selectText)
+    spellsCategory(selectText)
+});
+
+$("#spellLevel").on("click", "p", function() {
+    var selectText = $(this)
+        .text()
+        .trim();
+    spellLevelCat(selectText)
 });
 
 $("#monsters").on("click", "p", function() {
@@ -160,3 +344,122 @@ $("#monsters").on("click", "p", function() {
         .trim();
     console.log(selectText)
 });
+
+
+//able to select a time block and day and add it to table
+//saves name day and block to local storage
+//button to open the schedule module to schedule a block
+//able to clear your time or reschedule a day
+
+
+$(document).ready(function(){
+    $('#btnSubmit').click(function(){
+        var name = $('#name').val();
+        var time = $('#time').val();
+        var day = $('#days').val();
+        console.log('Info', {
+            name: name,
+            time: time,
+            day: day
+        })
+        // $('#eightam-mon').append(name);
+
+        if (time == '8to12pm') {
+            if(day == 'monday'){
+                $('#eightam-mon').append("<ul><li>" + name + "</ul></li>");
+            }
+            else if (day == 'tuesday') {
+                $('#eightam-tue').append(name);
+            }
+            else if (day == 'wednesday') {
+                $('#eightam-wed').append(name);
+            }
+            else if (day == 'thursday') {
+                $('#eightam-thur').append(name);
+            }
+            else if (day == 'friday') {
+                $('#eightam-fri').append(name);
+            }
+            else if (day == 'saturday') {
+                $('#eightam-sat').append(name);
+            }
+            else if (day == 'sunday') {
+                $('#eightam-sun').append(name);
+            }
+        }
+        else if(time == '12to4pm'){
+            // console.log('nope');
+            if(day == 'monday'){
+                $('#twelve-mon').append(name);
+            }
+            else if (day == 'tuesday') {
+                $('#twelve-tue').append(name);
+            }
+            else if (day == 'wednesday') {
+                $('#twelve-wed').append(name);
+            }
+            else if (day == 'thursday') {
+                $('#twelve-thur').append(name);
+            }
+            else if (day == 'friday') {
+                $('#twelve-fri').append(name);
+            }
+            else if (day == 'saturday') {
+                $('#twelve-sat').append(name);
+            }
+            else if (day == 'sunday') {
+                $('#twelve-sun').append(name);
+            }
+        }
+        else if(time == '4to8pm'){
+            // console.log('nope');
+            if(day == 'monday'){
+                $('#four-mon').append(name);
+            }
+            else if (day == 'tuesday') {
+                $('#four-tue').append(name);
+            }
+            else if (day == 'wednesday') {
+                $('#four-wed').append(name);
+            }
+            else if (day == 'thursday') {
+                $('#four-thur').append(name);
+            }
+            else if (day == 'friday') {
+                $('#four-fri').append(name);
+            }
+            else if (day == 'saturday') {
+                $('#four-sat').append(name);
+            }
+            else if (day == 'sunday') {
+                $('#four-sun').append(name);
+            }
+        }
+        else if(time == '8to12am'){
+            // console.log('nope');
+            if(day == 'monday'){
+                $('#eightpm-mon').append(name);
+            }
+            else if (day == 'tuesday') {
+                $('#eightpm-tue').append(name);
+            }
+            else if (day == 'wednesday') {
+                $('#eightpm-wed').append(name);
+            }
+            else if (day == 'thursday') {
+                $('#eightpm-thur').append(name);
+            }
+            else if (day == 'friday') {
+                $('#eightpm-fri').append(name);
+            }
+            else if (day == 'saturday') {
+                $('#eightpm-sat').append(name);
+            }
+            else if (day == 'sunday') {
+                $('#eightpm-sun').append(name);
+            }
+        }
+        
+
+    })
+})

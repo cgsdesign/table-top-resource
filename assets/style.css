@@ -41,6 +41,31 @@ h4 {
     padding:10px 0px;
 }
 
+button {
+    font-size: 16px;
+    color: #00d5c6;
+    text-shadow:3px 3px 15px #00179d,5px 5px 15px #5f61ff;
+    border-radius: 5px;
+    border: solid 3px #00d5c6;
+    box-shadow: 2px 2px 15px #5f61ff;
+    font-weight: 400;
+    padding: 10px 20px;
+    background:black;
+  }
+  button:hover{
+  background:rgb(49, 0, 88);
+  }
+/*flexers*/
+
+.space30 {
+    width:30%;
+    max-height:200px;
+    flex:1;
+}
+.space100 {
+    width:100%;
+}
+
 /*Header*/
 header {
     padding: 10px 20px;
@@ -152,23 +177,44 @@ section {
     background-color: rgba(250, 250, 250, .7);
     margin:20px;
     min-width: 150px;
+    flex:1;
+    max-width:30%;
 }
-.card-white {
-    padding:15px;
-    background: whitesmoke;
+.card2{
+    box-shadow:0px 0px 4px #000;
+    background-color: rgba(0, 0, 0, .7);
     margin:20px;
+    min-width: 150px;
+    flex:1;
+    max-width:30%;
+}
+.card2-body {
+    padding:15px;
+    box-shadow:inset 0px 0px 10px #000,;
+    background-color: rgba(0, 0, 0, .7);
+    margin:20px;
+    min-width: 150px;
+    flex:1;
+    max-width:30%;
+}
+.card2-header {
+    padding:10px;
+    text-align: center;
+    background: #00179d;
+    color:white;
     box-shadow:inset 0px 0px 10px #000;
 }
 
 .dark-glow {
     text-shadow:3px 3px 10px #00179d,0px 0px 5px #5f61ff;
 }
-
+/*backgrounds*/
 .monkbg {
     background-image: url('../assets/images/MonkBg.jpg');
     background-size: 100%;
     background-attachment: fixed;
     background-position: bottom; 
+    position: relative;
 }
 
 .firebg {
@@ -176,4 +222,76 @@ section {
     background-size: 100%;
     background-attachment: fixed;
     background-position: bottom; 
+}
+
+/*ImageSearch*/
+#imageInput {
+    font-size: 18px;
+    min-height:35px;
+    padding:5px;
+    background-color:#00179d;
+    color:white;
+    border: 2px black solid;
+    font-family: 'Commissioner','Gill Sans', sans-serif;
+    margin-left:0px;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+}
+.blackbg {
+    background:black;
+    max-width:360px;
+}
+#image-search-button {
+    min-height:35px;
+    max-height:35px;
+    padding:5px;
+    font-size: 16px;
+    background-color: black;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    color:white;
+    font-family: 'Eagle Lake', sans-serif;
+    margin:0px 0px;
+    border:none;
+    
+}
+#image-search-clear {
+    min-height:35px;
+    max-height:35px;
+    padding:5px;
+    font-size: 16px;
+    background-color: rgb(97, 0, 0);
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    color:white;
+    font-family: 'Eagle Lake', sans-serif;
+    margin:0px 0px;
+    border:none;
+    
+}
+.pixbay-logo-link{
+    max-width:120px;
+    max-height:40px;
+    position: absolute;
+    padding:5px;
+    bottom: 0;
+    right:0;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    background-color: rgba(250, 250, 250, .7);
+}
+.pixbay-logo-link img{
+    max-width: 110px;
+    max-height:30px;
+}
+
+.placeImages {
+    font-size:18px;
+    color: white;
+    padding-left: 20px;
+}
+
+#placeImages img{
+    max-width:200px;
+    max-height:200px;
+    flex:1;
+    margin:10px;
+    z-index: 9;
+
 }

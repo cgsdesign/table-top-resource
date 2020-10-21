@@ -1,0 +1,159 @@
+.title {
+  background: black;
+  height:50px;
+}
+h4{
+  color:white;
+}
+
+.left {
+  text-align: left;
+}
+/*sets sizes for grey boxes*/
+.item-outer-box {
+  height: 50px;
+  margin: 5px;
+  min-width: 51px;
+  background-color: rgba(250, 250, 250, .7);
+
+}
+.item-outer-box2 {
+  height: 102px;
+  margin: 5px;
+  min-width: 51px;
+  background-color: rgba(250, 250, 250, .7);
+
+}
+.item-outer-box-lg {
+height: 129px;
+margin:5px;
+min-width: 91px;
+background-color: rgba(250, 250, 250, .7);
+}
+@media only screen and (max-width: 700px){
+.item-outer-box-lg{
+display:none;
+}
+}
+
+/*terain tokens*/
+  .mymapdiv {
+    position: absolute;
+    z-index: 9;
+    opacity: .7;
+  }
+  
+/*class to keep characters tokenson top*/
+  .charTop {
+    z-index: 999;
+    position: absolute;
+    opacity: 1;
+  }
+/*token styling*/  
+  img {
+    width:40px;
+  }
+  .big img {
+    width:80px;
+  }
+
+  .width20{
+      width:40px;
+      display: flex;
+    flex:1;
+    margin: 5px 0px 0px 6px;
+    text-align: center;
+  }
+  .width40{
+    width:80px;
+    display: flex;
+  flex:1;
+  margin: 5px 0px 0px 5px;
+  text-align: center;
+}
+
+.grave {
+  padding: 0px 20px;
+}
+.grave img{
+min-width:120px;
+min-height:129x;
+max-width:120px;
+max-height:129px;
+padding:10px;
+background:#00d5c6;
+margin-top:5px;
+border-radius: 25px;
+box-shadow:inset 0px 0px 20px #000,0px 0px 20px #000,inset 0px 0px 40px #000;
+}
+/*map area and saving and clearing*/
+  .map-bg {
+    background-image: url('../assets/images/grid3.jpg');
+    background-size: 380px;
+    background-repeat: repeat;
+    background-position:top left; 
+
+  }
+  .map-zone {
+    min-height: 710px;
+  }
+
+.clearmap {
+  color: #cd0000;
+  border: solid 3px #cd0000;
+
+}
+#output canvas{
+  max-width: 200px;
+  max-height: 200px;
+  margin:10px;
+  text-align:left;
+}
+
+.map-made-alert{
+  display: none;
+  color:white;
+  font-size: 13px;;
+}
+
+
+
+
+
+  /*Token buttons*/
+
+  .big button:hover{
+    background:rgba(0, 0, 0, 1);
+  }
+  .big button{
+    min-width:91px;
+    margin-left: -5px;
+    font-size: 12px;
+    margin-top: 85px;
+    background:rgba(0, 0, 0, .7);
+    border:1px rgba(250, 250, 250, .7) solid;
+    border-radius: 0px;
+    font-weight: 700;
+    color:white;
+    padding:5px;
+    text-shadow: none;
+    box-shadow:none;
+
+  }
+  .width20 button:hover{
+    background:rgba(0, 0, 0, 1);
+  }
+  .width20 button{
+    min-width:51px;
+    margin-left: -6px;
+    margin-top: 44px;
+    background:rgba(0, 0, 0, .7);
+    border:1px rgba(250, 250, 250, .7) solid;
+    border-radius: 0px;
+    font-weight: 700;
+    font-size: 12px;
+    color:white;
+    padding:5px;
+    text-shadow: none;
+    box-shadow:none;
+  }
