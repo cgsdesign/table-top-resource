@@ -20,11 +20,28 @@ td.hour{
 }
 .calendar {
     display: fixed;
-    background-color: purple;
+    color:#d8d8d8;
     height: 500px;
     width: 75%;
 }
 
 span {
-    color: whitesmoke;
+    color: #d8d8d8;
+}
+
+td {
+    font-size: 14px;
+    background-color: rgba(250, 250, 250, .7);
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    border: none;
+    font-weight: 400;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin:none;
+    color: black;
+}
+
+.hour {
+    background-color: rgb(97, 0, 0);
+    color:white;
 }

@@ -6,6 +6,13 @@
   }
   /*roots*/
   :root { 
+  /*  --main:  #73DF00;
+    --main:#9BCE36;
+    */
+  --main:rgb(97, 0, 0);
+  --secondary: #14BCD9;
+  --hover: rgb(49, 0, 88);
+  --grey: #d8d8d8;
     } 
 
 /* universal*/
@@ -16,18 +23,19 @@ body {
 }
 h1 {
     font-family: 'Eagle Lake', sans-serif;
-    color: #00d5c6;
+    color:  var(--main);
+    text-shadow:0px 0px 10px var(--secondary),3px 3px 5px white;
     font-size: 44px;
-    text-shadow:3px 3px 15px #00179d,5px 5px 15px #5f61ff;
+    text-shadow:3px 3px 15px var(--hover);
 }
 h2 {
     font-family: 'Eagle Lake', sans-serif;
     font-size: 24px;
     font-weight: 400;
     /*text-shadow:0px 0px 3px #00d5c6;*/
-    color: #00d5c6;
-    text-shadow:3px 3px 15px #00179d,5px 5px 15px #5f61ff;
-    padding:10px 0px;
+    color: var(--grey);
+    text-shadow:3px 3px 15px var(--hover);
+    padding:10px 0px 30px 10px;
 }
 h3 {
     font-family: 'Eagle Lake', sans-serif;
@@ -42,128 +50,42 @@ h4 {
 }
 
 button {
+    min-height:35px;
+    padding:5px 10px;
     font-size: 16px;
-    color: #00d5c6;
-    text-shadow:3px 3px 15px #00179d,5px 5px 15px #5f61ff;
-    border-radius: 5px;
-    border: solid 3px #00d5c6;
-    box-shadow: 2px 2px 15px #5f61ff;
-    font-weight: 400;
-    padding: 10px 20px;
-    background:black;
+    background-color: var(--main);
+    box-shadow:inset 0px 0px 15px #000,0px 0px 3px #000;
+    color:white;
+    font-family: 'Eagle Lake', sans-serif;
+    margin:0px 0px;
+    border:none;
+    text-transform: uppercase;
+    text-shadow:3px 3px 25px var(var(--main));
+
   }
   button:hover{
-  background:rgb(49, 0, 88);
+  background:var(--hover);
+  color:var(--grey);
   }
-/*flexers*/
 
-.space30 {
-    width:30%;
-    max-height:200px;
-    flex:1;
-}
-.space100 {
-    width:100%;
+.secondary-button :hover{
+background-color: var(--hover);
+color:var(--grey);
 }
 
-/*Header*/
-header {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color:black;
-    color:white;
-}
-
-
-header a{
-    text-decoration: none;
-    color: #00d5c6;
-}
-
-header nav {
-    margin: 7px 0;
-}
-
-header nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header nav ul li {
-    margin: 0 14px;
+.secondary-button {
+    min-height:35px;
     padding:5px 10px;
-    font-size: 18px;
-    border: 2px solid darkblue;
-
-}
-
-header nav ul li:hover{
-
-    border: 2px solid #00d5c6;
-    text-shadow:0px 0px 25px white,3px 3px 25px #5f61ff;
-
-  }
-/*end header*/
-
-/* Hero Style Start */
-.hero {
-    background-image: url('../assets/images/sword.png');
-    background-size: 100%;
-    background-attachment: fixed;
-    min-height: 200px;
-    padding-right:30px;
-  }
-
-  .hero-box {
-    text-align:right;
-    padding: 5px 5px 5px 5px;
-    background-color: rgba(100, 200, 200, .7);
-    font-family: 'Eagle Lake', sans-serif;
-    position: relative;
-    bottom: 20px;
-    box-shadow: 5px 5px 10px #00179d, 5px 5px 15px #5f61ff;
-  }
-
-/*hero style end*/
-
-/*main body start*/
-.infoDrop {
-    font-family: 'Eagle Lake', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    background: none;
-    border: none;
-    /*text-shadow:0px 0px 3px #00d5c6;*/
-    color: #00d5c6;
-    text-shadow:3px 3px 15px #00179d,5px 5px 15px #5f61ff;
-    padding:10px 0px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    padding:15px;
+    font-size: 16px;
+    background-color:var(--secondary) ;
     box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
-    background-color: rgba(250, 250, 250, .7);
-    min-width: 150px;
-    z-index: 1;
+    color:black;
+    font-family: 'Eagle Lake', sans-serif;
+    margin:0px 0px;
+    border:none;  
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
-.twoRow {
-    padding: 10px;
-    text-align: center;
-}
-
-/*About*/
 section {
     display:flex;
     flex-wrap: wrap;
@@ -177,8 +99,10 @@ section {
     background-color: rgba(250, 250, 250, .7);
     margin:20px;
     min-width: 150px;
+    position: flex;
     flex:1;
     max-width:30%;
+    min-height:200px;
 }
 .card2{
     box-shadow:0px 0px 4px #000;
@@ -200,15 +124,143 @@ section {
 .card2-header {
     padding:10px;
     text-align: center;
-    background: #00179d;
-    color:white;
+    color:var(--grey);
+    background-color:var(--main);
+    box-shadow:inset 0px 0px 15px #000,0px 0px 3px #000;
     box-shadow:inset 0px 0px 10px #000;
 }
 
 .dark-glow {
-    text-shadow:3px 3px 10px #00179d,0px 0px 5px #5f61ff;
+    text-shadow:3px 3px 10px var(--hover),0px 0px 5px #5f61ff;
+}
+
+/*flexers*/
+
+.space30 {
+    width:30%;
+    max-height:200px;
+    flex:1;
+}
+.space100 {
+    width:100%;
+    flex:1;
+}
+
+/*Header*/
+header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color:black;
+    color:var(--grey);
+}
+
+
+header a{
+    text-decoration: none;
+    color:black;
+}
+
+header nav {
+    margin: 7px 0;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul li {
+    padding:5px 10px;
+    font-size: 14px;
+    background-color:var(--secondary);
+    box-shadow:inset 0px 0px 15px #000,0px 0px 3px #000;
+    font-family: 'Eagle Lake', sans-serif;
+    margin:0px 5px;
+    border:none;
+    text-transform: uppercase;
+    text-transform: uppercase;
+    list-style-type: none;
+
+}
+
+header nav ul li:hover{
+    text-shadow:0px 0px 25px white,3px 3px 25px #5f61ff;
+    background:var(--hover);
+    color:var(--grey);
+  }
+
+  header nav ul a:hover{
+    color:var(--grey);
+  }
+/*end header*/
+
+/* Hero Style Start */
+.hero {
+    background-image: url('../assets/images/sword.png');
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: bottom;
+    min-height: 200px;
+    padding-right:30px;
+  }
+
+  .hero h2{
+      color:black;
+      text-shadow: none;
+      padding-bottom: 10px;
+  }
+  .hero-sword {
+      max-width:250px;
+
+  }
+
+/*hero style end*/
+
+/*main body start*/
+
+.your-char{
+    color:var(--grey);
+    margin-bottom: -20px;
+    font-family: 'Commissioner','Gill Sans', sans-serif;
+    font-weight: normal;
+    padding-top: 20px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    padding:15px;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+    background-color: rgba(250, 250, 250, .9);
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.twoRow {
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown p:hover {
+    font-weight: bold;
 }
 /*backgrounds*/
+.swordbg {
+    background-image: url('../assets/images/helm-bg.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: bottom; 
+    position: relative;
+}
+
 .monkbg {
     background-image: url('../assets/images/MonkBg.jpg');
     background-size: 100%;
@@ -216,7 +268,6 @@ section {
     background-position: bottom; 
     position: relative;
 }
-
 .firebg {
     background-image: url('../assets/images/FireBg.jpg');
     background-size: 100%;
@@ -229,8 +280,8 @@ section {
     font-size: 18px;
     min-height:35px;
     padding:5px;
-    background-color:#00179d;
-    color:white;
+    background-color:var(--grey);
+    color:black;
     border: 2px black solid;
     font-family: 'Commissioner','Gill Sans', sans-serif;
     margin-left:0px;
@@ -240,32 +291,7 @@ section {
     background:black;
     max-width:360px;
 }
-#image-search-button {
-    min-height:35px;
-    max-height:35px;
-    padding:5px;
-    font-size: 16px;
-    background-color: black;
-    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
-    color:white;
-    font-family: 'Eagle Lake', sans-serif;
-    margin:0px 0px;
-    border:none;
-    
-}
-#image-search-clear {
-    min-height:35px;
-    max-height:35px;
-    padding:5px;
-    font-size: 16px;
-    background-color: rgb(97, 0, 0);
-    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
-    color:white;
-    font-family: 'Eagle Lake', sans-serif;
-    margin:0px 0px;
-    border:none;
-    
-}
+
 .pixbay-logo-link{
     max-width:120px;
     max-height:40px;
@@ -283,7 +309,7 @@ section {
 
 .placeImages {
     font-size:18px;
-    color: white;
+    color: var(--grey);
     padding-left: 20px;
 }
 
