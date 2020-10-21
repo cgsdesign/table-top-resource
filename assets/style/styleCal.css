@@ -5,7 +5,9 @@ table {
 }
 
 td {
-    border: 1px solid black;
+    border: 1px solid #00d5c6;
+    text-shadow: 2px 2px 10px #00179d, 5px 5px 15px #5f61ff;
+    color: #00d5c6;
 }
 
 tr {
@@ -20,11 +22,15 @@ td.hour{
 }
 .calendar {
     display: fixed;
-    background-color: purple;
+    /* background-color: purple; */
     height: 500px;
-    width: 75%;
+    width: 100%;
 }
 
 span {
     color: whitesmoke;
+}
+
+select {
+    text-align: center;
 }
