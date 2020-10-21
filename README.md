@@ -8,7 +8,7 @@
 <summary> Table of contents</summary>
 
  * [About the Project](#About-The-Project)
-    * [Build With](#built-with)
+    * [Built With](#built-with)
 * [Sections](#sections)
     * [Character List](#Character-list)
     * [Images](#images)
@@ -17,9 +17,11 @@
     * [Schedule](#schedule)
 
 * [Usage](#usage)
-    * [Pictures](#pics)
+    * [Pictures](#pictures)
 
-* [Contact](#contact)
+* [Link to Page](#link-to-page)
+
+* [Contact](#contact-us)
     * [Creators](#creators)
 
 </details>
@@ -106,6 +108,13 @@
 </br>
 </br>
 
+# Link to Page
+
+* [Follow this Link to page](https://cgsdesign.github.io/table-top-resource/index.html)
+
+</br>
+</br>
+</br>
 
 # Contact Us
 

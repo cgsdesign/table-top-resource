@@ -267,7 +267,17 @@ $(document).ready(function(){
                 $('#eightpm-sun-list').append("<li>" + name + "</li>");
             }
         }
-        
+         // var storageId = time + day;
+        // var getStoredText = JSON.parse(localStorage.getItem(storageId));
+        // console.log(storageId);
+
+        // $('tr').find(name)(getStoredText);
+
+
+        locationId = time + ", " + day;
+        localStorage.setItem(locationId, JSON.stringify(name));
+        console.log(locationId);
+
 
     })
 })
