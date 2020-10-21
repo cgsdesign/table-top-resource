@@ -33,10 +33,13 @@
                         <a href="#Creation">CREATION</a>
                     </li>
                     <li>
+                        <a href="#Images">IMAGES</a>
+                    </li>
+                    <li>
                         <a href="#Maps">MAPS</a>
                     </li>
                     <li>
-                        <a href="#Scheduling">SCHEDUAL</a>
+                        <a href="#Scheduling">SCHEDULE</a>
                     </li>
                     <li>
                         <a href="#Dice">DICE</a>
@@ -47,19 +50,17 @@
     
     <!--Hero-->    
         <section class="hero">
-            <div class="col-sm-6">
                 <div class="card">
-                    <h3>Intro Text here.</h3>  
-                    <p>Welcome to the tabletop resource website. Here you can find resources to build and run your D&D campaign. </p> 
+                    <h2>Welcome to the D&D Dungeon Master Resources Site</h2>  
+                    <p>Here you can find resources to build and run your D&D campaign. </p> 
                 </div>
-            </div>
         </section>
     
     <!--MAIN BODY-->
         <main>
             <section class="section">
                 <h2>Dungeons and Dragons 5th Edition Rules and References</h2>
-                <div class="col-sm-11">
+                <div class="col-sm-11 .secondary-button">
                     <div class="row around-sm">
                         <div class="dropdown" id="character">
                             <button class="infoDrop">Characters</button>
@@ -198,11 +199,13 @@
                         </div>
                     </div>
                 </div>
+
+                <h3 class="col-sm-11 dark-glow your-char"> Your Character:</h3>
                 <div class="col-sm-11 card" id="referenceContainer"></div>               
             </section>
             
             <!--Images-->
-            <section class="section monkbg">
+            <section class="section swordbg">
                 <h2 class="dark-glow col-sm-11">
                     Find Character and World Images: 
                 </h2>
@@ -212,7 +215,7 @@
                         <button id="image-search-button">
                             Search
                         </button>
-                        <button id="image-search-clear">
+                        <button  class="secondary-button" id="image-search-clear">
                             Clear
                         </button>
                     </div>
@@ -226,16 +229,13 @@
             </section>
 
             <!-- Maps --> 
-            <section>
-                <h2>
+            <section class="section">
+                <h2 class="dark-glow col-sm-11">
                     Build Maps or Play on Line                     
-                </h2>               
-                <div class="card2">
-                    <h3 class="card2-header">Click Image to Download </h3>
-                    <a href="./assets/images/map1.png" download>
-                        <img class="space100" src="./assets/images/map1.png"> 
-                    </a> 
-                </div>
+                </h2>    
+                <a class="dark-glow col-sm-11" href="./maps.html">
+                    <button class="secondary-button" href="./maps.html">BUILD YOUR OWN</button>  
+                </a>          
                 <div class="card2">
                     <h3 class="card2-header">Click Image to Download </h3>
                     <a href="./assets/images/map2.png" download>
@@ -244,22 +244,26 @@
                 </div>
                 <div class="card2">
                     <h3 class="card2-header">Click Image to Download </h3>
+                    <a href="./assets/images/map1.png" download>
+                        <img class="space100" src="./assets/images/map1.png"> 
+                    </a> 
+                </div>
+                <div class="card2">
+                    <h3 class="card2-header">Click Image to Download </h3>
                     <a href="./assets/images/map3.png" download>
                         <img class="space100" src="./assets/images/map3.png">
                     </a>
-                </div>
-                <a class="dark-glow col-sm-11" href="./maps.html">
-                <button href="./maps.html">BUILD YOUR OWN</button>  
-                </a>
+                </div> 
             </section>
 
             
             <!-- Dice -->
             <section class="section firebg">
-                <h2>Dice Roller</h2>
+                <h2 class="dark-glow col-sm-11 no-pad">Dice Roller</h2>
                 <!--subtract remove by id, clear remove by class-->
+                <div class="card">
                 <div id="dice-add-subtract-clear-buttons">
-                    <button type="submit" id="add-button">+</button>
+                    <button class="secondary-button" type="submit" id="add-button">+</button>
                     <button type="reset" id="subtract-button">-</button>
                     <button type="reset" id="clear-button">clear</button>
                 </div>
@@ -268,8 +272,9 @@
                     <select name="dice-dropdown" class="dice-dropdown"></select>
                     <div class="random-number-display">Roll Value:</div>
                     <div class="new-dropdown-container"></div>
-                    <button type="submit" id="roll-button">Roll!</button>
+                    <button type="submit" class="secondary-button" id="roll-button">Roll!</button>
                 </div>
+            </div>
             </section>
 
 
