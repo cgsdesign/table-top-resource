@@ -1,4 +1,4 @@
-//Getting and appending information to the infobox based on character class
+//Logic for appending all class information to the information box
 var classesCategory = function(charClass) {
     $("#mainInfoContainer").remove();
     var charSearch = charClass.toLowerCase();
@@ -45,6 +45,7 @@ var classesCategory = function(charClass) {
             $("#profBonusBlock").append("Proficiency")
             $("#classFeatBlock").append("Class Features")
 
+                // checking that each line is an actual increase to the class level to keep the 1-20 format
             fetch("http://www.dnd5eapi.co/api/classes/" + charSearch + "/levels").then(function(response) {
                 response.json().then(function(data) {
                     
@@ -72,6 +73,7 @@ var classesCategory = function(charClass) {
     })
 }
 
+// handler for creating and appending race information to the main info box
 var racesCategory = function(raceSelect) {
     $("#mainInfoContainer").remove();
     var raceSearch = raceSelect.toLowerCase();
@@ -97,9 +99,35 @@ var racesCategory = function(raceSelect) {
             $("#infoCont").append("Ability Bonus: ")
             $("#infoCont").append("<p>" + abilityBonus.name + " +" + abilityBonus.bonus + "</p>")
 
-            var racialprofs = data.starting_proficiencies[0]
-            $("#infoCont").append("Proficiencies: ")
-            $("#infoCont").append("<p>" + racialprofs.name + "</p>")
+            var racialprofs = data.starting_proficiencies
+            $("#infoCont").append("Starting Proficiencies: ")
+
+            for(i = 0; i < racialprofs.length; i++) {
+                $("#infoCont").append("<p>" + racialprofs[i].name + "</p>")
+            }
+
+            var languagesSpoken = data.languages
+            $("#infoCont").append("Languages: ")
+            for(i = 0; i < languagesSpoken.length; i++) {
+                $("#infoCont").append("<p>" + languagesSpoken[i].name + "</p>")
+            }
+
+            $("#sizeCont").append("<p>Age: " + data.age + "</p>")
+            $("#sizeCont").append("Alignment: " + data.alignment + "</p>")
+            $("#sizeCont").append("Size: " + data.size + "</p>")
+            $("#sizeCont").append(data.size_description)
+
+            var traitsList = data.traits
+            $("#traitCont").append("<p>Racial Traits: </p>")
+            for(i = 0; i < traitsList.length; i++) {
+                $("#traitCont").append("<p>" + traitsList[i].name + "</p>")
+            }
+
+            var subraces = data.subraces
+            $("#subraceCont").append("<p>Subraces: </p>")
+            for(i = 0; i < subraces.length; i++) {
+                $("#subraceCont").append("<p>" + subraces[i].name + "</p>")
+            }
         })
     })
 }
@@ -115,6 +143,38 @@ var equipmentCategory = function(category) {
             }
         })
     })        
+};
+
+var spellsCategory = function(spells) {
+    $("#mainInfoContainer").remove();
+    fetch("http://www.dnd5eapi.co/api/spells?school=" + spells).then(function(response) {
+        response.json().then(function(data) {
+
+            var listSpells = data.results
+
+            var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+            var $spellResults = $("<div class='col-sm-2' id='spellResults'></div>")
+            var $spellInfo = $("<div class='col-sm-10' id='spellInfo'></div>")
+            
+            $("#referenceContainer").append($mainCont);
+            $("#mainInfoContainer").append($spellResults);
+            $("#mainInfoContainer").append($spellInfo);
+
+            for(i = 0; i < listSpells.length; i++)
+            $("spellResults").append("<p id='spellChoice'>" + listSpells[i].name + "</p>")
+        })
+    })
+};
+
+var showSpell = function(selection) {
+    fetch("http://www.dnd5eapi.co/api/spells/" + selection).then(function(response) {
+        response.json().then(function(data) {
+            $("#spellInfo").append("<p>" + data.name + "</p>")
+            $("#spellInfo").append("<p>" + data.desc[0] + "</p>")
+            $("#spellInfo").append("<p>" + data.higher_level[0] + "</p>")
+            $("#spellInfo").append("<p>" + data.range + "</p>")
+        })
+    })
 };
 
 // Selecting the click option and feeding it into the call
@@ -146,11 +206,11 @@ $("#equipment").on("click", "p", function() {
     equipmentCategory(selectText)
 });
 
-$("#spells").on("click", "p", function() {
+$("#spellSchool").on("click", "p", function() {
     var selectText = $(this)
         .text()
         .trim();
-    console.log(selectText)
+    spellsCategory(selectText)
 });
 
 $("#monsters").on("click", "p", function() {
@@ -158,6 +218,13 @@ $("#monsters").on("click", "p", function() {
         .text()
         .trim();
     console.log(selectText)
+});
+
+$("#spellChoice").on("click", "p", function() {
+    var selectText = $(this)
+        .text()
+        .trim();
+    showSpell(selectText)
 });
 
 //able to select a time block and day and add it to table
