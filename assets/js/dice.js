@@ -89,6 +89,7 @@ for (var i = 0; i < diceTypes.length; i++) {
     diceDropdownClass.appendChild(dropdownOptions);
 }
 
+//remove appended dice and reset values
 var clearDropdowns = function() {
     newDropdownContainer.textContent = "";
     randomNumberDisplay.textContent = "Roll Value:";
@@ -96,7 +97,7 @@ var clearDropdowns = function() {
     totalDiceCounter = 2;
 }
 
-//do they actually have to have unique IDs? yes
+//function to add select elements to represent dice values
 var addDropdown = function() {
     var newDropdown  = document.createElement("select");
     newDropdown.setAttribute("class", "dice-dropdown");
@@ -131,19 +132,21 @@ var addDropdown = function() {
 //array.pop mdn?
 //creating counter arrays, subtract by id?
 //populate
+//revisit possible info that is selected, may want the select element
 var subtractDropdown = function() {
     diceIdCounterArr.pop();
     rollIdCounterArr.pop();
 };
 
-//get the value of the range of each die from the dropdown
-//assign another for loop here?
+/*get the value of the range of each die from the dropdown and
+plug each corresponding value into the random number generator
+and append the randomly generated number to the page, or insult
+anyone who fails to select a die value*/
 var getChoiceValueAndRandomNumber = function() {
     var randomInsult = insultsArr[Math.floor(Math.random() * insultsArr.length)];
 
     var choiceValue = diceDropdownClass.options[diceDropdownClass.selectedIndex].value;
 
-    //temporary, I know we can't use alerts
     if (choiceValue < 1) {
         randomNumberDisplay.textContent = "Pick a die value - " + randomInsult;
     }
@@ -170,17 +173,6 @@ var getChoiceValueAndRandomNumber = function() {
         }
     }
 }
-
-/*future plans:
--append/remove dropdowns with +/- buttons above all dropdowns
--add clear dice button to remove all appended dropdowns 
-    (still keeping one fixed to the page)
--Roll! button will be set up to activate all dropdowns
--seek feedback concerning function structure/layout
--clone function?
--javascript value this?
--kanban board taskinator
-*/
 
 rollButton.addEventListener("click", getChoiceValueAndRandomNumber);
 addButton.addEventListener("click", addDropdown);

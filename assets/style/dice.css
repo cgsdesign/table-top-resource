@@ -8,3 +8,7 @@
     text-shadow:3px 3px 15px #00179d,5px 5px 15px #5f61ff;
     padding:10px 0px
 }
+
+#dice-section-container {
+    display: inline-block;
+}
