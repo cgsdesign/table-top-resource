@@ -94,13 +94,13 @@
 
 ## Pictures
 
-![ScreenShot1of4](Assets/images/image00.png)
+![ScreenShot1of4](assets/images/image00.png)
 
-![ScreenShot2of4](Assets/images/image01.png)
+![ScreenShot2of4](assets/images/image01.png)
 
-![ScreenShot3of4](Assets/images/image02.png)
+![ScreenShot3of4](assets/images/image02.png)
 
-![ScreenShot4of4](Assets/images/image03.png)
+![ScreenShot4of4](assets/images/image03.png)
 
 </br>
 </br>
@@ -112,7 +112,7 @@
 ## Creators
 </br>
 
-* **Aaron Geiger** [GitHub](https://github.com/geigea84), </br> [geigea84@gmail.com](mailto:geigea84@gmail.com)
+* **Aaron Geiger** [GitHub](https://github.com/geigea84), [geigea84@gmail.com](mailto:geigea84@gmail.com)
 
 * **Brent Johnson** [GitHub](https://github.com/uberbrent), [brentjohnsondev@gmail.com](mailto:brentjohnsondev@gmail.com)
 
