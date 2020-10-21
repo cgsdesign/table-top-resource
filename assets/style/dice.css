@@ -1,3 +1,7 @@
 .no-pad {
     padding-bottom:0px;
 }
+
+#dice-section-container {
+    display: inline-block;
+}
