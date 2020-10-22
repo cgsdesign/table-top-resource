@@ -62,7 +62,7 @@ var abilityDescriptions = function(ability) {
     var $infoBlockCol = $("<div class='col-sm-10' id='infoBlockCol'></div>")
     $("#rowCont").append($infoBlockCol)
 
-    fetch("http://www.dnd5eapi.co/api/ability-scores/" + ability).then(function(response) {
+    fetch("https://www.dnd5eapi.co/api/ability-scores/" + ability).then(function(response) {
         response.json().then(function(data) {
 
             $("#infoBlockCol").append("<p>" + data.full_name + ": </p>")
@@ -82,7 +82,7 @@ var abilityDescriptions = function(ability) {
 var classesCategory = function(charClass) {
     $("#mainInfoContainer").remove();
     var charSearch = charClass.toLowerCase();
-    fetch("http://www.dnd5eapi.co/api/classes/" + charSearch).then(function(response) {
+    fetch("https://www.dnd5eapi.co/api/classes/" + charSearch).then(function(response) {
         response.json().then(function(data) {
             
             var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
@@ -126,7 +126,7 @@ var classesCategory = function(charClass) {
             $("#classFeatBlock").append("Class Features")
 
                 // checking that each line is an actual increase to the class level to keep the 1-20 format
-            fetch("http://www.dnd5eapi.co/api/classes/" + charSearch + "/levels").then(function(response) {
+            fetch("https://www.dnd5eapi.co/api/classes/" + charSearch + "/levels").then(function(response) {
                 response.json().then(function(data) {
                     
                     var charLevel = 1
@@ -157,7 +157,7 @@ var classesCategory = function(charClass) {
 var racesCategory = function(raceSelect) {
     $("#mainInfoContainer").remove();
     var raceSearch = raceSelect.toLowerCase();
-    fetch("http://www.dnd5eapi.co/api/races/" + raceSearch).then(function(response) {
+    fetch("https://www.dnd5eapi.co/api/races/" + raceSearch).then(function(response) {
         response.json().then(function(data) {
             var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
             var $rowCont = $("<div class='row' id='rowCont'></div>")
@@ -227,7 +227,7 @@ var equipmentCategory = function(category) {
 
 var spellsCategory = function(spells) {
     $("#mainInfoContainer").remove();
-    fetch("http://www.dnd5eapi.co/api/spells?school=" + spells).then(function(response) {
+    fetch("https://www.dnd5eapi.co/api/spells?school=" + spells).then(function(response) {
         response.json().then(function(data) {
 
             var listSpells = data.results
@@ -259,7 +259,7 @@ var spellsCategory = function(spells) {
 
 var spellLevelCat = function(spells) {
     $("#mainInfoContainer").remove();
-    fetch("http://www.dnd5eapi.co/api/spells?level=" + spells).then(function(response) {
+    fetch("https://www.dnd5eapi.co/api/spells?level=" + spells).then(function(response) {
         response.json().then(function(data) {
 
             var listSpells = data.results
@@ -281,7 +281,7 @@ var spellLevelCat = function(spells) {
 
 var showSpell = function(spellInfo) {
     var spellselect = spellInfo.toLowerCase();
-    fetch("http://www.dnd5eapi.co/api/spells/" + spellselect).then(function(response) {
+    fetch("https://www.dnd5eapi.co/api/spells/" + spellselect).then(function(response) {
         response.json().then(function(data) {
             $("#spellInfo").append("<p>" + data.name + "</p>")
             $("#spellInfo").append("<p>" + data.desc[0] + "</p>")

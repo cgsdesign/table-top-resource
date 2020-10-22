@@ -39,10 +39,10 @@
                         <a href="#Maps">MAPS</a>
                     </li>
                     <li>
-                        <a href="#Scheduling">SCHEDULE</a>
+                        <a href="#Dice">DICE</a>
                     </li>
                     <li>
-                        <a href="#Dice">DICE</a>
+                        <a href="#Scheduling">SCHEDULE</a>
                     </li>
                 </ul>  
             </nav>
@@ -58,7 +58,7 @@
     
     <!--MAIN BODY-->
         <main>
-            <section class="section">
+            <section id="Creation" class="section">
                 <h2>Dungeons and Dragons 5th Edition Rules and References</h2>
                 <div class="col-sm-11 .secondary-button">
                     <div class="row around-sm">
@@ -178,7 +178,7 @@
             </section>
 
             <!--Images-->
-            <section class="section swordbg">
+            <section id="Images" class="section swordbg">
                 <h2 class="dark-glow col-sm-11">
                     Find Character and World Images: 
                 </h2>
@@ -202,7 +202,7 @@
             </section>
 
             <!-- Maps --> 
-            <section class="section">
+            <section id="Maps" class="section">
                 <h2 class="dark-glow col-sm-11">
                     Build Maps or Play on Line                     
                 </h2>    
@@ -231,6 +231,7 @@
 
             
             <!-- Dice -->
+<<<<<<< HEAD
             <section class="section firebg">
                 <div id="dice-section-container">
                     <div id="dice-title">
@@ -252,14 +253,36 @@
                             <button type="submit" id="roll-button">Roll!</button>
                         </div>
                     </div>
+=======
+            <section id="Dice" class="section firebg">
+                <h2 class="dark-glow col-sm-11 no-pad">Dice Roller</h2>
+                <!--subtract remove by id, clear remove by class-->
+                <div class="card">
+                <div id="dice-add-subtract-clear-buttons">
+                    <button class="secondary-button" type="submit" id="add-button">+</button>
+                    <button type="reset" id="subtract-button">-</button>
+                    <button type="reset" id="clear-button">clear</button>
+                </div>
+                <br>
+                <div id="dice-select-container">
+                    <select name="dice-dropdown" class="dice-dropdown"></select>
+                    <div class="random-number-display">Roll Value:</div>
+                    <div class="new-dropdown-container"></div>
+                    <button type="submit" class="secondary-button" id="roll-button">Roll!</button>
+>>>>>>> feature/images
                 </div>
             </div>
             </section>
 
 
             <!-- Calendar -->
+<<<<<<< HEAD
             <h2>Schedule</h2>
             <section class="calendar">
+=======
+            <section id="Scheduling" class="calendar">
+                <h2 class="dark-glow col-sm-11">Scheduling</h2>
+>>>>>>> feature/images
                 <select id="time">
                     <option value="" >--select game time --</option>
                     <option value="8to12pm" id="8am">8AM - 12PM</option>
