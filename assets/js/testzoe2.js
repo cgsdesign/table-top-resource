@@ -251,9 +251,6 @@ var takeshot = function() {
             document 
             .getElementById('output') 
             .appendChild(canvas); 
-            var img = new Image();
-            img.src = canvas;
-            consolelog(canvas)
            // localStorage.setItem(canvas, canvas.toDataURL());-unusable with these types of layered graphics or possible just becasue not really live at https
         }) 
     }
@@ -261,11 +258,62 @@ var takeshot = function() {
   var clickerFlash = function() {
     $(".map-made-alert").fadeIn(500);
     $(".map-made-alert").fadeOut(600);
-    console.log("flash")
 };
+
+Storage.prototype.setObject = function (key, value) {
+  this.setItem(key, JSON.stringify(value));
+}
+
+Storage.prototype.getObject = function (key) {
+  var value = this.getItem(key);
+  return value && JSON.parse(value);
+}
+
+/*
+* Save all pictures in local storage
+*/
+var saveMapLocal = function () {
+  let div = 
+  document.getElementById('makeMap'); 
+  console.log("flash1")
+  html2canvas(div).then (
+      function (canvas) {
+          const image = canvas.toDataURL("image/png");
+          window.sessionStorage.setObject(new Date().getTime(), image);
+          console.log("flash2")
+      }
+  );
+}
+
 var mapMadeAlrt = document.getElementById("save-map")
 mapMadeAlrt.addEventListener("click", clickerFlash);
 mapMadeAlrt.addEventListener("click", takeshot);
+mapMadeAlrt.addEventListener("click", saveMapLocal);
+
+//NEW TEXT TO TRY
+
+// var mapMadeAlrt = document.getElementById("save-map")
+// mapMadeAlrt.addEventListener("click", clickerFlash);
+// mapMadeAlrt.addEventListener("click", takeshot);
+
+
+// document.getElementById('download').onclick = function () {
+//   // Create new document
+//   let doc = new jsPDF('p', 'mm', 'a4');
+
+//   const width = doc.internal.pageSize.getWidth();
+//   const height = doc.internal.pageSize.getHeight();
+
+//   // Get all images from local storage and add them to the pdf
+//   for (let key in sessionStorage) {
+//       if (!isNaN(key)) {
+//           const image = window.sessionStorage.getObject(key);
+//           doc.addImage(image, 'JPEG', 0, 0, width, height);
+//       }
+//   }
+//var imgurl= canvas.toDataURL( ) ; // This method saves graphics in png
+//document.getElementById(‘cimg’).src = imgurl; // This will set img src to dataurl(png)so that it can be saved as image.
+
 
 
 
