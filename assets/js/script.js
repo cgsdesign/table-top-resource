@@ -54,8 +54,7 @@ var abilityScores = function() {
 
         abilityDescriptions(selectText);
     })
-
-}
+};
 
 var abilityDescriptions = function(ability) {
     $("#infoBlockCol").remove();
@@ -76,6 +75,75 @@ var abilityDescriptions = function(ability) {
         })
     })
     
+}
+
+var skillsList = function() {
+    $("#mainInfoContainer").remove();
+    fetch("https://www.dnd5eapi.co/api/skills").then(function(response) {
+        response.json().then(function(data) {
+            var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+            var $rowCont = $("<div class='row' id='rowCont'></div>")
+            var $statsCol = $("<div class='col-sm-2' id='statsCol'></div>")
+            var $infoBlockCol = $("<div class='col-sm-10' id='infoBlockCol'></div>")
+        
+            $("#referenceContainer").append($mainCont)
+            $("#mainInfoContainer").append($rowCont)
+            $("#rowCont").append($statsCol)
+            $("#rowCont").append($infoBlockCol)
+
+            var skills = data.results
+
+            for(i = 0; i < skills.length; i++) {
+                $("#statsCol").append("<p id='" + [i] + "'>" + skills[i].name + "</p>")
+            }
+
+            $("#statsCol").on("click", "p", function() {
+                var getId = $(this)
+                    .attr("id")
+                var skillSelect = data.results[getId].index
+                skillDescriptions(skillSelect)
+            })
+        })
+    })
+};
+
+var skillDescriptions = function(skillname) {
+    $("#infoBlockCol").remove();
+
+    var $infoBlockCol = $("<div class='col-sm-10' id='infoBlockCol'></div>")
+    $("#rowCont").append($infoBlockCol)
+
+    fetch("https://www.dnd5eapi.co/api/skills/" + skillname).then(function(response) {
+        response.json().then(function(data) {
+            $("#infoBlockCol").append("<p>" + data.name + "</p>")
+                .append("<p>" + data.desc + "</p>")
+                .append("<p>Ability Score Bonus: " + data.ability_score.name + "</p>")
+            
+        })
+    })
+};
+
+var languagesList = function () {
+    $("#mainInfoContainer").remove();
+    
+    var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+    var $rowCont = $("<div class='row' id='rowCont'></div>")
+    var $statsCol = $("<div class='col-sm-2' id='statsCol'></div>")
+
+    $("#referenceContainer").append($mainCont)
+    $("#mainInfoContainer").append($rowCont)
+    $("#rowCont").append($statsCol)
+
+    fetch("https://www.dnd5eapi.co/api/languages").then(function(response) {
+        response.json().then(function(data) {
+
+            var languages = data.results
+
+            for(i = 0; i < languages.length; i++) {
+                $("#statsCol").append("<p>" + languages[i].name + "</p>")
+            }
+        })
+    })
 }
 
 //Logic for appending all class information to the information box
@@ -212,17 +280,135 @@ var racesCategory = function(raceSelect) {
     })
 }
 
-var equipmentCategory = function(category) {
-    if (category === "Weapons") {
-        var category = "weapon"
-    }
-    fetch("https://www.dnd5eapi.co/api/equipment-categories/" + category).then(function(response) {
-        response.json().then(function(data) {
-            for (i = 0; i < data.length; i++) {
+var weaponCategory = function() {
+    $("#mainInfoContainer").remove();
 
+    var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+    var $rowCont = $("<div class='row' id='rowCont'></div>")
+    var $equipResults = $("<div class='col-sm-2' id='equipResults'></div>")
+    var $equipInfo = $("<div class='col-sm-10' id='equipInfo'></div>")
+    
+    $("#referenceContainer").append($mainCont);
+    $("#mainInfoContainer").append($rowCont)
+    $("#rowCont").append($equipResults);
+    $("#rowCont").append($equipInfo);
+
+    fetch("https://www.dnd5eapi.co/api/equipment-categories/weapon").then(function(response) {
+        response.json().then(function(data) {
+
+            var equipmentList = data.equipment
+
+            for (i = 0; i < 37; i++) {
+                $("#equipResults").append("<p id='" + [i] + "'>" + equipmentList[i].name + "</p>")
             }
+
+            $("#equipResults").on("click", "p", function() {
+                var getId = $(this)
+                    .attr("id")
+                var weaponSelect = data.equipment[getId].index
+                showWeapon(weaponSelect)
+            });
         })
     })        
+};
+
+var showWeapon = function(weapon) {
+    $("#equipInfo").remove();
+
+    var $equipInfo = $("<div class='col-sm-10' id='equipInfo'></div>")
+    $("#rowCont").append($equipInfo);
+
+    fetch("https://www.dnd5eapi.co/api/equipment/" + weapon).then(function(response) {
+        response.json().then(function(data) {
+            $("#equipInfo").append("<p>" + data.name + "</p>")
+                .append("<p>Weapon Category: " + data.weapon_category + "</p>")
+                .append("<p>Range: " + data.weapon_range + "</p>")
+                .append("<p>Damge Dice: " + data.damage.damage_dice + "</p>")
+                .append("<p>Damage Type: " + data.damage.damage_type.name + "</p>")
+            
+            var properties = data.properties
+
+            $("#equipInfo").append("<p>Properties: </p>")
+            for(i = 0; i < properties.length; i++) {
+                $("#equipInfo").append("<p>" + properties[i].name + "</p>")
+            }
+
+        })
+    })
+}
+
+var armorCategory = function() {
+    $("#mainInfoContainer").remove();
+
+    var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+    var $rowCont = $("<div class='row' id='rowCont'></div>")
+    var $equipResults = $("<div class='col-sm-2' id='equipResults'></div>")
+    var $equipInfo = $("<div class='col-sm-10' id='equipInfo'></div>")
+    
+    $("#referenceContainer").append($mainCont);
+    $("#mainInfoContainer").append($rowCont)
+    $("#rowCont").append($equipResults);
+    $("#rowCont").append($equipInfo);
+
+    fetch("https://www.dnd5eapi.co/api/equipment-categories/armor").then(function(response) {
+        response.json().then(function(data) {
+
+            var equipmentList = data.equipment
+
+            for (i = 0; i < 13; i++) {
+                $("#equipResults").append("<p id='" + [i] + "'>" + equipmentList[i].name + "</p>")
+            }
+
+            $("#equipResults").on("click", "p", function() {
+                var getId = $(this)
+                    .attr("id")
+                var armorSelect = data.equipment[getId].index
+                showArmor(armorSelect)
+            });
+        })
+    })        
+};
+
+var showArmor = function(armor) {
+    $("#equipInfo").remove();
+
+    var $equipInfo = $("<div class='col-sm-10' id='equipInfo'></div>")
+    $("#rowCont").append($equipInfo);
+
+    fetch("https://www.dnd5eapi.co/api/equipment/" + armor).then(function(response) {
+        response.json().then(function(data) {
+            $("#equipInfo").append("<p>" + data.name + "</p>")
+                .append("<p>Armor Category: " + data.armor_category + "</p>")
+                .append("<p>AC : " + data.armor_class.base + "</p>")
+                .append("<p>Dex Bonus: " + data.armor_class.dex_bonus + "</p>")
+                .append("<p>Strength Minimum: " + data.str_minimum + "</p>")
+                .append("<p>Weight: " + data.weight + "</p>")
+
+        })
+    })
+};
+
+var advGearCategory = function() {
+    $("#mainInfoContainer").remove();
+
+    var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+    var $rowCont = $("<div class='row' id='rowCont'></div>")
+    var $equipResults = $("<div class='col-sm-12' id='equipResults'></div>")
+    
+    $("#referenceContainer").append($mainCont);
+    $("#mainInfoContainer").append($rowCont)
+    $("#rowCont").append($equipResults);
+
+    fetch("https://www.dnd5eapi.co/api/equipment-categories/adventuring-gear").then(function(response) {
+        response.json().then(function(data) {
+
+            var gear = data.equipment
+
+            for(i = 0; i < gear.length; i++) {
+                $("#equipResults").append("<p id='" + [i] + "'>" + gear[i].name + "</p>")
+            }
+        })
+    })
 };
 
 var spellsCategory = function(spells) {
@@ -243,15 +429,14 @@ var spellsCategory = function(spells) {
             $("#rowCont").append($spellInfo);
 
             for(i = 0; i < listSpells.length; i++) {
-            $("#spellResults").append("<p id='spellChoice'>" + listSpells[i].name + "</p>")
+            $("#spellResults").append("<p id='" + [i] + "'>" + listSpells[i].name + "</p>")
             }
 
             $("#spellResults").on("click", "p", function() {
-                var selectText = $(this)
-                    .text()
-                    .trim();
-                    console.log(selectText)
-                showSpell(selectText)
+                var getId = $(this)
+                    .attr("id")
+                var spellSelect = data.results[getId].index
+                showSpell(spellSelect)
             });
         })
     })
@@ -265,27 +450,42 @@ var spellLevelCat = function(spells) {
             var listSpells = data.results
 
             var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+            var $rowCont = $("<div class='row' id='rowCont'></div>")
             var $spellResults = $("<div class='col-sm-2' id='spellResults'></div>")
             var $spellInfo = $("<div class='col-sm-10' id='spellInfo'></div>")
             
             $("#referenceContainer").append($mainCont);
-            $("#mainInfoContainer").append($spellResults);
-            $("#mainInfoContainer").append($spellInfo);
+            $("#mainInfoContainer").append($rowCont)
+            $("#rowCont").append($spellResults);
+            $("#rowCont").append($spellInfo);
 
             for(i = 0; i < listSpells.length; i++) {
-            $("#spellResults").append("<p id='spellChoice'>" + listSpells[i].name + "</p>")
+            $("#spellResults").append("<p id='" + [i] + "'>" + listSpells[i].name + "</p>")
             }
+
+            $("#spellResults").on("click", "p", function() {
+                var getId = $(this)
+                    .attr("id")
+                var spellSelect = data.results[getId].index
+                showSpell(spellSelect)
+            });
         })
     })
 };
 
 var showSpell = function(spellInfo) {
-    var spellselect = spellInfo.toLowerCase();
-    fetch("https://www.dnd5eapi.co/api/spells/" + spellselect).then(function(response) {
+    $("#spellInfo").remove();
+
+    var $spellInfo = $("<div class='col-sm-10' id='spellInfo'></div>")
+    $("#rowCont").append($spellInfo);
+
+    fetch("https://www.dnd5eapi.co/api/spells/" + spellInfo).then(function(response) {
         response.json().then(function(data) {
             $("#spellInfo").append("<p>" + data.name + "</p>")
             $("#spellInfo").append("<p>" + data.desc[0] + "</p>")
+            if(data.higher_level) {
             $("#spellInfo").append("<p>At Higher Levels: " + data.higher_level[0] + "</p>")
+            }
             $("#spellInfo").append("<p>Range: " + data.range + "</p>")
             $("#spellInfo").append("<p>Duration: " + data.duration + "</p>")
             $("#spellInfo").append("<p>Casting Time: " + data.casting_time + "</p>")
@@ -294,12 +494,88 @@ var showSpell = function(spellInfo) {
     })
 };
 
+var monsterList = function(cr) {
+    $("#mainInfoContainer").remove();
+
+    var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
+    var $rowCont = $("<div class='row' id='rowCont'></div>")
+    var $monsterResults = $("<div class='col-sm-2' id='monsterResults'></div>")
+    var $monsterInfo = $("<div class='col-sm-10' id='monsterInfo'></div>")
+    
+    $("#referenceContainer").append($mainCont);
+    $("#mainInfoContainer").append($rowCont)
+    $("#rowCont").append($monsterResults);
+    $("#rowCont").append($monsterInfo);
+
+    fetch("https://www.dnd5eapi.co/api/monsters?challenge_rating=" + cr).then(function(response) {
+        response.json().then(function(data) {
+
+            var monList = data.results
+
+            for(i = 0; i < monList.length; i++) {
+                $("#monsterResults").append("<p id='" + [i] + "'>" + monList[i].name + "</p>")
+            }
+            $("#monsterResults").on("click", "p", function() {
+                var getId = $(this)
+                    .attr("id")
+                var monsterSelect = data.results[getId].index
+                showMonster(monsterSelect)
+            });
+        })
+    })
+};
+
+var showMonster = function(monster) {
+    $("#monsterInfo").remove();
+
+    var $monsterInfo = $("<div class='col-sm-10' id='monsterInfo'></div>")
+    $("#rowCont").append($monsterInfo);
+
+    fetch("https://www.dnd5eapi.co/api/monsters/" + monster).then(function(response) {
+        response.json().then(function(data) {
+            $("#monsterInfo").append("<p>Name: " + data.name + "</p>")
+                .append("<p>Size: " + data.size + "</p>")
+                .append("<p>Type: " + data.type + "</p>")
+                .append("<p>AC: " + data.armor_class + "</p>")
+                .append("<p>HP:  " + data.hit_points + "</p>")
+                .append("<p>Speed: " + data.speed.walk + "</p>")
+                .append("<p>Size: " + data.size + "</p>")
+                .append("<p>Core Stats: </p>")
+                .append("<p>STR: " + data.strength + "</p>")
+                .append("<p>DEX: " + data.dexterity + "</p>")
+                .append("<p>CON: " + data.constitution + "</p>")
+                .append("<p>INT: " + data.intelligence + "</p>")
+                .append("<p>WIS: " + data.wisdom + "</p>")
+                .append("<p>CHA: " + data.charisma + "</p>")
+                .append("<p>Damage Vulnerabilities: " + data.damage_vulnerabilities + "</p>")
+                .append("<p>Damage Resistances: " + data.damage_resistances + "</p>")
+                .append("<p>Damage Immunities: " + data.damage_immunities + "</p>")
+                .append("<p>Experience Points: " + data.xp + "</p>")
+                .append("<p>Actions: </p>")
+
+                var abilities = data.actions
+
+                for(i = 0; i < abilities.length; i++) {
+                    $("#monsterInfo").append("<p>" + abilities[i].name + "</p>")
+                        .append("<p>" + abilities[i].desc + "</p>")
+                }
+
+
+        })
+    })
+}
+
 // Selecting the click option and feeding it into the call
 $("#abilitiesInfo").on("click", function() {
-    var selectText = $(this)
-        .text()
-        .trim();
-    abilityScores(selectText)
+    abilityScores()
+});
+
+$("#skillsInfo").on("click", function() {
+    skillsList()
+});
+
+$("#languagesInfo").on("click", function() {
+    languagesList()
 });
 
 $("#classes").on("click", "p", function() {
@@ -316,11 +592,16 @@ $("#races").on("click", "p", function() {
     racesCategory(selectText)
 });
 
-$("#equipment").on("click", "p", function() {
-    var selectText = $(this)
-        .text()
-        .trim();
-    equipmentCategory(selectText)
+$("#weapons").on("click", function() {
+    weaponCategory()
+});
+
+$("#armor").on("click", function() {
+    armorCategory()
+});
+
+$("#advGear").on("click", function() {
+    advGearCategory()
 });
 
 $("#spellSchool").on("click", "p", function() {
@@ -342,7 +623,8 @@ $("#monsters").on("click", "p", function() {
     var selectText = $(this)
         .text()
         .trim();
-    console.log(selectText)
+    var passThrough = selectText.split(" ")
+    monsterList(passThrough[2])
 });
 
 

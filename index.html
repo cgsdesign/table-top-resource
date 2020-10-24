@@ -67,7 +67,6 @@
                             <div class="dropdown-content">
                                 <p id="abilitiesInfo">Abilities</p>
                                 <p id="skillsInfo">Skills</p>
-                                <p id="profsInfo">Proficiencies</p>
                                 <p id="languagesInfo">Languages</p>
                             </div>
                         </div>
@@ -105,10 +104,9 @@
                         <div class="dropdown" id="equipment">
                             <button class="infoDrop">Equipment</button>
                             <div class="dropdown-content">
-                                <p>Weapons</p>
-                                <p>Armor</p>
-                                <p>Adventuring Gear</p>
-                                <p>Magic Items</p>
+                                <p id="weapons">Weapons</p>
+                                <p id="armor">Armor</p>
+                                <p id="advGear">Adventuring Gear</p>
                             </div>
                         </div>
                         <div class="dropdown" id="spells">
@@ -143,30 +141,28 @@
                         <div class="dropdown" id="monsters">
                             <button class="infoDrop">Monsters</button>
                             <div class="dropdown-content">
-                                <div class="row">
-                                    <div class="twoRow">
-                                        <p>Challenge Rating 0</p>
-                                        <p>Challenge Rating 1</p>
-                                        <p>Challenge Rating 2</p>
-                                        <p>Challenge Rating 3</p>
-                                        <p>Challenge Rating 4</p>
-                                        <p>Challenge Rating 5</p>
-                                        <p>Challenge Rating 6</p>
-                                        <p>Challenge Rating 7</p>
-                                        <p>Challenge Rating 8</p>
-                                        <p>Challenge Rating 9</p>
-                                        <p>Challenge Rating 10</p>
-                                        <p>Challenge Rating 11</p>
-                                        <p>Challenge Rating 12</p>
-                                        <p>Challenge Rating 13</p>
-                                        <p>Challenge Rating 14</p>
-                                        <p>Challenge Rating 15</p>
-                                        <p>Challenge Rating 16</p>
-                                        <p>Challenge Rating 17</p>
-                                        <p>Challenge Rating 18</p>
-                                        <p>Challenge Rating 19</p>
-                                        <p>Challenge Rating 20</p>
-                                    </div>
+                                <div class="col">
+                                    <p>Challenge Rating 0</p>
+                                    <p>Challenge Rating 1</p>
+                                    <p>Challenge Rating 2</p>
+                                    <p>Challenge Rating 3</p>
+                                    <p>Challenge Rating 4</p>
+                                    <p>Challenge Rating 5</p>
+                                    <p>Challenge Rating 6</p>
+                                    <p>Challenge Rating 7</p>
+                                    <p>Challenge Rating 8</p>
+                                    <p>Challenge Rating 9</p>
+                                    <p>Challenge Rating 10</p>
+                                    <p>Challenge Rating 11</p>
+                                    <p>Challenge Rating 12</p>
+                                    <p>Challenge Rating 13</p>
+                                    <p>Challenge Rating 14</p>
+                                    <p>Challenge Rating 15</p>
+                                    <p>Challenge Rating 16</p>
+                                    <p>Challenge Rating 17</p>
+                                    <p>Challenge Rating 18</p>
+                                    <p>Challenge Rating 19</p>
+                                    <p>Challenge Rating 20</p>
                                 </div>
                             </div>
                         </div>
@@ -231,29 +227,6 @@
 
             
             <!-- Dice -->
-<<<<<<< HEAD
-            <section class="section firebg">
-                <div id="dice-section-container">
-                    <div id="dice-title">
-                        <h2 class="dark-glow col-sm-11 no-pad">Dice Roller</h2>
-                    </div>
-                    <div class="card">
-                        <div id="dice-add-subtract-clear-buttons">
-                            <button class="secondary-button" type="submit" id="add-button">add a die</button>
-                            <!--<button type="reset" id="subtract-button">-</button>-->
-                            <button type="reset" id="clear-button">clear dice</button>
-                        </div>
-                        <div id="total-dice-container">
-                            <div id="total-dice">Total Dice: 1</div>
-                        </div>
-                        <div id="dice-select-container">
-                            <select name="dice-dropdown" class="dice-dropdown"></select>
-                            <div class="random-number-display">Roll Value:</div>
-                            <div class="new-dropdown-container"></div>
-                            <button type="submit" id="roll-button">Roll!</button>
-                        </div>
-                    </div>
-=======
             <section id="Dice" class="section firebg">
                 <h2 class="dark-glow col-sm-11 no-pad">Dice Roller</h2>
                 <!--subtract remove by id, clear remove by class-->
@@ -269,20 +242,14 @@
                     <div class="random-number-display">Roll Value:</div>
                     <div class="new-dropdown-container"></div>
                     <button type="submit" class="secondary-button" id="roll-button">Roll!</button>
->>>>>>> feature/images
                 </div>
             </div>
             </section>
 
 
             <!-- Calendar -->
-<<<<<<< HEAD
-            <h2>Schedule</h2>
-            <section class="calendar">
-=======
             <section id="Scheduling" class="calendar">
                 <h2 class="dark-glow col-sm-11">Scheduling</h2>
->>>>>>> feature/images
                 <select id="time">
                     <option value="" >--select game time --</option>
                     <option value="8to12pm" id="8am">8AM - 12PM</option>
