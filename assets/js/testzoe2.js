@@ -251,6 +251,9 @@ var takeshot = function() {
             document 
             .getElementById('output') 
             .appendChild(canvas); 
+            var img = new Image();
+            img.src = canvas;
+            consolelog(canvas)
            // localStorage.setItem(canvas, canvas.toDataURL());-unusable with these types of layered graphics or possible just becasue not really live at https
         }) 
     }
@@ -263,6 +266,15 @@ var takeshot = function() {
 var mapMadeAlrt = document.getElementById("save-map")
 mapMadeAlrt.addEventListener("click", clickerFlash);
 mapMadeAlrt.addEventListener("click", takeshot);
+
+
+
+//var imgurl= canvas.toDataURL( ) ; // This method saves graphics in png
+//document.getElementById(‘cimg’).src = imgurl; // This will set img src to dataurl(png)so that it can be saved as image.
+
+
+
+
 //RELOAD MAP------------------------------------------------------------
 //looking at error code, should work when live on https
 var ReloadMap = function() {
