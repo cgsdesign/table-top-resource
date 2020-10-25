@@ -67,7 +67,6 @@
                             <div class="dropdown-content">
                                 <p id="abilitiesInfo">Abilities</p>
                                 <p id="skillsInfo">Skills</p>
-                                <p id="profsInfo">Proficiencies</p>
                                 <p id="languagesInfo">Languages</p>
                             </div>
                         </div>
@@ -105,10 +104,9 @@
                         <div class="dropdown" id="equipment">
                             <button class="infoDrop">Equipment</button>
                             <div class="dropdown-content">
-                                <p>Weapons</p>
-                                <p>Armor</p>
-                                <p>Adventuring Gear</p>
-                                <p>Magic Items</p>
+                                <p id="weapons">Weapons</p>
+                                <p id="armor">Armor</p>
+                                <p id="advGear">Adventuring Gear</p>
                             </div>
                         </div>
                         <div class="dropdown" id="spells">
@@ -143,30 +141,28 @@
                         <div class="dropdown" id="monsters">
                             <button class="infoDrop">Monsters</button>
                             <div class="dropdown-content">
-                                <div class="row">
-                                    <div class="twoRow">
-                                        <p>Challenge Rating 0</p>
-                                        <p>Challenge Rating 1</p>
-                                        <p>Challenge Rating 2</p>
-                                        <p>Challenge Rating 3</p>
-                                        <p>Challenge Rating 4</p>
-                                        <p>Challenge Rating 5</p>
-                                        <p>Challenge Rating 6</p>
-                                        <p>Challenge Rating 7</p>
-                                        <p>Challenge Rating 8</p>
-                                        <p>Challenge Rating 9</p>
-                                        <p>Challenge Rating 10</p>
-                                        <p>Challenge Rating 11</p>
-                                        <p>Challenge Rating 12</p>
-                                        <p>Challenge Rating 13</p>
-                                        <p>Challenge Rating 14</p>
-                                        <p>Challenge Rating 15</p>
-                                        <p>Challenge Rating 16</p>
-                                        <p>Challenge Rating 17</p>
-                                        <p>Challenge Rating 18</p>
-                                        <p>Challenge Rating 19</p>
-                                        <p>Challenge Rating 20</p>
-                                    </div>
+                                <div class="col">
+                                    <p>Challenge Rating 0</p>
+                                    <p>Challenge Rating 1</p>
+                                    <p>Challenge Rating 2</p>
+                                    <p>Challenge Rating 3</p>
+                                    <p>Challenge Rating 4</p>
+                                    <p>Challenge Rating 5</p>
+                                    <p>Challenge Rating 6</p>
+                                    <p>Challenge Rating 7</p>
+                                    <p>Challenge Rating 8</p>
+                                    <p>Challenge Rating 9</p>
+                                    <p>Challenge Rating 10</p>
+                                    <p>Challenge Rating 11</p>
+                                    <p>Challenge Rating 12</p>
+                                    <p>Challenge Rating 13</p>
+                                    <p>Challenge Rating 14</p>
+                                    <p>Challenge Rating 15</p>
+                                    <p>Challenge Rating 16</p>
+                                    <p>Challenge Rating 17</p>
+                                    <p>Challenge Rating 18</p>
+                                    <p>Challenge Rating 19</p>
+                                    <p>Challenge Rating 20</p>
                                 </div>
                             </div>
                         </div>
@@ -193,11 +189,27 @@
                         </button>
                     </div>
                 </div>   
+                <div id="placeImages">
+                </div>
+
+                <h2 class="dark-glow col-sm-11">
+                    Find Inspiring Videos: 
+                </h2>
+                <div class="col-sm-11">
+                    <div id="videoSearch">
+                        <input type="text" id="videoInput" value="Wolf" >
+                        <button id="video-search-button">
+                            Search
+                        </button>
+                        <button  class="secondary-button" id="video-search-clear">
+                            Clear
+                        </button>
+                    </div>
+                </div>   
                 <a class="pixbay-logo-link" target="_blank" href="https://pixabay.com/">
                     <img src="./assets/images/pixabayLogo.png">
                 </a>
-                <div id="placeImages">
-
+                <div id="placeVideos">
                 </div>
             </section>
 
@@ -236,7 +248,7 @@
                     <div id="dice-title">
                         <h2 class="dark-glow col-sm-11 no-pad">Dice Roller</h2>
                     </div>
-                    <div>
+                    <div class="dark-glow">
                         <div id="dice-add-subtract-clear-buttons">
                             <button class="secondary-button" type="submit" id="add-button">add a die</button>
                             <!--<button type="reset" id="subtract-button">-</button>-->

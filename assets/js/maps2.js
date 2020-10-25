@@ -85,6 +85,7 @@ var createNewWaterToken = function(){
     var parent = document.getElementById("newWater")
     var style = document.createElement('div');
     style.classList.add("mymapdiv")
+    style.setAttribute("id", `mymapdivW${waterTokenNum}`)
     style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
     parent.appendChild(style);
     //make dragable
@@ -114,6 +115,7 @@ var createNewWaterTokenS = function(i){
     var parent = document.getElementById("newWaterS")
     var style = document.createElement('div');
     style.classList.add("mymapdiv")
+    style.setAttribute("id", `mymapdivw${waterTokenNumS}`)
     style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
     parent.appendChild(style);
     //make dragable
@@ -141,6 +143,7 @@ var createNewWroughToken = function(i){
       var parent = document.getElementById("newWrough")
       var style = document.createElement('div');
       style.classList.add("mymapdiv")
+      style.setAttribute("id", `mymapdivWr${wroughTokenNum}`)
       style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
       parent.appendChild(style);
       //make dragable
@@ -167,6 +170,7 @@ var createNewWroughTokenS = function(i){
     var parent = document.getElementById("newWroughS")
     var style = document.createElement('div');
     style.classList.add("mymapdiv")
+    style.setAttribute("id", `mymapdivwr${wroughTokenNumS}`)
     style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
     parent.appendChild(style);
     //make dragable
@@ -194,6 +198,7 @@ var createNewWallToken = function(i){
     var parent = document.getElementById("newWall")
     var style = document.createElement('div');
     style.classList.add("mymapdiv")
+    style.setAttribute("id", `mymapdivWa${wallTokenNum}`)
     style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
     parent.appendChild(style);
     //make dragable
@@ -221,6 +226,7 @@ var createNewWallTokenS = function(i){
       var parent = document.getElementById("newWallS")
       var style = document.createElement('div');
       style.classList.add("mymapdiv")
+      style.setAttribute("id", `mymapdivwa${wallTokenNumS}`)
       style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
       parent.appendChild(style);
       //make dragable
@@ -257,12 +263,74 @@ var takeshot = function() {
         //flash alert map was made
   var clickerFlash = function() {
     $(".map-made-alert").fadeIn(500);
-    $(".map-made-alert").fadeOut(600);
-    console.log("flash")
+    $(".map-made-alert").fadeOut(800);
 };
+
+Storage.prototype.setObject = function (key, value) {
+  this.setItem(key, JSON.stringify(value));
+}
+
+Storage.prototype.getObject = function (key) {
+  var value = this.getItem(key);
+  return value && JSON.parse(value);
+}
+
+/*
+* Save all pictures in local storage
+*/
+var saveMapLocal = function () {
+  var div = document.getElementById('makeMap'); 
+  console.log("flash1")
+
+  html2canvas($("#makeMap")[0], {
+    useCORS : true,
+    allowTaint : true
+  }).then(    
+    function (canvas) {
+      const image = canvas.toDataURL("image/png");
+      window.sessionStorage.setObject(new Date().getTime(), image);
+      console.log("flash2")
+  });
+}
+
 var mapMadeAlrt = document.getElementById("save-map")
 mapMadeAlrt.addEventListener("click", clickerFlash);
 mapMadeAlrt.addEventListener("click", takeshot);
+mapMadeAlrt.addEventListener("click", saveMapLocal);//may work when live site
+
+//NEW TEXT TO TRY
+//<a href="https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png" class="dropbox-saver"></a>
+// var mapMadeAlrt = document.getElementById("save-map")
+// mapMadeAlrt.addEventListener("click", clickerFlash);
+// mapMadeAlrt.addEventListener("click", takeshot);
+
+
+// document.getElementById('download').onclick = function () {
+//   // Create new document
+//   let doc = new jsPDF('p', 'mm', 'a4');
+
+//   const width = doc.internal.pageSize.getWidth();
+//   const height = doc.internal.pageSize.getHeight();
+
+//   // Get all images from local storage and add them to the pdf
+//   for (let key in sessionStorage) {
+//       if (!isNaN(key)) {
+//           const image = window.sessionStorage.getObject(key);
+//           doc.addImage(image, 'JPEG', 0, 0, width, height);
+//       }
+//   }
+//var imgurl= canvas.toDataURL( ) ; // This method saves graphics in png
+//document.getElementById(‘cimg’).src = imgurl; // This will set img src to dataurl(png)so that it can be saved as image.
+
+
+
+
+//var imgurl= canvas.toDataURL( ) ; // This method saves graphics in png
+//document.getElementById(‘cimg’).src = imgurl; // This will set img src to dataurl(png)so that it can be saved as image.
+
+
+
+
 //RELOAD MAP------------------------------------------------------------
 //looking at error code, should work when live on https
 var ReloadMap = function() {

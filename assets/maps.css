@@ -12,13 +12,15 @@ h4{
 .left {
   text-align: left;
 }
+.less-padding-btm{
+  padding-bottom: 10px;
+}
 /*sets sizes for grey boxes*/
 .item-outer-box {
   height: 50px;
   margin: 5px;
   min-width: 51px;
   background-color: rgba(250, 250, 250, .7);
-
 }
 .item-outer-box2 {
   height: 102px;
