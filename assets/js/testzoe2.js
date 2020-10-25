@@ -273,22 +273,24 @@ Storage.prototype.getObject = function (key) {
 * Save all pictures in local storage
 */
 var saveMapLocal = function () {
-  let div = 
-  document.getElementById('makeMap'); 
+  var div = document.getElementById('makeMap'); 
   console.log("flash1")
-  html2canvas(div).then (
-      function (canvas) {
-          const image = canvas.toDataURL("image/png");
-          window.sessionStorage.setObject(new Date().getTime(), image);
-          console.log("flash2")
-      }
-  );
+
+  html2canvas($("#makeMap")[0], {
+    useCORS : true,
+    allowTaint : true
+  }).then(    
+    function (canvas) {
+      const image = canvas.toDataURL("image/png");
+      window.sessionStorage.setObject(new Date().getTime(), image);
+      console.log("flash2")
+  });
 }
 
 var mapMadeAlrt = document.getElementById("save-map")
 mapMadeAlrt.addEventListener("click", clickerFlash);
 mapMadeAlrt.addEventListener("click", takeshot);
-//mapMadeAlrt.addEventListener("click", saveMapLocal);
+mapMadeAlrt.addEventListener("click", saveMapLocal);
 
 //NEW TEXT TO TRY
 //<a href="https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png" class="dropbox-saver"></a>
