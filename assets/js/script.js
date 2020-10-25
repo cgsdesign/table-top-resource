@@ -351,10 +351,9 @@ $("#monsters").on("click", "p", function() {
 
 var scheduleData = JSON.parse(localStorage.getItem("scheduleCache")) || [];
 
-$(document).ready(function(){
+$(document).ready(function () {
 
     //pull data from local if it exists
-    
     console.log(scheduleData);
 
     //if someone got scheduled for specific day and time this happens
@@ -364,18 +363,18 @@ $(document).ready(function(){
             if (item.day == 'monday') {
                 $('.eightam-mon-text').removeClass('nothing')
                 $('#eightam-mon-list').removeClass('nothing')
-                $('#eightam-mon-list')[0].textContent = parseInt($('#eightam-mon-list')[0].textContent) + 1                
+                $('#eightam-mon-list')[0].textContent = parseInt($('#eightam-mon-list')[0].textContent) + 1
             }
             else if (item.day == 'tuesday') {
                 $('.eightam-tue-text').removeClass('nothing')
                 $('#eightam-tue-list').removeClass('nothing')
-                $('#eightam-tue-list')[0].textContent = parseInt($('#eightam-tue-list')[0].textContent) + 1                
-                
+                $('#eightam-tue-list')[0].textContent = parseInt($('#eightam-tue-list')[0].textContent) + 1
+
             }
             else if (item.day == 'wednesday') {
                 $('.eightam-wed-text').removeClass('nothing')
                 $('#eightam-wed-list').removeClass('nothing')
-                $('#eightam-wed-list')[0].textContent = parseInt($('#eightam-wed-list')[0].textContent) + 1                
+                $('#eightam-wed-list')[0].textContent = parseInt($('#eightam-wed-list')[0].textContent) + 1
             }
             else if (item.day == 'thursday') {
                 $('.eightam-thur-text').removeClass('nothing')
@@ -477,52 +476,54 @@ $(document).ready(function(){
             if (item.day == 'monday') {
                 $('.eightpm-mon-text').removeClass('nothing')
                 $('#eightpm-mon-list').removeClass('nothing')
-                $('#eightpm-mon-list')[0].textContent = parseInt($('#eightpm-mon-list')[0].textContent) + 1            
+                $('#eightpm-mon-list')[0].textContent = parseInt($('#eightpm-mon-list')[0].textContent) + 1
             }
             else if (item.day == 'tuesday') {
                 $('.eightpm-tue-text').removeClass('nothing')
                 $('#eightpm-tue-list').removeClass('nothing')
-                $('#eightpm-tue-list')[0].textContent = parseInt($('#eightpm-tue-list')[0].textContent) + 1            
+                $('#eightpm-tue-list')[0].textContent = parseInt($('#eightpm-tue-list')[0].textContent) + 1
             }
             else if (item.day == 'wednesday') {
                 $('.eightpm-wed-text').removeClass('nothing')
                 $('#eightpm-wed-list').removeClass('nothing')
-                $('#eightpm-wed-list')[0].textContent = parseInt($('#eightpm-wed-list')[0].textContent) + 1            
+                $('#eightpm-wed-list')[0].textContent = parseInt($('#eightpm-wed-list')[0].textContent) + 1
             }
             else if (item.day == 'thursday') {
                 $('.eightpm-thur-text').removeClass('nothing')
                 $('#eightpm-thur-list').removeClass('nothing')
-                $('#eightpm-thur-list')[0].textContent = parseInt($('#eightpm-thur-list')[0].textContent) + 1                
+                $('#eightpm-thur-list')[0].textContent = parseInt($('#eightpm-thur-list')[0].textContent) + 1
             }
             else if (item.day == 'friday') {
                 $('.eightpm-fri-text').removeClass('nothing')
                 $('#eightpm-fri-list').removeClass('nothing')
-                $('#eightpm-fri-list')[0].textContent = parseInt($('#eightpm-fri-list')[0].textContent) + 1            
+                $('#eightpm-fri-list')[0].textContent = parseInt($('#eightpm-fri-list')[0].textContent) + 1
             }
             else if (item.day == 'saturday') {
                 $('.eightpm-sat-text').removeClass('nothing')
                 $('#eightpm-sat-list').removeClass('nothing')
-                $('#eightpm-sat-list')[0].textContent = parseInt($('#eightpm-sat-list')[0].textContent) + 1            
+                $('#eightpm-sat-list')[0].textContent = parseInt($('#eightpm-sat-list')[0].textContent) + 1
             }
             else if (item.day == 'sunday') {
                 $('.eightpm-sun-text').removeClass('nothing')
                 $('#eightpm-sun-list').removeClass('nothing')
-                $('#eightpm-sun-list')[0].textContent = parseInt($('#eightpm-sun-list')[0].textContent) + 1            
+                $('#eightpm-sun-list')[0].textContent = parseInt($('#eightpm-sun-list')[0].textContent) + 1
             }
-        }        
+        }
     });
-    
+
     //on click of 'book' this function runs
-    $('#btnSubmit').click(function(){
+    $('#btnSubmit').click(function () {
         var name = $('#name').val();
         var time = $('#time').val();
         var day = $('#days').val();
+
+        location.reload();
+
         console.log('Info', {
             name: name,
             time: time,
             day: day
         })
-
 
         //if you select a certain time and day you will be added to corresponding day
         if (time == '8to12pm') {
@@ -673,7 +674,7 @@ $(document).ready(function(){
                 $('#eightpm-sun-list')[0].textContent = parseInt($('#eightpm-sun-list')[0].textContent) + 1
             }
         }
-       
+
         //shorthand for (if true) = ? (else) = :
         var scheduleList = localStorage.getItem('scheduleCache') ? localStorage.getItem('scheduleCache') : []
         var scheduleVal = {}
@@ -682,18 +683,18 @@ $(document).ready(function(){
         scheduleVal.time = time;
         scheduleVal.day = day;
 
-        if(scheduleList.length > 1){
+        if (scheduleList.length > 1) {
             //If theres alerady data we need to grab it, modify it, and restore it
 
             //grab it
-            var personInfo = scheduleList.toString(); 
+            var personInfo = scheduleList.toString();
             var tempInfo = JSON.parse(personInfo);
 
             //Modify it
             tempInfo.push(scheduleVal);
             scheduleList = tempInfo;
 
-        }else {
+        } else {
             //If theres nothing currently we add our first Item
             scheduleList.push(scheduleVal)
         }
@@ -701,17 +702,23 @@ $(document).ready(function(){
         localStorage.setItem('scheduleCache', JSON.stringify(scheduleList));
         console.log(scheduleList);
         console.log(personInfo);
-
-
     })
 })
 
+//on click of the "clear all" btn clears all data from the calendar and local storage
+$('#btnClear').click(function () {
+    localStorage.removeItem('scheduleCache');
+    $('.schedule-info').addClass('nothing')
+    $('.schedule-text').addClass('nothing')
+})
 
 var modal = document.getElementById("myModal");
-
+//when you click a specific section on the table this happens
 $('td').click(function (event) {
+    //display modal for people scheduled
     modal.style.display = "block";
 
+    //clear the data when clicked on a different date
     $('.modal-people').html('');
     console.log(event.target.id);
 
@@ -720,11 +727,12 @@ $('td').click(function (event) {
     var dataForHourDay = scheduleData.filter(function (item) {
         return item.time === cellInfo[0] && item.day === cellInfo[1];
     })
-    console.log(cellInfo);
-    console.log(dataForHourDay);
+    //console.log(cellInfo);
+    //console.log(dataForHourDay);
 
+    //for each item in a specific day create a list item for each of the names scheduled
     dataForHourDay.forEach(function (item) {
-
+        //create a list item and append it to the ul
         var li = document.createElement("li");
         li.textContent = item.name;
         $('.modal-people').append(li);
@@ -732,9 +740,10 @@ $('td').click(function (event) {
     })
 })
 
+//when you click on anything other than the modal it closes
 window.onclick = function (event) {
     if (event.target === modal) {
         modal.style.display = "none";
-        
+
     }
 }

@@ -278,6 +278,7 @@
                 </select>
                 <input type="text" name="name" id="name" placeholder="Enter your name"/>
                 <button type="button" id="btnSubmit">Book</button>
+                <button type="button" id="btnClear" class="btn-clear">Clear All</button>
                 <table>
                     <thead>
                       <tr>
@@ -308,26 +309,26 @@
                     <tbody>
                       <tr>
                         <td class="hour" rowspan="4" colspan="1"><span>8AM-12PM</span></td>
-                        <td id="8to12pm-monday" rowspan="4" colspan="1"><ul id="eightam-mon-list" class="nothing">0</ul><p class="nothing eightam-mon-text">scheduled</p></td>
-                        <td id="8to12pm-tuesday" rowspan="4" colspan="1"><ul id="eightam-tue-list" class="nothing">0</ul><p class="nothing eightam-tue-text">scheduled</p></td>
-                        <td id="8to12pm-wednesday" rowspan="4" colspan="1"><ul id="eightam-wed-list" class="nothing">0</ul><p class="nothing eightam-wed-text">scheduled</p></td>
-                        <td id="8to12pm-thursday" rowspan="4" colspan="1"><ul id="eightam-thur-list" class="nothing">0</ul><p class="nothing eightam-thur-text">scheduled</p></td>
-                        <td id="8to12pm-friday" rowspan="4" colspan="1"><ul id="eightam-fri-list" class="nothing">0</ul><p class="nothing eightam-fri-text">scheduled</p></td>
-                        <td id="8to12pm-saturday" rowspan="4" colspan="1"><ul id="eightam-sat-list" class="nothing">0</ul><p class="nothing eightam-sat-text">scheduled</p></td>
-                        <td id="8to12pm-sunday" rowspan="4" colspan="1"><ul id="eightam-sun-list" class="nothing">0</ul><p class="nothing eightam-sun-text">scheduled</p></td>
+                        <td id="8to12pm-monday" rowspan="4" colspan="1"><ul id="eightam-mon-list" class="nothing schedule-info">0</ul><p class="nothing eightam-mon-text schedule-text">scheduled</p></td>
+                        <td id="8to12pm-tuesday" rowspan="4" colspan="1"><ul id="eightam-tue-list" class="nothing schedule-info">0</ul><p class="nothing eightam-tue-text schedule-text">scheduled</p></td>
+                        <td id="8to12pm-wednesday" rowspan="4" colspan="1"><ul id="eightam-wed-list" class="nothing schedule-info">0</ul><p class="nothing eightam-wed-text schedule-text">scheduled</p></td>
+                        <td id="8to12pm-thursday" rowspan="4" colspan="1"><ul id="eightam-thur-list" class="nothing schedule-info">0</ul><p class="nothing eightam-thur-text schedule-text">scheduled</p></td>
+                        <td id="8to12pm-friday" rowspan="4" colspan="1"><ul id="eightam-fri-list" class="nothing schedule-info">0</ul><p class="nothing eightam-fri-text schedule-text">scheduled</p></td>
+                        <td id="8to12pm-saturday" rowspan="4" colspan="1"><ul id="eightam-sat-list" class="nothing schedule-info">0</ul><p class="nothing eightam-sat-text schedule-text">scheduled</p></td>
+                        <td id="8to12pm-sunday" rowspan="4" colspan="1"><ul id="eightam-sun-list" class="nothing schedule-info">0</ul><p class="nothing eightam-sun-text schedule-text">scheduled</p></td>
                       </tr>
                       <tr></tr>
                       <tr></tr>
                       <tr></tr>
                       <tr>
                         <td class="hour" rowspan="4"><span>12PM-4PM</span></td>
-                        <td id="12to4pm-monday" rowspan="4" colspan="1"><ul id="twelve-mon-list" class="nothing">0</ul><p class="nothing twelve-mon-text">scheduled</p></td>
-                        <td id="12to4pm-tuesday" rowspan="4" colspan="1"><ul id="twelve-tue-list" class="nothing">0</ul><p class="nothing twelve-tue-text">scheduled</p></td>
-                        <td id="12to4pm-wednesday" rowspan="4" colspan="1"><ul id="twelve-wed-list" class="nothing">0</ul><p class="nothing twelve-wed-text">scheduled</p></td>
-                        <td id="12to4pm-thursday" rowspan="4" colspan="1"><ul id="twelve-thur-list" class="nothing">0</ul><p class="nothing twelve-thur-text">scheduled</p></td>
-                        <td id="12to4pm-friday" rowspan="4" colspan="1"><ul id="twelve-fri-list" class="nothing">0</ul><p class="nothing twelve-fri-text">scheduled</p></td>
-                        <td id="12to4pm-saturday" rowspan="4" colspan="1"><ul id="twelve-sat-list" class="nothing">0</ul><p class="nothing twelve-sat-text">scheduled</p></td>
-                        <td id="12to4pm-sunday" rowspan="4" colspan="1"><ul id="twelve-sun-list" class="nothing">0</ul><p class="nothing twelve-sun-text">scheduled</p></td>
+                        <td id="12to4pm-monday" rowspan="4" colspan="1"><ul id="twelve-mon-list" class="nothing schedule-info">0</ul><p class="nothing twelve-mon-text schedule-text">scheduled</p></td>
+                        <td id="12to4pm-tuesday" rowspan="4" colspan="1"><ul id="twelve-tue-list" class="nothing schedule-info">0</ul><p class="nothing twelve-tue-text schedule-text">scheduled</p></td>
+                        <td id="12to4pm-wednesday" rowspan="4" colspan="1"><ul id="twelve-wed-list" class="nothing schedule-info">0</ul><p class="nothing twelve-wed-text schedule-text">scheduled</p></td>
+                        <td id="12to4pm-thursday" rowspan="4" colspan="1"><ul id="twelve-thur-list" class="nothing schedule-info">0</ul><p class="nothing twelve-thur-text schedule-text">scheduled</p></td>
+                        <td id="12to4pm-friday" rowspan="4" colspan="1"><ul id="twelve-fri-list" class="nothing schedule-info">0</ul><p class="nothing twelve-fri-text schedule-text">scheduled</p></td>
+                        <td id="12to4pm-saturday" rowspan="4" colspan="1"><ul id="twelve-sat-list" class="nothing schedule-info">0</ul><p class="nothing twelve-sat-text schedule-text">scheduled</p></td>
+                        <td id="12to4pm-sunday" rowspan="4" colspan="1"><ul id="twelve-sun-list" class="nothing schedule-info">0</ul><p class="nothing twelve-sun-text schedule-text">scheduled</p></td>
                       </tr>
                       <tr></tr>
                       <tr></tr>
@@ -335,26 +336,26 @@
                       
                       <tr>
                         <td class="hour" rowspan="4"><span>4PM-8PM</span></td>
-                        <td id="4to8pm-monday" rowspan="4" colspan="1"><ul id="four-mon-list" class="nothing">0</ul><p class="nothing four-mon-text">scheduled</p></td>
-                        <td id="4to8pm-tuesday" rowspan="4" colspan="1"><ul id="four-tue-list" class="nothing">0</ul><p class="nothing four-tue-text">scheduled</p></td>
-                        <td id="4to8pm-wednesday" rowspan="4" colspan="1"><ul id="four-wed-list" class="nothing">0</ul><p class="nothing four-wed-text">scheduled</p></td>
-                        <td id="4to8pm-thursday" rowspan="4" colspan="1"><ul id="four-thur-list" class="nothing">0</ul><p class="nothing four-thur-text">scheduled</p></td>
-                        <td id="4to8pm-friday" rowspan="4" colspan="1"><ul id="four-fri-list" class="nothing">0</ul><p class="nothing four-fri-text">scheduled</p></td>
-                        <td id="4to8pm-saturday" rowspan="4" colspan="1"><ul id="four-sat-list" class="nothing">0</ul><p class="nothing four-sat-text">scheduled</p></td>
-                        <td id="4to8pm-sunday" rowspan="4" colspan="1"><ul id="four-sun-list" class="nothing">0</ul><p class="nothing four-sun-text">scheduled</p></td>
+                        <td id="4to8pm-monday" rowspan="4" colspan="1"><ul id="four-mon-list" class="nothing schedule-info">0</ul><p class="nothing four-mon-text schedule-text">scheduled</p></td>
+                        <td id="4to8pm-tuesday" rowspan="4" colspan="1"><ul id="four-tue-list" class="nothing schedule-info">0</ul><p class="nothing four-tue-text schedule-text">scheduled</p></td>
+                        <td id="4to8pm-wednesday" rowspan="4" colspan="1"><ul id="four-wed-list" class="nothing schedule-info">0</ul><p class="nothing four-wed-text schedule-text">scheduled</p></td>
+                        <td id="4to8pm-thursday" rowspan="4" colspan="1"><ul id="four-thur-list" class="nothing schedule-info">0</ul><p class="nothing four-thur-text schedule-text">scheduled</p></td>
+                        <td id="4to8pm-friday" rowspan="4" colspan="1"><ul id="four-fri-list" class="nothing schedule-info">0</ul><p class="nothing four-fri-text schedule-text">scheduled</p></td>
+                        <td id="4to8pm-saturday" rowspan="4" colspan="1"><ul id="four-sat-list" class="nothing schedule-info">0</ul><p class="nothing four-sat-text schedule-text">scheduled</p></td>
+                        <td id="4to8pm-sunday" rowspan="4" colspan="1"><ul id="four-sun-list" class="nothing schedule-info">0</ul><p class="nothing four-sun-text schedule-text">scheduled</p></td>
                       </tr>
                       <tr></tr>
                       <tr></tr>
                       <tr></tr>
                       <tr>
                         <td class="hour" rowspan="4"><span>8PM-12AM</span></td>
-                        <td id="8to12am-monday" rowspan="4" colspan="1"><ul id="eightpm-mon-list" class="nothing">0</ul><p class="nothing eightpm-mon-text">scheduled</p></td>
-                        <td id="8to12am-tuesday" rowspan="4" colspan="1"><ul id="eightpm-tue-list" class="nothing">0</ul><p class="nothing eightpm-tue-text">scheduled</p></td>
-                        <td id="8to12am-wednesday" rowspan="4" colspan="1"><ul id="eightpm-wed-list" class="nothing">0</ul><p class="nothing eightpm-wed-text">scheduled</p></td>
-                        <td id="8to12am-thursday" rowspan="4" colspan="1"><ul id="eightpm-thur-list" class="nothing">0</ul><p class="nothing eightpm-thur-text">scheduled</p></td>
-                        <td id="8to12am-friday" rowspan="4" colspan="1"><ul id="eightpm-fri-list" class="nothing">0</ul><p class="nothing eightpm-fri-text">scheduled</p></td>
-                        <td id="8to12am-saturday" rowspan="4" colspan="1"><ul id="eightpm-sat-list" class="nothing">0</ul><p class="nothing eightpm-sat-text">scheduled</p></td>
-                        <td id="8to12am-sunday" rowspan="4" colspan="1"><ul id="eightpm-sun-list" class="nothing">0</ul><p class="nothing eightpm-sun-text">scheduled</p></td>
+                        <td id="8to12am-monday" rowspan="4" colspan="1"><ul id="eightpm-mon-list" class="nothing schedule-info">0</ul><p class="nothing eightpm-mon-text schedule-text">scheduled</p></td>
+                        <td id="8to12am-tuesday" rowspan="4" colspan="1"><ul id="eightpm-tue-list" class="nothing schedule-info">0</ul><p class="nothing eightpm-tue-text schedule-text">scheduled</p></td>
+                        <td id="8to12am-wednesday" rowspan="4" colspan="1"><ul id="eightpm-wed-list" class="nothing schedule-info">0</ul><p class="nothing eightpm-wed-text schedule-text">scheduled</p></td>
+                        <td id="8to12am-thursday" rowspan="4" colspan="1"><ul id="eightpm-thur-list" class="nothing schedule-info">0</ul><p class="nothing eightpm-thur-text schedule-text">scheduled</p></td>
+                        <td id="8to12am-friday" rowspan="4" colspan="1"><ul id="eightpm-fri-list" class="nothing schedule-info">0</ul><p class="nothing eightpm-fri-text schedule-text">scheduled</p></td>
+                        <td id="8to12am-saturday" rowspan="4" colspan="1"><ul id="eightpm-sat-list" class="nothing schedule-info">0</ul><p class="nothing eightpm-sat-text schedule-text">scheduled</p></td>
+                        <td id="8to12am-sunday" rowspan="4" colspan="1"><ul id="eightpm-sun-list" class="nothing schedule-info">0</ul><p class="nothing eightpm-sun-text schedule-text">scheduled</p></td>
                       </tr>
                       <tr></tr>
                       <tr></tr>
@@ -367,16 +368,20 @@
             
             <!-- The Modal -->
             <div id="myModal" class="modal">
-                <div class="modal-content">
-                   
-                    <h4>People Scheduled For: </h4>
+                <div class="modal-content">                   
+                    <h4>People Scheduled: </h4>
                     <h5 class="module-time"></h5>
                     <h5 class="module-day"></h5>
-
-                      <ul class="modal-people"></ul>
-                    
-                    
+                    <ul class="modal-people"></ul>
             </div>
+
+            <!-- <div id="modal" class="confirm-modal">
+                <div class="m-content">
+                    <h5 class="modal-content">Are you sure you want to Clear All?</h5>
+                    <button type="button" id="btnYes" class="btn-Yes">Yes</button>
+                    <button type="button" id="btnNo" class="btn-No">NO</button>
+                </div>
+            </div> -->
         </main>
         
         <script
