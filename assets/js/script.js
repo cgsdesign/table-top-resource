@@ -1,6 +1,8 @@
+// dropdown for characters/ability score
 var abilityScores = function() {
     $("#mainInfoContainer").remove();
     
+    // creating and appending all areas
     var $mainCont = $("<div class='col-sm-12' id='mainInfoContainer'></div>")
     var $rowCont = $("<div class='row' id='rowCont'></div>")
     var $statsCol = $("<div class='col-sm-2' id='statsCol'></div>")
@@ -18,6 +20,7 @@ var abilityScores = function() {
     $("#statsCol").append("<p id='wisCont'>Wisdom (WIS): </p>")
     $("#statsCol").append("<p id='chaCont'>Charisma (CHA): </p>")
 
+    // listeners for the list options
     $("#strCont").on("click", function() {
         
         var selectText = "str"
@@ -56,6 +59,7 @@ var abilityScores = function() {
     })
 };
 
+// the descriptions for the abilities based on what's selected
 var abilityDescriptions = function(ability) {
     $("#infoBlockCol").remove();
     var $infoBlockCol = $("<div class='col-sm-10' id='infoBlockCol'></div>")
@@ -73,10 +77,10 @@ var abilityDescriptions = function(ability) {
                 $("#infoBlockCol").append("<p>" + skillArr[i].name + "</p>")
             } 
         })
-    })
-    
-}
+    }) 
+};
 
+// logic for skills selected pulled from API to display and append
 var skillsList = function() {
     $("#mainInfoContainer").remove();
     fetch("https://www.dnd5eapi.co/api/skills").then(function(response) {
@@ -107,6 +111,7 @@ var skillsList = function() {
     })
 };
 
+// description of the skills based on selection from skillsList and appending to screen
 var skillDescriptions = function(skillname) {
     $("#infoBlockCol").remove();
 
@@ -123,6 +128,7 @@ var skillDescriptions = function(skillname) {
     })
 };
 
+// API call for the list of languages and appending them to screen
 var languagesList = function () {
     $("#mainInfoContainer").remove();
     
@@ -146,7 +152,7 @@ var languagesList = function () {
     })
 }
 
-//Logic for appending all class information to the information box
+//Logic for appending all class information and appending to the information box
 var classesCategory = function(charClass) {
     $("#mainInfoContainer").remove();
     var charSearch = charClass.toLowerCase();
@@ -211,15 +217,13 @@ var classesCategory = function(charClass) {
                                 }
                                 $("#classFeatBlock").append("<p>" + classFeatures[j].name + "</p>")
                             }
-
                         }
-
                     }
                 })
             })
         })
     })
-}
+};1
 
 // handler for creating and appending race information to the main info box
 var racesCategory = function(raceSelect) {
@@ -278,8 +282,9 @@ var racesCategory = function(raceSelect) {
             }
         })
     })
-}
+};
 
+// API call for weapon informatio and appending list to info box
 var weaponCategory = function() {
     $("#mainInfoContainer").remove();
 
@@ -312,6 +317,7 @@ var weaponCategory = function() {
     })        
 };
 
+//showing weapon data based on selection from weaponCategory
 var showWeapon = function(weapon) {
     $("#equipInfo").remove();
 
@@ -332,11 +338,11 @@ var showWeapon = function(weapon) {
             for(i = 0; i < properties.length; i++) {
                 $("#equipInfo").append("<p>" + properties[i].name + "</p>")
             }
-
         })
     })
-}
+};
 
+// API call get and append armor list
 var armorCategory = function() {
     $("#mainInfoContainer").remove();
 
@@ -369,6 +375,7 @@ var armorCategory = function() {
     })        
 };
 
+// getting and appending information about the armor selection from previous menu
 var showArmor = function(armor) {
     $("#equipInfo").remove();
 
@@ -388,6 +395,7 @@ var showArmor = function(armor) {
     })
 };
 
+// API call to get and append a list of adventuring gear
 var advGearCategory = function() {
     $("#mainInfoContainer").remove();
 
@@ -411,6 +419,7 @@ var advGearCategory = function() {
     })
 };
 
+// API call to get and append information based on spell school selection
 var spellsCategory = function(spells) {
     $("#mainInfoContainer").remove();
     fetch("https://www.dnd5eapi.co/api/spells?school=" + spells).then(function(response) {
@@ -442,6 +451,7 @@ var spellsCategory = function(spells) {
     })
 };
 
+// API call to get and append information based on spell level selection
 var spellLevelCat = function(spells) {
     $("#mainInfoContainer").remove();
     fetch("https://www.dnd5eapi.co/api/spells?level=" + spells).then(function(response) {
@@ -473,6 +483,7 @@ var spellLevelCat = function(spells) {
     })
 };
 
+// displaying information based on the selection from either spellLevelCat or spellsCategory
 var showSpell = function(spellInfo) {
     $("#spellInfo").remove();
 
@@ -494,6 +505,7 @@ var showSpell = function(spellInfo) {
     })
 };
 
+// API call to get and append a list of monsters based on their challenge rating
 var monsterList = function(cr) {
     $("#mainInfoContainer").remove();
 
@@ -525,6 +537,7 @@ var monsterList = function(cr) {
     })
 };
 
+// pulling all monster information based on the selection from monsterList and appending the information
 var showMonster = function(monster) {
     $("#monsterInfo").remove();
 
@@ -559,13 +572,11 @@ var showMonster = function(monster) {
                     $("#monsterInfo").append("<p>" + abilities[i].name + "</p>")
                         .append("<p>" + abilities[i].desc + "</p>")
                 }
-
-
         })
     })
-}
+};
 
-// Selecting the click option and feeding it into the call
+// Listeners for all of the drop down menus to begin call to the API
 $("#abilitiesInfo").on("click", function() {
     abilityScores()
 });
