@@ -27,7 +27,21 @@ h1 {
     text-shadow:0px 0px 10px var(--secondary),3px 3px 5px white;
     font-size: 44px;
     text-shadow:3px 3px 15px var(--hover);
+        -webkit-animation: glow 4s ease-in-out infinite alternate;
+        -moz-animation: glow 4s ease-in-out infinite alternate;
+        animation: glow 4s ease-in-out infinite alternate;
 }
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px #fff, 0 0 30px var(--hover), 0 0 40px 30px var(--hover);
+    }
+    to {
+        text-shadow: 0 0 10px var(--secondary), 0 0 20px var(--secondary), 0 0 30px var(--secondary);
+    }
+  }
+
+
+
 h2 {
     font-family: 'Eagle Lake', sans-serif;
     font-size: 24px;
@@ -47,6 +61,7 @@ h4 {
     font-size: 15px;
     font-weight: 400;
     padding:10px 0px;
+    color: var(--grey);
 }
 
 button {
@@ -62,15 +77,15 @@ button {
     text-transform: uppercase;
     text-shadow:3px 3px 25px var(var(--main));
 
-  }
-  button:hover{
-  background:var(--hover);
-  color:var(--grey);
-  }
+}
+button:hover{
+    background:var(--hover);
+    color:var(--grey);
+}
 
 .secondary-button :hover{
-background-color: var(--hover);
-color:var(--grey);
+    background-color: var(--hover);
+    color:var(--grey);
 }
 
 .secondary-button {
@@ -192,11 +207,11 @@ header nav ul li:hover{
     text-shadow:0px 0px 25px white,3px 3px 25px #5f61ff;
     background:var(--hover);
     color:var(--grey);
-  }
+}
 
-  header nav ul a:hover{
+header nav ul a:hover{
     color:var(--grey);
-  }
+}
 /*end header*/
 
 /* Hero Style Start */
@@ -252,6 +267,7 @@ header nav ul li:hover{
 .dropdown p:hover {
     font-weight: bold;
 }
+
 /*backgrounds*/
 .swordbg {
     background-image: url('../assets/images/helm-bg.jpg');
@@ -287,6 +303,17 @@ header nav ul li:hover{
     margin-left:0px;
     box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
 }
+#videoInput {
+    font-size: 18px;
+    min-height:35px;
+    padding:5px;
+    background-color:var(--grey);
+    color:black;
+    border: 2px black solid;
+    font-family: 'Commissioner','Gill Sans', sans-serif;
+    margin-left:0px;
+    box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
+}
 .blackbg {
     background:black;
     max-width:360px;
@@ -307,13 +334,13 @@ header nav ul li:hover{
     max-height:30px;
 }
 
-.placeImages {
+.placeImages, .placeVideos {
     font-size:18px;
     color: var(--grey);
     padding-left: 20px;
 }
 
-#placeImages img{
+#placeImages img, #placeVideos img{
     max-width:200px;
     max-height:200px;
     flex:1;
@@ -322,6 +349,12 @@ header nav ul li:hover{
 
 }
 
+#placeImages button, #placeVideos button{
+    flex:1;
+    margin-left:-60px;
+    z-index: 10;
+
+}
 
 @media only screen and (max-width: 900px){
     .card{
@@ -339,7 +372,8 @@ header nav ul li:hover{
     }
 
     .card2 {
-        min-width:45%;
+        max-width:100%;
+        min-width:60%;
         margin-left: 0px;
     }
 
