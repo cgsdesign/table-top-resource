@@ -288,10 +288,10 @@ var saveMapLocal = function () {
 var mapMadeAlrt = document.getElementById("save-map")
 mapMadeAlrt.addEventListener("click", clickerFlash);
 mapMadeAlrt.addEventListener("click", takeshot);
-mapMadeAlrt.addEventListener("click", saveMapLocal);
+//mapMadeAlrt.addEventListener("click", saveMapLocal);
 
 //NEW TEXT TO TRY
-
+//<a href="https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png" class="dropbox-saver"></a>
 // var mapMadeAlrt = document.getElementById("save-map")
 // mapMadeAlrt.addEventListener("click", clickerFlash);
 // mapMadeAlrt.addEventListener("click", takeshot);
