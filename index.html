@@ -227,23 +227,28 @@
 
             
             <!-- Dice -->
-            <section id="Dice" class="section firebg">
-                <h2 class="dark-glow col-sm-11 no-pad">Dice Roller</h2>
-                <!--subtract remove by id, clear remove by class-->
-                <div class="card">
-                <div id="dice-add-subtract-clear-buttons">
-                    <button class="secondary-button" type="submit" id="add-button">+</button>
-                    <button type="reset" id="subtract-button">-</button>
-                    <button type="reset" id="clear-button">clear</button>
+            <section class="section firebg">
+                <div id="dice-section-container">
+                    <div id="dice-title">
+                        <h2 class="dark-glow col-sm-11 no-pad">Dice Roller</h2>
+                    </div>
+                    <div>
+                        <div id="dice-add-subtract-clear-buttons">
+                            <button class="secondary-button" type="submit" id="add-button">add a die</button>
+                            <!--<button type="reset" id="subtract-button">-</button>-->
+                            <button type="reset" id="clear-button">clear dice</button>
+                        </div>
+                        <div id="total-dice-container">
+                            <div id="total-dice">Total Dice: 1</div>
+                        </div>
+                        <div id="dice-select-container">
+                            <select name="dice-dropdown" class="dice-dropdown"></select>
+                            <div class="random-number-display">Roll Value:</div>
+                            <div class="new-dropdown-container"></div>
+                            <button type="submit" id="roll-button">Roll!</button>
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <div id="dice-select-container">
-                    <select name="dice-dropdown" class="dice-dropdown"></select>
-                    <div class="random-number-display">Roll Value:</div>
-                    <div class="new-dropdown-container"></div>
-                    <button type="submit" class="secondary-button" id="roll-button">Roll!</button>
-                </div>
-            </div>
             </section>
 
 
@@ -353,8 +358,8 @@
                       
                       
                     </tbody>
-                  </table>
-
+                </table>
+            </section>    
         </main>
         
         <script
