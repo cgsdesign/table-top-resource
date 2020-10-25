@@ -1,6 +1,6 @@
 # Table Top Resource
 
-* As a Dungeon Master (DM) it would be nice to have a one stop shop for everything from character creation, scheduling when everyone can play, and even map creation.
+* As a Dungeon Master (DM) it would be nice to have a one stop shop for everything from rules and resources to world building, dice rolling, and scheduling tools.
 
 # Table of Contents
 
@@ -37,24 +37,24 @@
 
 # About The Project
 
-* AS a DM it would be convienient to have a single app to do everything needed to conduct/run a new campaign.
-* GIVEN you are using this resource to build and run your DnD adventure.
-* WHEN you load the page.
-* THEN you are presented with a header with multiple seciton titles.
-* WHEN you click one of the section titles.
-* THEN you will be taken to that seciton on the page.
-* WHEN you scroll down
-* THEN you will be presented first with the 5th edition rules and references. 
-* WHEN you hover over one of the options.
-* THEN there will be a drop down of more information for you to refrence during your campaign creation.
-* WHEN on the 'Find Character and World Images' section.
-* THEN you will be able to type and search for images.
-* WHEN you click the build your own map section.
-* THEN you will be able to build and save your own custom map.
-* WHEN presented with the dice. 
-* THEN you will be able to add, subtract and roll any amount of dice chosen up to d100.
-* WHEN presented with the schedule section.
-* THEN you will be able to schedule your time that you and your friends could meet to run the campaign.
+* AS a DM it would be convenient to have a single app to do everything needed to conduct/run a new campaign.
+* GIVEN you are using this resource to build and run your D&D adventure.
+* WHEN you load the page,
+* THEN you are presented with links to multiple resources.
+* WHEN you and your players click one of the resources,
+* THEN you will be taken to that section of the page.
+* WHEN you and your players arrive at the Dungeons and Dragons 5th Edition rules and references section,
+* THEN you will find drop down menus with all of the information contained within the Player's Handbook of 5th Edition D&D. 
+* WHEN you arrive at the character/world images and videos,
+* THEN you will be able to type and search for images and videos.
+* WHEN you and your players arrive at the maps section,
+* THEN you will be able to download pre-built maps or click to create your own.
+* WHEN you arrive on the map building tool,
+* THEN you and your players will be presented with monsters, character tokens, and terrain to create, play on, and save your own custom maps.
+* WHEN you and your players arrive at the dice roller,
+* THEN you will be able to select your desired die value and roll as many dice as you need.
+* WHEN you and your players arrive at the schedule section,
+* THEN you will be able to schedule, delete, or change you and your players available times and dates to run the campaign.
 
 </br>
 </br>
@@ -66,6 +66,9 @@
  * JavaScript
  * [jQuery](https://jquery.com/)
  * [HTML2Canvas](https://html2canvas.hertzen.com/)
+ * [D&D 5e API](https://www.dnd5eapi.co/)
+ * [Pixabay](https://pixabay.com/)
+
 
 </br>
 </br>
@@ -73,21 +76,21 @@
 
 # Sections
 
-## Character List
-* Using the character list you can create your character while searching and looking up any character trait, class, race, equitment, spells, and even monster data.
+## Rules and Resources
+* Using the rules and resources you can create your character while searching and looking up any character trait, class, race, equipment, spells, and even monster data.
 
 ## Images
-* With the images section you will be able to type and search for any image that you may need to assist in the creation and running of your campaign!
+* With the images section you will be able to type and search for any image/video that you may need to assist in the world building and running of your campaign!
 
 ## Map
-* Using the map section you will be taken to another page where you can set your map. Design your map any way you would like with monsters, and terrain. You are able to save the map, clear the map and also return to the main page, and if you want you could also save the image of the map onto your local computer!
+* Using the map section you will be able to download maps or go to another page where you can build your map. Design your map any way you would like with monsters, and terrain. You can then download your map or play live on the page with your players.
 
 ## Dice
 * With the Dice section you will be able to generate as many dice as you need to roll for your turn. Select dice from a d4 up to a d100!
 
 ## Schedule
 
-* With the schedule section you will be able to set a weekly schedule in a four hour block on specific days that you and your group chooses. All you need to do is select a time, select a day, and type your name and then it will be saved to the calendar within your local storage, and stay when you come back to the page. Make sure you stick to your scheduled time!
+* With the schedule section you will be able to set a weekly schedule in a four hour block on specific days that you and your group choose. All you need to do is select a time, select a day, and type your name and then it will be saved to the calendar within your local storage. Make sure you stick to your scheduled time!
 
 </br>
 </br>
@@ -97,13 +100,11 @@
 
 ## Pictures
 
-![ScreenShot1of4](assets/images/image00.png)
+![ScreenShot1of3](assets/images/image00.png)
 
-![ScreenShot2of4](assets/images/image01.png)
+![ScreenShot2of3](assets/images/image01.png)
 
-![ScreenShot3of4](assets/images/image02.png)
-
-![ScreenShot4of4](assets/images/image03.png)
+![ScreenShot3of3](assets/images/image02.png)
 
 </br>
 </br>
@@ -111,7 +112,7 @@
 
 # Link to Page
 
-* [Follow this Link to page](https://cgsdesign.github.io/table-top-resource/index.html)
+* [Follow this Link to page](https://cgsdesign.github.io/table-top-resource/)
 
 </br>
 </br>
