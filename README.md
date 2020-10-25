@@ -61,10 +61,11 @@
 </br>
 
 ## Built With
- * [jQuery](https://jquery.com/)
  * HTML
  * CSS 
  * JavaScript
+ * [jQuery](https://jquery.com/)
+ * [HTML2Canvas](https://html2canvas.hertzen.com/)
 
 </br>
 </br>
@@ -86,7 +87,7 @@
 
 ## Schedule
 
-* With the schedule section you will be able to set a weekly schedule in a four hour block on specific days that you and your group chooses. All you need to do is select a time, select a day, and type your name and then it will be saved to the calendar. Make sure you stick to your scheduled time!
+* With the schedule section you will be able to set a weekly schedule in a four hour block on specific days that you and your group chooses. All you need to do is select a time, select a day, and type your name and then it will be saved to the calendar within your local storage, and stay when you come back to the page. Make sure you stick to your scheduled time!
 
 </br>
 </br>

@@ -2,12 +2,7 @@ table {
     table-layout: fixed;
     width: 100%;
     height: 300px;
-}
-
-td {
-    border: 1px solid #00d5c6;
-    text-shadow: 2px 2px 10px #00179d, 5px 5px 15px #5f61ff;
-    color: #00d5c6;
+    margin-bottom: 2%;
 }
 
 tr {
@@ -32,6 +27,8 @@ span {
 }
 
 td {
+    text-align: center;
+    font-family: 'Eagle Lake', sans-serif;
     font-size: 14px;
     background-color: rgba(250, 250, 250, .7);
     box-shadow:inset 0px 0px 10px #000,0px 0px 4px #000;
@@ -43,7 +40,62 @@ td {
     color: black;
 }
 
+td > ul, td > p {
+    pointer-events: none;
+}
+
+td:hover {
+    background-color: var(--secondary);
+}
+
+.hour:hover {
+  background-color: var(--hover);
+}
+
 .hour {
     background-color: rgb(97, 0, 0);
     color:white;
+}
+
+.modal-people {
+    font-family: 'Eagle Lake', sans-serif;
+    list-style: none;
+    font-weight: 400;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin:none;
+    color: black;
+}
+
+
+/* not displaying number inside of table data */
+.nothing {
+  display: none;
+  
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; 
+  position: fixed; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal Content */
+.modal-content {
+    text-align: center;
+    position: center;
+    background-color: rgba(97,0,0,.9);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    padding-bottom: 20px;
+    border-radius: 0.5rem;
 }
