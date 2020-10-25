@@ -82,7 +82,7 @@
 * Using the map section you will be taken to another page where you can set your map. Design your map any way you would like with monsters, and terrain. You are able to save the map, clear the map and also return to the main page, and if you want you could also save the image of the map onto your local computer!
 
 ## Dice
-* With the Dice section you will be able to generate as many die as you need to take a turn. (up to 10 dice!) Select dice from a d4 up to a d100!
+* With the Dice section you will be able to generate as many dice as you need to roll for your turn. Select dice from a d4 up to a d100!
 
 ## Schedule
 
