@@ -61,10 +61,11 @@
 </br>
 
 ## Built With
- * [jQuery](https://jquery.com/)
  * HTML
  * CSS 
  * JavaScript
+ * [jQuery](https://jquery.com/)
+ * [HTML2Canvas](https://html2canvas.hertzen.com/)
 
 </br>
 </br>

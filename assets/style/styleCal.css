@@ -5,9 +5,6 @@ table {
     margin-bottom: 2%;
 }
 
-
-
-
 tr {
     
     text-align: center;
@@ -57,6 +54,7 @@ td:hover {
 ul {
     list-style: none;
 }
+
 
 /* not displaying number inside of table data */
 .nothing {
