@@ -345,21 +345,17 @@ $("#monsters").on("click", "p", function() {
     console.log(selectText)
 });
 
+//CALENDAR
 
 //when the document loads, this function runs
+
+var scheduleData = JSON.parse(localStorage.getItem("scheduleCache")) || [];
+
 $(document).ready(function(){
 
     //pull data from local if it exists
-    var scheduleData = JSON.parse(localStorage.getItem("scheduleCache")) || [];
+    
     console.log(scheduleData);
-
-
-    //for each name in on the day append it to the modal 
-    // scheduleData.forEach(function(name) {
-    //     var li = document.createElement("li");
-    //     li.textContent = name.name;
-    //     $('.modal-people').append(li);
-    // });
 
     //if someone got scheduled for specific day and time this happens
     //adds number and removes class that hides it from start
@@ -368,21 +364,18 @@ $(document).ready(function(){
             if (item.day == 'monday') {
                 $('.eightam-mon-text').removeClass('nothing')
                 $('#eightam-mon-list').removeClass('nothing')
-                $('#eightam-mon-list')[0].textContent = parseInt($('#eightam-mon-list')[0].textContent) + 1
-                var li = document.createElement("li");
-                li.textContent = item.name;
-                $('.modal-people').append(li);
-                $(li).attr('id', 'people-on-day');
+                $('#eightam-mon-list')[0].textContent = parseInt($('#eightam-mon-list')[0].textContent) + 1                
             }
             else if (item.day == 'tuesday') {
                 $('.eightam-tue-text').removeClass('nothing')
                 $('#eightam-tue-list').removeClass('nothing')
-                $('#eightam-tue-list')[0].textContent = parseInt($('#eightam-tue-list')[0].textContent) + 1
+                $('#eightam-tue-list')[0].textContent = parseInt($('#eightam-tue-list')[0].textContent) + 1                
+                
             }
             else if (item.day == 'wednesday') {
                 $('.eightam-wed-text').removeClass('nothing')
                 $('#eightam-wed-list').removeClass('nothing')
-                $('#eightam-wed-list')[0].textContent = parseInt($('#eightam-wed-list')[0].textContent) + 1
+                $('#eightam-wed-list')[0].textContent = parseInt($('#eightam-wed-list')[0].textContent) + 1                
             }
             else if (item.day == 'thursday') {
                 $('.eightam-thur-text').removeClass('nothing')
@@ -516,10 +509,9 @@ $(document).ready(function(){
                 $('#eightpm-sun-list').removeClass('nothing')
                 $('#eightpm-sun-list')[0].textContent = parseInt($('#eightpm-sun-list')[0].textContent) + 1            
             }
-        }
-
-        
+        }        
     });
+    
     //on click of 'book' this function runs
     $('#btnSubmit').click(function(){
         var name = $('#name').val();
@@ -535,155 +527,150 @@ $(document).ready(function(){
         //if you select a certain time and day you will be added to corresponding day
         if (time == '8to12pm') {
             if (day == 'monday') {
-                
+                $('.eightam-mon-text').removeClass('nothing')
                 $('#eightam-mon-list').removeClass('nothing')
                 $('#eightam-mon-list')[0].textContent = parseInt($('#eightam-mon-list')[0].textContent) + 1
-                // console.log($('#eightam-mon-list')[0].textContent)
             }
             else if (day == 'tuesday') {
+                $('.eightam-tue-text').removeClass('nothing')
                 $('#eightam-tue-list').removeClass('nothing')
                 $('#eightam-tue-list')[0].textContent = parseInt($('#eightam-tue-list')[0].textContent) + 1
-
-                // $('#eightam-tue-list').append("<li>" + name + "</li>");
             }
             else if (day == 'wednesday') {
+                $('.eightam-wed-text').removeClass('nothing')
                 $('#eightam-wed-list').removeClass('nothing')
                 $('#eightam-wed-list')[0].textContent = parseInt($('#eightam-wed-list')[0].textContent) + 1
-                // $('#eightam-wed-list').append("<li>" + name + "</li>");
             }
             else if (day == 'thursday') {
+                $('.eightam-thur-text').removeClass('nothing')
                 $('#eightam-thur-list').removeClass('nothing')
                 $('#eightam-thur-list')[0].textContent = parseInt($('#eightam-thur-list')[0].textContent) + 1
-                // $('#eightam-thur-list').append("<li>" + name + "</li>");
             }
             else if (day == 'friday') {
+                $('.eightam-fri-text').removeClass('nothing')
                 $('#eightam-fri-list').removeClass('nothing')
                 $('#eightam-fri-list')[0].textContent = parseInt($('#eightam-fri-list')[0].textContent) + 1
-                // $('#eightam-fri-list').append("<li>" + name + "</li>");
             }
             else if (day == 'saturday') {
+                $('.eightam-sat-text').removeClass('nothing')
                 $('#eightam-sat-list').removeClass('nothing')
                 $('#eightam-sat-list')[0].textContent = parseInt($('#eightam-sat-list')[0].textContent) + 1
-                // $('#eightam-sat-list').append("<li>" + name + "</li>");
             }
             else if (day == 'sunday') {
+                $('.eightam-sun-text').removeClass('nothing')
                 $('#eightam-sun-list').removeClass('nothing')
                 $('#eightam-sun-list')[0].textContent = parseInt($('#eightam-sun-list')[0].textContent) + 1
-                // $('#eightam-sun-list').append("<li>" + name + "</li>");
             }
         }
         else if (time == '12to4pm') {
-            // console.log('nope');
             if (day == 'monday') {
+                $('.twelve-mon-text').removeClass('nothing')
                 $('#twelve-mon-list').removeClass('nothing')
                 $('#twelve-mon-list')[0].textContent = parseInt($('#twelve-mon-list')[0].textContent) + 1
-                // $('#twelve-mon-list').append("<li>" + name + "</li>");
             }
             else if (day == 'tuesday') {
+                $('.twelve-tue-text').removeClass('nothing')
                 $('#twelve-tue-list').removeClass('nothing')
                 $('#twelve-tue-list')[0].textContent = parseInt($('#twelve-tue-list')[0].textContent) + 1
-                // $('#twelve-tue-list').append("<li>" + name + "</li>");
             }
             else if (day == 'wednesday') {
+                $('.twelve-wed-text').removeClass('nothing')
                 $('#twelve-wed-list').removeClass('nothing')
                 $('#twelve-wed-list')[0].textContent = parseInt($('#twelve-wed-list')[0].textContent) + 1
-                // $('#twelve-wed-list').append("<li>" + name + "</li>");
             }
             else if (day == 'thursday') {
+                $('.twelve-thur-text').removeClass('nothing')
                 $('#twelve-thur-list').removeClass('nothing')
                 $('#twelve-thur-list')[0].textContent = parseInt($('#twelve-thur-list')[0].textContent) + 1
-                // $('#twelve-thur-list').append("<li>" + name + "</li>");
             }
             else if (day == 'friday') {
+                $('.twelve-fri-text').removeClass('nothing')
                 $('#twelve-fri-list').removeClass('nothing')
                 $('#twelve-fri-list')[0].textContent = parseInt($('#twelve-fri-list')[0].textContent) + 1
-                // $('#twelve-fri-list').append("<li>" + name + "</li>");
             }
             else if (day == 'saturday') {
+                $('.twelve-sat-text').removeClass('nothing')
                 $('#twelve-sat-list').removeClass('nothing')
                 $('#twelve-sat-list')[0].textContent = parseInt($('#twelve-sat-list')[0].textContent) + 1
-                // $('#twelve-sat-list').append("<li>" + name + "</li>");
             }
             else if (day == 'sunday') {
+                $('.twelve-sun-text').removeClass('nothing')
                 $('#twelve-sun-list').removeClass('nothing')
                 $('#twelve-sun-list')[0].textContent = parseInt($('#twelve-sun-list')[0].textContent) + 1
-                // $('#twelve-sun-list').append("<li>" + name + "</li>");
             }
         }
         else if (time == '4to8pm') {
-            // console.log('nope');
             if (day == 'monday') {
+                $('.four-mon-text').removeClass('nothing')
                 $('#four-mon-list').removeClass('nothing')
                 $('#four-mon-list')[0].textContent = parseInt($('#four-mon-list')[0].textContent) + 1
-                // $('#four-mon-list').append("<li>" + name + "</li>");
             }
             else if (day == 'tuesday') {
+                $('.four-tue-text').removeClass('nothing')
                 $('#four-tue-list').removeClass('nothing')
                 $('#four-tue-list')[0].textContent = parseInt($('#four-tue-list')[0].textContent) + 1
-                // $('#four-tue-list').append("<li>" + name + "</li>");
             }
             else if (day == 'wednesday') {
+                $('.four-wed-text').removeClass('nothing')
                 $('#four-wed-list').removeClass('nothing')
                 $('#four-wed-list')[0].textContent = parseInt($('#four-wed-list')[0].textContent) + 1
-                // $('#four-wed-list').a#four-mon-listme + "</li>");
             }
             else if (day == 'thursday') {
+                $('.four-thur-text').removeClass('nothing')
                 $('#four-thur-list').removeClass('nothing')
                 $('#four-thur-list')[0].textContent = parseInt($('#four-thur-list')[0].textContent) + 1
-                // $('#four-thur-list').append("<li>" + name + "</li>");
             }
             else if (day == 'friday') {
+                $('.four-fri-text').removeClass('nothing')
                 $('#four-fri-list').removeClass('nothing')
                 $('#four-fri-list')[0].textContent = parseInt($('#four-fri-list')[0].textContent) + 1
-                // $('#four-fri-list').append("<li>" + name + "</li>");
             }
             else if (day == 'saturday') {
+                $('.four-sat-text').removeClass('nothing')
                 $('#four-sat-list').removeClass('nothing')
                 $('#four-sat-list')[0].textContent = parseInt($('#four-sat-list')[0].textContent) + 1
-                // $('#four-sat-list').append("<li>" + name + "</li>");
             }
             else if (day == 'sunday') {
+                $('.four-sun-text').removeClass('nothing')
                 $('#four-sun-list').removeClass('nothing')
                 $('#four-sun-list')[0].textContent = parseInt($('#four-sun-list')[0].textContent) + 1
-                // $('#four-sun-list').append("<li>" + name + "</li>");
             }
         }
         else if (time == '8to12am') {
-            // console.log('nope');
             if (day == 'monday') {
+                $('.eightpm-mon-text').removeClass('nothing')
                 $('#eightpm-mon-list').removeClass('nothing')
                 $('#eightpm-mon-list')[0].textContent = parseInt($('#eightpm-mon-list')[0].textContent) + 1
-                // $('#eightpm-mon-list').append("<li>" + name + "</li>");
             }
             else if (day == 'tuesday') {
+                $('.eightpm-tue-text').removeClass('nothing')
                 $('#eightpm-tue-list').removeClass('nothing')
                 $('#eightpm-tue-list')[0].textContent = parseInt($('#eightpm-tue-list')[0].textContent) + 1
-                // $('#eightpm-tue-list').append("<li>" + name + "</li>");
             }
             else if (day == 'wednesday') {
+                $('.eightpm-wed-text').removeClass('nothing')
                 $('#eightpm-wed-list').removeClass('nothing')
                 $('#eightpm-wed-list')[0].textContent = parseInt($('#eightpm-wed-list')[0].textContent) + 1
-                // $('#eightpm-wed-list').append("<li>" + name + "</li>");
             }
             else if (day == 'thursday') {
+                $('.eightpm-thur-text').removeClass('nothing')
                 $('#eightpm-thur-list').removeClass('nothing')
                 $('#eightpm-thur-list')[0].textContent = parseInt($('#eightpm-thur-list')[0].textContent) + 1
-                // $('#eightpm-thur-list').append("<li>" + name + "</li>");
             }
             else if (day == 'friday') {
+                $('.eightpm-fri-text').removeClass('nothing')
                 $('#eightpm-fri-list').removeClass('nothing')
                 $('#eightpm-fri-list')[0].textContent = parseInt($('#eightpm-fri-list')[0].textContent) + 1
-                // $('#eightpm-fri-list').append("<li>" + name + "</li>");
             }
             else if (day == 'saturday') {
+                $('.eightpm-sat-text').removeClass('nothing')
                 $('#eightpm-sat-list').removeClass('nothing')
                 $('#eightpm-sat-list')[0].textContent = parseInt($('#eightpm-sat-list')[0].textContent) + 1
-                // $('#eightpm-sat-list').append("<li>" + name + "</li>");
             }
             else if (day == 'sunday') {
+                $('.eightpm-sun-text').removeClass('nothing')
                 $('#eightpm-sun-list').removeClass('nothing')
                 $('#eightpm-sun-list')[0].textContent = parseInt($('#eightpm-sun-list')[0].textContent) + 1
-                // $('#eightpm-sun-list').append("<li>" + name + "</li>");
             }
         }
        
@@ -700,11 +687,11 @@ $(document).ready(function(){
 
             //grab it
             var personInfo = scheduleList.toString(); 
-            var tempARRR = JSON.parse(personInfo);
+            var tempInfo = JSON.parse(personInfo);
 
             //Modify it
-            tempARRR.push(scheduleVal);
-            scheduleList = tempARRR;
+            tempInfo.push(scheduleVal);
+            scheduleList = tempInfo;
 
         }else {
             //If theres nothing currently we add our first Item
@@ -722,14 +709,32 @@ $(document).ready(function(){
 
 var modal = document.getElementById("myModal");
 
-$('td').click(function () {
+$('td').click(function (event) {
     modal.style.display = "block";
+
+    $('.modal-people').html('');
+    console.log(event.target.id);
+
+    var cellInfo = event.target.id.split('-');
+
+    var dataForHourDay = scheduleData.filter(function (item) {
+        return item.time === cellInfo[0] && item.day === cellInfo[1];
+    })
+    console.log(cellInfo);
+    console.log(dataForHourDay);
+
+    dataForHourDay.forEach(function (item) {
+
+        var li = document.createElement("li");
+        li.textContent = item.name;
+        $('.modal-people').append(li);
+        $(li).attr('id', 'people-on-day');
+    })
 })
 
 window.onclick = function (event) {
-    if (event.target == modal) {
+    if (event.target === modal) {
         modal.style.display = "none";
-        $('#poeple-on-block').remove;
         
     }
 }
