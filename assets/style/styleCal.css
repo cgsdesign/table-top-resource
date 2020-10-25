@@ -99,3 +99,13 @@ td:hover {
     padding-bottom: 20px;
     border-radius: 0.5rem;
 }
+
+
+@media only screen and (max-width: 900px) {
+    
+    .schedule-text {
+        visibility: hidden;
+    }
+
+
+}
