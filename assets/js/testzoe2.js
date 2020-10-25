@@ -85,6 +85,7 @@ var createNewWaterToken = function(){
     var parent = document.getElementById("newWater")
     var style = document.createElement('div');
     style.classList.add("mymapdiv")
+    style.setAttribute("id", `mymapdivW${waterTokenNum}`)
     style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
     parent.appendChild(style);
     //make dragable
@@ -114,6 +115,7 @@ var createNewWaterTokenS = function(i){
     var parent = document.getElementById("newWaterS")
     var style = document.createElement('div');
     style.classList.add("mymapdiv")
+    style.setAttribute("id", `mymapdivw${waterTokenNumS}`)
     style.innerHTML = `<img src="./assets/images/Tokens/water.png">`;
     parent.appendChild(style);
     //make dragable
@@ -141,6 +143,7 @@ var createNewWroughToken = function(i){
       var parent = document.getElementById("newWrough")
       var style = document.createElement('div');
       style.classList.add("mymapdiv")
+      style.setAttribute("id", `mymapdivWr${wroughTokenNum}`)
       style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
       parent.appendChild(style);
       //make dragable
@@ -167,6 +170,7 @@ var createNewWroughTokenS = function(i){
     var parent = document.getElementById("newWroughS")
     var style = document.createElement('div');
     style.classList.add("mymapdiv")
+    style.setAttribute("id", `mymapdivwr${wroughTokenNumS}`)
     style.innerHTML = `<img src="./assets/images/Tokens/wroughTerain.png">`;
     parent.appendChild(style);
     //make dragable
@@ -194,6 +198,7 @@ var createNewWallToken = function(i){
     var parent = document.getElementById("newWall")
     var style = document.createElement('div');
     style.classList.add("mymapdiv")
+    style.setAttribute("id", `mymapdivWa${wallTokenNum}`)
     style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
     parent.appendChild(style);
     //make dragable
@@ -221,6 +226,7 @@ var createNewWallTokenS = function(i){
       var parent = document.getElementById("newWallS")
       var style = document.createElement('div');
       style.classList.add("mymapdiv")
+      style.setAttribute("id", `mymapdivwa${wallTokenNumS}`)
       style.innerHTML = `<img src="./assets/images/Tokens/wall.png">`;
       parent.appendChild(style);
       //make dragable
@@ -257,7 +263,7 @@ var takeshot = function() {
         //flash alert map was made
   var clickerFlash = function() {
     $(".map-made-alert").fadeIn(500);
-    $(".map-made-alert").fadeOut(600);
+    $(".map-made-alert").fadeOut(800);
 };
 
 Storage.prototype.setObject = function (key, value) {
@@ -290,7 +296,7 @@ var saveMapLocal = function () {
 var mapMadeAlrt = document.getElementById("save-map")
 mapMadeAlrt.addEventListener("click", clickerFlash);
 mapMadeAlrt.addEventListener("click", takeshot);
-mapMadeAlrt.addEventListener("click", saveMapLocal);
+mapMadeAlrt.addEventListener("click", saveMapLocal);//may work when live site
 
 //NEW TEXT TO TRY
 //<a href="https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png" class="dropbox-saver"></a>

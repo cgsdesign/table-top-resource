@@ -47,6 +47,7 @@ h4 {
     font-size: 15px;
     font-weight: 400;
     padding:10px 0px;
+    color: var(--grey);
 }
 
 button {
@@ -62,15 +63,15 @@ button {
     text-transform: uppercase;
     text-shadow:3px 3px 25px var(var(--main));
 
-  }
-  button:hover{
-  background:var(--hover);
-  color:var(--grey);
-  }
+}
+button:hover{
+    background:var(--hover);
+    color:var(--grey);
+}
 
 .secondary-button :hover{
-background-color: var(--hover);
-color:var(--grey);
+    background-color: var(--hover);
+    color:var(--grey);
 }
 
 .secondary-button {
@@ -192,11 +193,11 @@ header nav ul li:hover{
     text-shadow:0px 0px 25px white,3px 3px 25px #5f61ff;
     background:var(--hover);
     color:var(--grey);
-  }
+}
 
-  header nav ul a:hover{
+header nav ul a:hover{
     color:var(--grey);
-  }
+}
 /*end header*/
 
 /* Hero Style Start */
@@ -252,6 +253,7 @@ header nav ul li:hover{
 .dropdown p:hover {
     font-weight: bold;
 }
+
 /*backgrounds*/
 .swordbg {
     background-image: url('../assets/images/helm-bg.jpg');
