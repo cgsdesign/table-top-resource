@@ -71,13 +71,6 @@ return
 
 //  var bossMonster = document.getElementById("newBossMonster")
 //  bossMonster.addEventListener("click", createNewBossToken);
-// if ($(this).hasClass('one')) {
-//   $(this).removeClass('one').addClass('two');
-// } else if ($(this).hasClass('two')) {
-//   $(this).removeClass('two').addClass('three');
-// } else if ($(this).hasClass('three')) {
-//   $(this).removeClass('three').addClass('one');
-// }
 //CONVERT BLOCKS------------------------------------------------------------//MUST work with .this
 $('.block').click(function(){
   if ( $('.block').hasClass('origin') ) {
@@ -110,7 +103,45 @@ $('.block').click(function(){
 // });
 
 //SPAWN BLOCKS----------------------------------------------------------NOTE make sure have 3 maps block formats ONLY
+var blockTokenNum = 0
+var createBlocks = function(){
+//make parent componant
 
+if (j=0,20>j, j++){
+var parent = $("#mapZone");
+var style = document.createElement('div');
+style.classList.add("origin")
+style.classList.add("block")
+style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
+style.innerHTML = `<ul></ul>`;
+parent.append(style);
+//make color click change
+$('.block').click(function(){
+  if ( $('.block').hasClass('origin') ) {
+    $(this).addClass('water').removeClass('origin');
+    return
+  }
+  else if ( $(this).hasClass('water') ) {
+    $(this).addClass('terrain')
+    $(this).removeClass('water');
+    return
+  }
+  else if ( $(this).hasClass('terrain') ) {
+    $(this).addClass('wall');
+    $(this).removeClass('terrain');
+    return
+  }
+  else
+    $(this).addClass('origin');
+    $(this).removeClass('wall');
+    return
+
+})
+}
+//end
+blockTokenNum = blockTokenNum +1
+return
+}
 
 //SAVE MAP------------------------------------------------------------
 var takeshot = function() { 
