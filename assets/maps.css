@@ -121,9 +121,19 @@ box-shadow:inset 0px 0px 20px #000,0px 0px 20px #000,inset 0px 0px 40px #000;
   color:white;
   font-size: 13px;;
 }
-
-
-
+/*ap bgs*/
+.origin {
+  background-color: tan;
+}
+.water {
+ background-color: turquoise;
+}
+.terrain {
+  background-color: brown;
+}
+.wall {
+  background-color: black;
+}
 
 
   /*Token buttons*/

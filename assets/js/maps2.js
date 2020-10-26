@@ -3,6 +3,7 @@
 //change grid from image based to bg image change on click via class change via JS- 3 option clickable squares - taerrain options
     //NOTES- keep player/monster pieces as dragable - 
     //may try to make them possible via dropdown & sortable - snap to sortable each box? - NOTE boxes MUST be fixed height
+    //spawn map boxes on page load
 //drag
 $( function() {
     $( ".mymapdiv" ).draggable({
@@ -70,12 +71,45 @@ return
 
 //  var bossMonster = document.getElementById("newBossMonster")
 //  bossMonster.addEventListener("click", createNewBossToken);
-//Convert blocks------------------------------------------------------------
+// if ($(this).hasClass('one')) {
+//   $(this).removeClass('one').addClass('two');
+// } else if ($(this).hasClass('two')) {
+//   $(this).removeClass('two').addClass('three');
+// } else if ($(this).hasClass('three')) {
+//   $(this).removeClass('three').addClass('one');
+// }
+//CONVERT BLOCKS------------------------------------------------------------//MUST work with .this
+$('.block').click(function(){
+  if ( $('.block').hasClass('origin') ) {
+    $(this).addClass('water').removeClass('origin');
+    return
+  }
+  else if ( $(this).hasClass('water') ) {
+    $(this).addClass('terrain')
+    $(this).removeClass('water');
+    return
+  }
+  else if ( $(this).hasClass('terrain') ) {
+    $(this).addClass('wall');
+    $(this).removeClass('terrain');
+    return
+  }
+  else
+    $(this).addClass('origin');
+    $(this).removeClass('wall');
+    return
 
+})
 
+// other option to try
+// $('.toggle').click(function () {
+//   var classes = ['class1','class2','class3'];
+//   $('div').each(function(){
+//     this.className = classes[($.inArray(this.className, classes)+1)%classes.length];
+//   });
+// });
 
-
-
+//SPAWN BLOCKS----------------------------------------------------------NOTE make sure have 3 maps block formats ONLY
 
 
 //SAVE MAP------------------------------------------------------------
