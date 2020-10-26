@@ -72,42 +72,12 @@ return
 //  var bossMonster = document.getElementById("newBossMonster")
 //  bossMonster.addEventListener("click", createNewBossToken);
 //CONVERT BLOCKS------------------------------------------------------------//MUST work with .this
-$('.block').click(function(){
-  if ( $('.block').hasClass('origin') ) {
-    $(this).addClass('water').removeClass('origin');
-    return
-  }
-  else if ( $(this).hasClass('water') ) {
-    $(this).addClass('terrain')
-    $(this).removeClass('water');
-    return
-  }
-  else if ( $(this).hasClass('terrain') ) {
-    $(this).addClass('wall');
-    $(this).removeClass('terrain');
-    return
-  }
-  else
-    $(this).addClass('origin');
-    $(this).removeClass('wall');
-    return
-
-})
-
-// other option to try
-// $('.toggle').click(function () {
-//   var classes = ['class1','class2','class3'];
-//   $('div').each(function(){
-//     this.className = classes[($.inArray(this.className, classes)+1)%classes.length];
-//   });
-// });
-
 //SPAWN BLOCKS----------------------------------------------------------NOTE make sure have 3 maps block formats ONLY
 var blockTokenNum = 0
 var createBlocks = function(){
 //make parent componant
-
-if (j=0,20>j, j++){
+i=220
+for (i=0; i<220;i++){
 var parent = $("#mapZone");
 var style = document.createElement('div');
 style.classList.add("origin")
@@ -115,34 +85,34 @@ style.classList.add("block")
 style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
 style.innerHTML = `<ul></ul>`;
 parent.append(style);
-//make color click change
-$('.block').click(function(){
-  if ( $('.block').hasClass('origin') ) {
-    $(this).addClass('water').removeClass('origin');
-    return
-  }
-  else if ( $(this).hasClass('water') ) {
-    $(this).addClass('terrain')
-    $(this).removeClass('water');
-    return
-  }
-  else if ( $(this).hasClass('terrain') ) {
-    $(this).addClass('wall');
-    $(this).removeClass('terrain');
-    return
-  }
-  else
-    $(this).addClass('origin');
-    $(this).removeClass('wall');
-    return
-
-})
 }
+//make color click change - NOTE- only add this once not in 4 loop,only after
+$('.block').click(function() {
+   if ( $(this).hasClass('origin') ) {
+     $(this).addClass('water').removeClass('origin');
+     return
+   }
+   else if ( $(this).hasClass('water') ) {
+     $(this).addClass('terrain')
+     $(this).removeClass('water');
+     return
+   }
+   else if ( $(this).hasClass('terrain') ) {
+     $(this).addClass('wall');
+     $(this).removeClass('terrain');
+     return
+   }
+   else
+     $(this).addClass('origin');
+     $(this).removeClass('wall');
+     return
+ })
+
 //end
 blockTokenNum = blockTokenNum +1
-return
 }
 
+createBlocks()
 //SAVE MAP------------------------------------------------------------
 var takeshot = function() { 
     let div = 
