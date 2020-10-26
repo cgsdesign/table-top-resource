@@ -4,6 +4,7 @@
     //NOTES- keep player/monster pieces as dragable - 
     //may try to make them possible via dropdown & sortable - snap to sortable each box? - NOTE boxes MUST be fixed height
     //spawn map boxes on page load
+      //chose yor map size ^>^- give 5 options inc cell phone play
 //drag
 $( function() {
     $( ".mymapdiv" ).draggable({
@@ -76,8 +77,8 @@ return
 var blockTokenNum = 0
 var createBlocks = function(){
 //make parent componant
-i=220
-for (i=0; i<220;i++){
+blockNum=312
+for (i=0; i<312;i++){
 var parent = $("#mapZone");
 var style = document.createElement('div');
 style.classList.add("origin")
