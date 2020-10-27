@@ -70,15 +70,37 @@ bossTokenNum = bossTokenNum +1
 return
 }
 
-//  var bossMonster = document.getElementById("newBossMonster")
+//  var bossMonster = document.getElementById("newBossMonster") //saving code in case need old spawn on click ability
 //  bossMonster.addEventListener("click", createNewBossToken);
-//CONVERT BLOCKS------------------------------------------------------------//MUST work with .this
-//SPAWN BLOCKS----------------------------------------------------------NOTE make sure have 3 maps block formats ONLY
+//Block Color Change-----------------------------------------------------------
+var blockColorChange = function(){
+  $('.block').click(function() {
+  if ( $(this).hasClass('origin') ) {
+    $(this).addClass('water').removeClass('origin');
+    return
+  }
+  else if ( $(this).hasClass('water') ) {
+    $(this).addClass('terrain')
+    $(this).removeClass('water');
+    return
+  }
+  else if ( $(this).hasClass('terrain') ) {
+    $(this).addClass('wall');
+    $(this).removeClass('terrain');
+    return
+  }
+  else
+    $(this).addClass('origin');
+    $(this).removeClass('wall');
+    return
+})
+}
+//SPAWN BLOCKS with Class Change Ability---------------------------------------
+//Desktop
 var blockTokenNum = 0
 var createBlocks = function(){
-//make parent componant
-blockNum=312
-for (i=0; i<312;i++){
+//Spawn block numbers
+for (i=0; i<325;i++){
 var parent = $("#mapZone");
 var style = document.createElement('div');
 style.classList.add("origin")
@@ -86,34 +108,62 @@ style.classList.add("block")
 style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
 style.innerHTML = `<ul></ul>`;
 parent.append(style);
-}
-//make color click change - NOTE- only add this once not in 4 loop,only after
-$('.block').click(function() {
-   if ( $(this).hasClass('origin') ) {
-     $(this).addClass('water').removeClass('origin');
-     return
-   }
-   else if ( $(this).hasClass('water') ) {
-     $(this).addClass('terrain')
-     $(this).removeClass('water');
-     return
-   }
-   else if ( $(this).hasClass('terrain') ) {
-     $(this).addClass('wall');
-     $(this).removeClass('terrain');
-     return
-   }
-   else
-     $(this).addClass('origin');
-     $(this).removeClass('wall');
-     return
- })
-
-//end
+//curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
 blockTokenNum = blockTokenNum +1
 }
-
+//make color click change - NOTE- only add this once not in 4 loop,only after!!!!!
+blockColorChange()
+//end
+}
+if (window.innerWidth > 1000) { 
 createBlocks()
+}
+//tablet-------------------------------------------------------------------------------------------
+var createBlocksTablet = function(){
+  //Spawn block numbers
+  for (i=0; i<300;i++){
+  var parent = $("#mapZone");
+  var style = document.createElement('div');
+  style.classList.add("origin")
+  style.classList.add("block")
+  style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
+  style.innerHTML = `<ul></ul>`;
+  parent.append(style);
+  //curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
+  blockTokenNum = blockTokenNum +1
+  }
+  //make color click change - NOTE- only add this once not in 4 loop,only after!!!!!
+  blockColorChange()
+  //end
+  }
+  if (window.innerWidth < 1000 && window.innerWidth > 400) { 
+  createBlocksTablet()
+  }
+
+//cell phone blocks -------------------------------------------------------------------------------
+var createBlocksCell = function(){
+  //Spawn block numbers
+  blockNum=91
+  for (i=0; i<91;i++){
+  var parent = $("#mapZone");
+  var style = document.createElement('div');
+  style.classList.add("origin")
+  style.classList.add("block")
+  style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
+  style.innerHTML = `<ul></ul>`;
+  parent.append(style);
+  //curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
+  blockTokenNum = blockTokenNum +1
+  }
+  //make color click change - NOTE- only add this once not in 4 loop,only after!!!!!
+  blockColorChange()
+  
+  //end
+  }
+  if (window.innerWidth < 400) { 
+    createBlocksCell()
+  }
+
 //SAVE MAP------------------------------------------------------------
 var takeshot = function() { 
     let div = 
@@ -135,69 +185,9 @@ var takeshot = function() {
     $(".map-made-alert").fadeOut(800);
 };
 
-Storage.prototype.setObject = function (key, value) {
-  this.setItem(key, JSON.stringify(value));
-}
-
-Storage.prototype.getObject = function (key) {
-  var value = this.getItem(key);
-  return value && JSON.parse(value);
-}
-
-/*
-* Save all pictures in local storage
-*/
-var saveMapLocal = function () {
-  var div = document.getElementById('makeMap'); 
-  console.log("flash1")
-
-  html2canvas($("#makeMap")[0], {
-    useCORS : true,
-    allowTaint : true
-  }).then(    
-    function (canvas) {
-      const image = canvas.toDataURL("image/png");
-      window.sessionStorage.setObject(new Date().getTime(), image);
-      console.log("flash2")
-  });
-}
-
 var mapMadeAlrt = document.getElementById("save-map")
 mapMadeAlrt.addEventListener("click", clickerFlash);
 mapMadeAlrt.addEventListener("click", takeshot);
-mapMadeAlrt.addEventListener("click", saveMapLocal);//may work when live site
-
-//NEW TEXT TO TRY
-//<a href="https://dl.dropboxusercontent.com/s/deroi5nwm6u7gdf/advice.png" class="dropbox-saver"></a>
-// var mapMadeAlrt = document.getElementById("save-map")
-// mapMadeAlrt.addEventListener("click", clickerFlash);
-// mapMadeAlrt.addEventListener("click", takeshot);
-
-
-// document.getElementById('download').onclick = function () {
-//   // Create new document
-//   let doc = new jsPDF('p', 'mm', 'a4');
-
-//   const width = doc.internal.pageSize.getWidth();
-//   const height = doc.internal.pageSize.getHeight();
-
-//   // Get all images from local storage and add them to the pdf
-//   for (let key in sessionStorage) {
-//       if (!isNaN(key)) {
-//           const image = window.sessionStorage.getObject(key);
-//           doc.addImage(image, 'JPEG', 0, 0, width, height);
-//       }
-//   }
-//var imgurl= canvas.toDataURL( ) ; // This method saves graphics in png
-//document.getElementById(‘cimg’).src = imgurl; // This will set img src to dataurl(png)so that it can be saved as image.
-
-
-
-
-//var imgurl= canvas.toDataURL( ) ; // This method saves graphics in png
-//document.getElementById(‘cimg’).src = imgurl; // This will set img src to dataurl(png)so that it can be saved as image.
-
-
 
 
 //RELOAD MAP------------------------------------------------------------
@@ -205,7 +195,5 @@ mapMadeAlrt.addEventListener("click", saveMapLocal);//may work when live site
 var ReloadMap = function() {
   $("#reload-map").load(location.href+" #reload-map>*","");
   }
-
-  $( ".selector" ).checkboxradio( "refresh" );
 var mapClearAlrt = document.getElementById("clearmap")
 mapClearAlrt.addEventListener("click", ReloadMap);
