@@ -102,7 +102,7 @@
 
 ![ScreenShot1of3](assets/images/image00.png)
 
-![ScreenShot2of3](assets/images/image01.png)
+![ScreenShot2of3](assets/images/image01-2.png)
 
 ![ScreenShot3of3](assets/images/image02.png)
 
