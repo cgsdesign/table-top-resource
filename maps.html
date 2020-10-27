@@ -24,9 +24,9 @@
             <!--Print Button-->
             </button> 
             <h4 class="dark-glow" style="justify-items:right;">
-                Choose your components and drag them to place on the map.<br>
-                Saved Maps are located at the bottom of the screen.<br>
-                Character and Monster tokens are intended for live play only.
+                Click on map squares to cycle through terain options and build your map.<br>
+                Saved maps are located at the bottom of the screen.<br>
+                Drag character and monster tokens for live play!
             </h4>
             <div>
             <button id="save-map" class=" secondary-button bottom-right"> 
@@ -44,7 +44,6 @@
             </div>
         </header>
         <!--below custom styling needed for buttons-->
-        <div id="makeMap"> 
         <section id="reload-map" class="section monkbg"style="padding: 5px;">
             <!--Archer-->
                 <div class="item-outer-box">
@@ -95,33 +94,6 @@
                         </div>                        
                     </div> 
                 </div>
-            <!--S Water-->
-                <div  class="item-outer-box3">
-                    <div class="width20" id="newWaterS">  
-                        <button id="createNewWaterTokenS">Get New<br>Water Set</button> 
-                        <div id="small-water" class="mymapdiv terrain"> 
-                            <img src="./assets/images/Tokens/water.png"> 
-                        </div>                         
-                    </div> 
-                </div>
-            <!--S Wrough Terrain-->
-                <div  class="item-outer-box3">
-                    <div class="width20" id="newWroughS">  
-                        <button id="createNewWroughTokenS">Get New<br>Terrain Set</button> 
-                        <div id="small-terrain" class="mymapdiv terrain"> 
-                            <img src="./assets/images/Tokens/wroughTerain.png"> 
-                        </div>                         
-                    </div> 
-                </div>
-            <!--S Wall-->
-                <div  class="item-outer-box3">
-                    <div class="width20" id="newWallS">  
-                        <button id="createNewWallTokenS">Get New<br>Wall Set</button> 
-                        <div id="small-wall" class="mymapdiv terrain"> 
-                            <img src="./assets/images/Tokens/wall.png"> 
-                        </div>                         
-                    </div> 
-                </div>
             <!--LG Monster-->
                 <div  class="item-outer-box-lg">
                     <div class="width40 big" id="newBossMonster">
@@ -131,42 +103,17 @@
                         </div>                         
                     </div> 
                 </div>
-            <!--LG Water-->
-                <div  class="item-outer-box-lg">
-                    <div class="width40 big" id="newWater">  
-                        <button id="createNewWaterToken">Get New Big<br>Water Set</button> 
-                        <div id="large-water" class="mymapdiv"> 
-                            <img src="./assets/images/Tokens/water.png"> 
-                        </div>                         
-                    </div> 
-                </div>
-            <!--LG Wrough Terrain-->
-                <div  class="item-outer-box-lg">
-                    <div class="width40 big" id="newWrough">  
-                        <button id="createNewWroughToken">Get New Big<br>Terrain Set</button> 
-                        <div id="large-terrain" class="mymapdiv"> 
-                            <img src="./assets/images/Tokens/wroughTerain.png"> 
-                        </div>                         
-                    </div> 
-                </div>
-            <!--Large Wall-->
-                <div  class="item-outer-box-lg">
-                    <div class="width40 big" id="newWall">  
-                        <button id="createNewWallToken">Get New Big<br>Wall Set</button> 
-                        <div id="large-wall" class="mymapdiv"> 
-                            <img src="./assets/images/Tokens/wall.png"> 
-                        </div>                         
-                    </div> 
-                </div>
-            <!--Large Wall-->
+            <!--Graveyard-->
                 <div class="grave">
                     <img src="./assets/images/Tokens/grave-yard.png"> 
                 </div>
         </section>
         <!--Map Zone-->
-        <section id="mapZone" class="map-bg map-zone">
-        </section>
-      </div>  
+        <div id="makeMap"> 
+            <section id="mapZone">
+            </section>
+        </div>  
+        <!--Maps you made Zone-->    
         <section>
             <div class="col-sm-11"><h2 class="flex1 less-padding-btm">Maps You've Made:</h2>
             <h4 class="dark-glow" style="margin:auto;">Right Click on a Map to Save to Your Computer</h4> 
