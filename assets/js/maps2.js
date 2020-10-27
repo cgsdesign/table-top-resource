@@ -115,7 +115,7 @@ blockTokenNum = blockTokenNum +1
 blockColorChange()
 //end
 }
-if (window.innerWidth > 1000) { 
+if (window.innerWidth > 1100) { 
 createBlocks()
 }
 //tablet-------------------------------------------------------------------------------------------
@@ -136,7 +136,7 @@ var createBlocksTablet = function(){
   blockColorChange()
   //end
   }
-  if (window.innerWidth < 1000 && window.innerWidth > 400) { 
+  if (window.innerWidth < 1100 && window.innerWidth > 400) { 
   createBlocksTablet()
   }
 
