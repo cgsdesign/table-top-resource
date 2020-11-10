@@ -26,7 +26,9 @@
             </button> 
             <h4 class="dark-glow" style="justify-items:right;">
                 Click on map squares to cycle through terain options and build your map.<br>
-                Saved maps are located at the bottom of the screen.<br>
+                <div class="hide-mobile">
+                    Saved maps are located at the bottom of the screen.<br>
+                </div>
                 Drag character and monster tokens for live play!
             </h4>
             <div>
@@ -38,14 +40,14 @@
                 CLEAR MAP 
             </button>
             <a href="./index.html">
-                <button class="bottom-right clearmap" id="clearmap"> 
+                <button class="bottom-right clearmap"> 
                     RETURN TO SITE
                 </button>
             </a>
             </div>
         </header>
         <!--below custom styling needed for buttons-->
-        <section id="reload-map" class="section monkbg"style="padding: 5px;">
+        <section class="section monkbg"style="padding: 5px;">
             <!--Archer-->
                 <div class="item-outer-box">
                     <div class="width20"> 
@@ -111,9 +113,11 @@
         </section>
         <!--Map Zone-->
         <div id="makeMap"> 
-            <section id="mapZone">
-            </section>
-        </div>  
+            <div id="reload-map">
+                <section id="mapZone">
+                </section>
+            </div>  
+        </div>
         <!--Maps you made Zone-->    
         <section>
             <div class="col-sm-11"><h2 class="flex1 less-padding-btm">Maps You've Made:</h2>
@@ -121,7 +125,6 @@
             <div>
             <div id="output"></div> 
         </section>
-        <!--<script src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="lqz6pfv33ogj66v"></script>-->
         <script src="./assets/js/html2canvas.min.js"></script> 
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

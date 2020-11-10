@@ -59,8 +59,7 @@ parent.append(style);
 $( function() {
     $( ".mymapdiv" ).draggable({
       containment: "document"
-    });
-    
+    });  
     var someArray = [];
   } );
 //end
@@ -75,62 +74,62 @@ return
 //Block Color Change-----------------------------------------------------------
 var blockColorChange = function(){
   $('.block').click(function() {
-  if ( $(this).hasClass('origin') ) {
-    $(this).addClass('water').removeClass('origin');
-    return
-  }
-  else if ( $(this).hasClass('water') ) {
-    $(this).addClass('terrain')
-    $(this).removeClass('water');
-    return
-  }
-  else if ( $(this).hasClass('terrain') ) {
-    $(this).addClass('wall');
-    $(this).removeClass('terrain');
-    return
-  }
-  else
-    $(this).addClass('origin');
-    $(this).removeClass('wall');
-    return
-})
+    if ( $(this).hasClass('origin') ) {
+      $(this).addClass('water').removeClass('origin');
+      return
+    }
+    else if ( $(this).hasClass('water') ) {
+      $(this).addClass('terrain')
+      $(this).removeClass('water');
+      return
+    }
+    else if ( $(this).hasClass('terrain') ) {
+      $(this).addClass('wall');
+      $(this).removeClass('terrain');
+      return
+    }
+    else
+      $(this).addClass('origin');
+      $(this).removeClass('wall');
+      return
+  })
 }
 //SPAWN BLOCKS with Class Change Ability---------------------------------------
 //Desktop
 var blockTokenNum = 0
 var createBlocks = function(){
-//Spawn block numbers
-for (i=0; i<325;i++){
-var parent = $("#mapZone");
-var style = document.createElement('div');
-style.classList.add("origin")
-style.classList.add("block")
-style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
-style.innerHTML = `<ul></ul>`;
-parent.append(style);
-//curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
-blockTokenNum = blockTokenNum +1
-}
-//make color click change - NOTE- only add this once not in 4 loop,only after!!!!!
-blockColorChange()
-//end
-}
-if (window.innerWidth > 1100) { 
-createBlocks()
+  //Spawn block numbers
+  for (i=0; i<325;i++){
+    var parent = $("#mapZone");
+    var style = document.createElement('div');
+    style.classList.add("origin")
+    style.classList.add("block")
+    style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
+    style.innerHTML = `<ul></ul>`;
+    parent.append(style);
+    //curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
+    blockTokenNum = blockTokenNum +1
+  }
+  //make color click change - NOTE- only add this once not in 4 loop,only after!!!!!
+  blockColorChange()
+  //end
+  }
+  if (window.innerWidth > 1100) { 
+  createBlocks()
 }
 //tablet-------------------------------------------------------------------------------------------
 var createBlocksTablet = function(){
   //Spawn block numbers
   for (i=0; i<300;i++){
-  var parent = $("#mapZone");
-  var style = document.createElement('div');
-  style.classList.add("origin")
-  style.classList.add("block")
-  style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
-  style.innerHTML = `<ul></ul>`;
-  parent.append(style);
-  //curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
-  blockTokenNum = blockTokenNum +1
+    var parent = $("#mapZone");
+    var style = document.createElement('div');
+    style.classList.add("origin")
+    style.classList.add("block")
+    style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
+    style.innerHTML = `<ul></ul>`;
+    parent.append(style);
+    //curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
+    blockTokenNum = blockTokenNum +1
   }
   //make color click change - NOTE- only add this once not in 4 loop,only after!!!!!
   blockColorChange()
@@ -138,22 +137,22 @@ var createBlocksTablet = function(){
   }
   if (window.innerWidth < 1100 && window.innerWidth > 400) { 
   createBlocksTablet()
-  }
+}
 
 //cell phone blocks -------------------------------------------------------------------------------
 var createBlocksCell = function(){
   //Spawn block numbers
   blockNum=91
   for (i=0; i<91;i++){
-  var parent = $("#mapZone");
-  var style = document.createElement('div');
-  style.classList.add("origin")
-  style.classList.add("block")
-  style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
-  style.innerHTML = `<ul></ul>`;
-  parent.append(style);
-  //curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
-  blockTokenNum = blockTokenNum +1
+    var parent = $("#mapZone");
+    var style = document.createElement('div');
+    style.classList.add("origin")
+    style.classList.add("block")
+    style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
+    style.innerHTML = `<ul></ul>`;
+    parent.append(style);
+    //curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
+    blockTokenNum = blockTokenNum +1
   }
   //make color click change - NOTE- only add this once not in 4 loop,only after!!!!!
   blockColorChange()
@@ -162,12 +161,11 @@ var createBlocksCell = function(){
   }
   if (window.innerWidth < 400) { 
     createBlocksCell()
-  }
+}
 
 //SAVE MAP------------------------------------------------------------
 var takeshot = function() { 
-    let div = 
-        document.getElementById('makeMap'); 
+    let div = document.getElementById('makeMap'); 
 
     // Use the html2canvas to take a screenshot 
     // and append it* note button must be at top of screen
@@ -193,7 +191,20 @@ mapMadeAlrt.addEventListener("click", takeshot);
 //RELOAD MAP------------------------------------------------------------
 //looking at error code, should work when live on https
 var ReloadMap = function() {
-  $("#reload-map").load(location.href+" #reload-map>*","");
+
+  var ReplacableMapZone = document.getElementById('mapZone')
+  ReplacableMapZone.innerHTML = '';
+
+  console.log( "hit")
+  if (window.innerWidth > 1100) { 
+    createBlocks()
+    }
+  else if (window.innerWidth < 1100 && window.innerWidth > 400) { 
+    createBlocksTablet()
+    }
+  else { 
+    createBlocksCell()
   }
+}
 var mapClearAlrt = document.getElementById("clearmap")
 mapClearAlrt.addEventListener("click", ReloadMap);
