@@ -42,13 +42,6 @@ min-width: 91px;
 background-color: rgba(250, 250, 250, .7);
 }
 
-/*terain tokens*/
-  .mymapdiv {
-    position: absolute;
-    z-index: 9;
-    opacity: .7;
-  }
-  
 /*class to keep characters tokenson top*/
   .charTop {
     z-index: 999;
@@ -73,25 +66,48 @@ background-color: rgba(250, 250, 250, .7);
   .width40{
     width:80px;
     display: flex;
-  flex:1;
-  margin: 5px 0px 0px 5px;
-  text-align: center;
-}
+    flex:1;
+    margin: 5px 0px 0px 5px;
+    text-align: center;
+  }
 
-.grave {
-  padding: 0px 20px;
-}
-.grave img{
-min-width:120px;
-min-height:129x;
-max-width:120px;
-max-height:129px;
-padding:10px;
-background:#00d5c6;
-margin-top:5px;
-border-radius: 25px;
-box-shadow:inset 0px 0px 20px #000,0px 0px 20px #000,inset 0px 0px 40px #000;
-}
+  .grave {
+    padding: 0px 20px;
+  }
+  .grave img{
+    min-width:120px;
+    min-height:129x;
+    max-width:120px;
+    max-height:129px;
+    padding:10px;
+    background:#00d5c6;
+    margin-top:5px;
+    border-radius: 25px;
+    box-shadow:inset 0px 0px 20px #000,0px 0px 20px #000,inset 0px 0px 40px #000;
+  }
+/* moster token color changing*/
+  .colorM1 {
+    filter: brightness(-30%);
+    filter: grayscale(20%);
+  }
+  .colorM2 {
+    filter: hue-rotate(60deg);
+    filter: grayscale(40%);
+  }
+  .colorM3 {
+    filter: grayscale(60%);
+  }
+  .colorM4 {
+    filter: brightness(20%);
+    filter: grayscale(80%);
+  }
+  .colorM5 {
+    filter: grayscale(100%);
+  }
+  .colorM6 {
+    filter: grayscale(0%);    
+  }
+
 /*map area and saving and clearing*/
   .map-bg {
     background-image: url('../assets/images/grid3.jpg');

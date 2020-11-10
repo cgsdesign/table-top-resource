@@ -14,19 +14,27 @@ $( function() {
     var someArray = [];
   } )
 
+//color change random---------------------
+var randomColorize = function(){
+  var colorsArray = [ "colorM1", "colorM2", "colorM3", "colorM4", "colorM5", 'colorM6', 'colorM7']
+  console.log("running randomColorize")
+  return  colorsArray[Math.floor(Math.random()*6+.2)]
+}
+
 //SPAWNING MONSTERS-----------------------------------------------------
 
 //spon new monster to Drag
 var tokenNum = 2
 var createNewMonsterToken = function(){
-console.log(tokenNum)
+//console.log(tokenNum)
+var monsterColor = randomColorize()
 //make parent componant
 var parent = document.getElementById("newMonster")
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
 style.classList.add("charTop")
 style.setAttribute("id", `mymapdivM${tokenNum}`)
-style.innerHTML = `<img src="./assets/images/Tokens/monster.png"><b>${tokenNum}</b>`;
+style.innerHTML = `<img class="${monsterColor}" src="./assets/images/Tokens/monster.png"><b>${tokenNum}</b>`;
 parent.appendChild(style);
 //make dragable
 $( function() {
@@ -36,24 +44,26 @@ $( function() {
     var someArray = [];
   } );
   //end
-console.log(style)
-console.log(tokenNum)
+//console.log(style)
+//console.log(tokenNum)
 tokenNum = tokenNum +1
 return
 }
+
 
 //spon new boss monster to Drag----------
 var bossTokenNum = 2
 var Trial = ""
 var createNewBossToken = function(){
-console.log(bossTokenNum)
+//console.log(bossTokenNum)
+monsterColor = randomColorize()
 //make parent componant
 var parent = $("#newBossMonster");
 var style = document.createElement('div');
 style.classList.add("mymapdiv")
 style.classList.add("charTop")
 style.setAttribute("id", `mymapdivB${bossTokenNum}`)
-style.innerHTML = `<img src="./assets/images/Tokens/boss.png"><b>${bossTokenNum}</b>`;
+style.innerHTML = `<img class="${monsterColor}" src="./assets/images/Tokens/boss.png"><b>${bossTokenNum}</b>`;
 parent.append(style);
 //make dragable
 $( function() {
@@ -63,8 +73,7 @@ $( function() {
     var someArray = [];
   } );
 //end
-console.log(style)
-console.log(bossTokenNum)
+//console.log(bossTokenNum)
 bossTokenNum = bossTokenNum +1
 return
 }
