@@ -68,6 +68,7 @@
  * [HTML2Canvas](https://html2canvas.hertzen.com/)
  * [D&D 5e API](https://www.dnd5eapi.co/)
  * [Pixabay](https://pixabay.com/)
+ * [Touch Punch](https://github.com/furf/jquery-ui-touch-punch)
 
 
 </br>
