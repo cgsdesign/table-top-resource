@@ -123,4 +123,7 @@ td:hover {
         padding-left:0px;
         padding-right:0px;
     }
+    td.hour{
+        font-size:8px;
+    }
 }
