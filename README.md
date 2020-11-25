@@ -107,6 +107,8 @@
 
 ![ScreenShot3of3](assets/images/image02.png)
 
+![ScreenShot3of3](assets/images/map-mockup.png)
+
 </br>
 </br>
 </br>
