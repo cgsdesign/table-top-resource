@@ -104,11 +104,15 @@ var blockColorChange = function(){
   })
 }
 //SPAWN BLOCKS with Class Change Ability---------------------------------------
+
 //Desktop
 var blockTokenNum = 0
 var createBlocks = function(){
-  //Spawn block numbers
-  for (i=0; i<325;i++){
+  //Spawn block numbers based on page width
+  var widthPage = Math.floor((window.innerWidth-40)/50)*13
+  console.log(window.innerWidth)
+  console.log(widthPage)
+  for (i=0; i<widthPage;i++){
     var parent = $("#mapZone");
     var style = document.createElement('div');
     style.classList.add("origin")
@@ -122,55 +126,9 @@ var createBlocks = function(){
   //make color click change - NOTE- only add this once not in 4 loop,only after!!!!!
   blockColorChange()
   //end
-  }
-  if (window.innerWidth > 1100) { 
-  createBlocks()
-}
-//tablet-------------------------------------------------------------------------------------------
-var createBlocksTablet = function(){
-  //Spawn block numbers
-  for (i=0; i<300;i++){
-    var parent = $("#mapZone");
-    var style = document.createElement('div');
-    style.classList.add("origin")
-    style.classList.add("block")
-    style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
-    style.innerHTML = `<ul></ul>`;
-    parent.append(style);
-    //curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
-    blockTokenNum = blockTokenNum +1
-  }
-  //make color click change - NOTE- only add this once not in 4 loop,only after!!!!!
-  blockColorChange()
-  //end
-  }
-  if (window.innerWidth < 1100 && window.innerWidth > 400) { 
-  createBlocksTablet()
 }
 
-//cell phone blocks -------------------------------------------------------------------------------
-var createBlocksCell = function(){
-  //Spawn block numbers
-  blockNum=91
-  for (i=0; i<91;i++){
-    var parent = $("#mapZone");
-    var style = document.createElement('div');
-    style.classList.add("origin")
-    style.classList.add("block")
-    style.setAttribute("id", `mymapdivBlock${blockTokenNum}`)
-    style.innerHTML = `<ul></ul>`;
-    parent.append(style);
-    //curently on this is and ID are only in place in case want to later add sortable to pieces to snap to map
-    blockTokenNum = blockTokenNum +1
-  }
-  //make color click change - NOTE- only add this once not in 4 loop,only after!!!!!
-  blockColorChange()
-  
-  //end
-  }
-  if (window.innerWidth < 400) { 
-    createBlocksCell()
-}
+  createBlocks()
 
 //SAVE MAP------------------------------------------------------------
 var takeshot = function() { 
@@ -205,15 +163,33 @@ var ReloadMap = function() {
   ReplacableMapZone.innerHTML = '';
 
   console.log( "hit")
-  if (window.innerWidth > 1100) { 
     createBlocks()
-    }
-  else if (window.innerWidth < 1100 && window.innerWidth > 400) { 
-    createBlocksTablet()
-    }
-  else { 
-    createBlocksCell()
-  }
+
 }
 var mapClearAlrt = document.getElementById("clearmap")
 mapClearAlrt.addEventListener("click", ReloadMap);
+
+//HIDE TOKEN BAR----------------------------------------------------------
+function hideBar() {
+  var tokenBar = document.getElementById("tokenbar");
+  tokenBar.classList.toggle("hidebar");
+
+
+
+  var tokenButton = document.getElementById("hidetokenbar");
+  var tokenButtonText = tokenButton.innerHTML
+  console.log(tokenButtonText)
+  if (tokenButtonText=="OPEN TOKEN BAR") {
+    tokenButton.innerHTML = "HIDE TOKENS & BAR"
+    $("#hidetokenbar").removeClass("secondary-button");
+    $("#hidetokenbar").addClass("primary-button");
+  }
+  else {tokenButton.innerHTML = "OPEN TOKEN BAR"
+  $("#hidetokenbar").removeClass("primary-button");
+  $("#hidetokenbar").addClass("secondary-button");
+}
+
+
+}
+var hideTokenBar = document.getElementById("hidetokenbar")
+hideTokenBar.addEventListener("click", hideBar);

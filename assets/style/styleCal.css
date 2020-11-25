@@ -14,12 +14,16 @@ tr {
 td.hour{
     padding-top: 45px;
     padding-bottom: 45px;
+    font-size:12px;
+    padding-left:0px;
+    padding-right:0px;
 }
 .calendar {
     display: fixed;
     color:#d8d8d8;
     height: 500px;
     width: 100%;
+    text-align: center;
 }
 
 span {
@@ -61,13 +65,16 @@ td:hover {
     font-family: 'Eagle Lake', sans-serif;
     list-style: none;
     font-weight: 400;
-    padding: 10px 20px;
+    padding: 10px 0px;
     text-transform: uppercase;
     margin:none;
     color: black;
+    font-size:12px;
 }
 
-
+.schedule-text {
+    font-size:12px;
+}
 /* not displaying number inside of table data */
 .nothing {
   display: none;
@@ -84,6 +91,7 @@ td:hover {
   width: 100%; 
   height: 100%; 
   background-color: rgba(0,0,0,0.4); 
+  text-align: center;
 }
 
 /* Modal Content */
@@ -107,5 +115,12 @@ td:hover {
         visibility: hidden;
     }
 
+    .hideSM {
+        visibility: hidden;
+    }
 
+    .td {
+        padding-left:0px;
+        padding-right:0px;
+    }
 }

@@ -13,12 +13,12 @@ var abilityScores = function() {
     $("#rowCont").append($statsCol)
     $("#rowCont").append($infoBlockCol)
 
-    $("#statsCol").append("<p id='strCont'>Strength (STR): </p>")
-    $("#statsCol").append("<p id='dexCont'>Dexterity (DEX): </p>")
-    $("#statsCol").append("<p id='conCont'>Constitution (CON): </p>")
-    $("#statsCol").append("<p id='intCont'>Intelligence (INT): </p>")
-    $("#statsCol").append("<p id='wisCont'>Wisdom (WIS): </p>")
-    $("#statsCol").append("<p id='chaCont'>Charisma (CHA): </p>")
+    $("#statsCol").append("<p class='hover-ef' id='strCont'>Strength (STR): </p>")
+    $("#statsCol").append("<p class='hover-ef' id='dexCont'>Dexterity (DEX): </p>")
+    $("#statsCol").append("<p class='hover-ef' id='conCont'>Constitution (CON): </p>")
+    $("#statsCol").append("<p class='hover-ef' id='intCont'>Intelligence (INT): </p>")
+    $("#statsCol").append("<p class='hover-ef' id='wisCont'>Wisdom (WIS): </p>")
+    $("#statsCol").append("<p class='hover-ef' id='chaCont'>Charisma (CHA): </p>")
 
     // listeners for the list options
     $("#strCont").on("click", function() {
@@ -98,7 +98,7 @@ var skillsList = function() {
             var skills = data.results
 
             for(i = 0; i < skills.length; i++) {
-                $("#statsCol").append("<p id='" + [i] + "'>" + skills[i].name + "</p>")
+                $("#statsCol").append("<p class='hover-ef' id='" + [i] + "'>" + skills[i].name + "</p>")
             }
 
             $("#statsCol").on("click", "p", function() {
@@ -304,7 +304,7 @@ var weaponCategory = function() {
             var equipmentList = data.equipment
 
             for (i = 0; i < 37; i++) {
-                $("#equipResults").append("<p id='" + [i] + "'>" + equipmentList[i].name + "</p>")
+                $("#equipResults").append("<p class='hover-ef' id='" + [i] + "'>" + equipmentList[i].name + "</p>")
             }
 
             $("#equipResults").on("click", "p", function() {
@@ -362,7 +362,7 @@ var armorCategory = function() {
             var equipmentList = data.equipment
 
             for (i = 0; i < 13; i++) {
-                $("#equipResults").append("<p id='" + [i] + "'>" + equipmentList[i].name + "</p>")
+                $("#equipResults").append("<p class='hover-ef' id='" + [i] + "'>" + equipmentList[i].name + "</p>")
             }
 
             $("#equipResults").on("click", "p", function() {
@@ -470,7 +470,7 @@ var spellLevelCat = function(spells) {
             $("#rowCont").append($spellInfo);
 
             for(i = 0; i < listSpells.length; i++) {
-            $("#spellResults").append("<p id='" + [i] + "'>" + listSpells[i].name + "</p>")
+            $("#spellResults").append("<p class='hover-ef' id='" + [i] + "'>" + listSpells[i].name + "</p>")
             }
 
             $("#spellResults").on("click", "p", function() {
@@ -525,7 +525,7 @@ var monsterList = function(cr) {
             var monList = data.results
 
             for(i = 0; i < monList.length; i++) {
-                $("#monsterResults").append("<p id='" + [i] + "'>" + monList[i].name + "</p>")
+                $("#monsterResults").append("<p class='hover-ef' id='" + [i] + "'>" + monList[i].name + "</p>")
             }
             $("#monsterResults").on("click", "p", function() {
                 var getId = $(this)

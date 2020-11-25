@@ -72,7 +72,7 @@ button {
     box-shadow:inset 0px 0px 15px #000,0px 0px 3px #000;
     color:white;
     font-family: 'Eagle Lake', sans-serif;
-    margin:0px 0px;
+    margin:2px 0px;
     border:none;
     text-transform: uppercase;
     text-shadow:3px 3px 25px var(var(--main));
@@ -268,6 +268,10 @@ header nav ul a:hover{
     font-weight: bold;
 }
 
+.hover-ef:hover{
+    font-weight: bold;
+}
+
 /*backgrounds*/
 .swordbg {
     background-image: url('../assets/images/helm-bg.jpg');
@@ -290,6 +294,7 @@ header nav ul a:hover{
     background-attachment: fixed;
     background-position: bottom; 
 }
+
 
 /*ImageSearch*/
 #imageInput {
@@ -377,10 +382,29 @@ header nav ul a:hover{
         margin-left: 0px;
     }
 
+    header {
+        padding: 10px 20px;
+        justify-content: center;
+        text-align:center;
+    }
+    header button{
+        margin: 6px 6px;
+    }
+    header h1 {
+        font-size: 48px;
+    }
+    header nav ul{
+        justify-content: center;
+    }
     header nav ul li{
-        margin: 2px 2px;
+        margin: 6px 6px;
     }
     .dropdown {
         margin: 2px auto;
     }
+    .monkbg,.firebg, .firebg,.hero {
+        background-size: 250%;
+        background-position: center; 
+    }
+
     }

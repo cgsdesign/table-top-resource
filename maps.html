@@ -21,33 +21,39 @@
     </head>
     <body>
         <header>
-            <h1 class="secondary">Maps</h1>
+            <h1 class="secondary max400">Maps</h1>
             <!--Print Button-->
-            </button> 
             <h4 class="dark-glow" style="justify-items:right;">
-                Click on map squares to cycle through terain options and build your map.<br>
+                Click on map squares to cycle through terain options and build your map.
+                <br>
                 <div class="hide-mobile">
-                    Saved maps are located at the bottom of the screen.<br>
+                Saved maps are located at the bottom of the screen.<br>
                 </div>
                 Drag character and monster tokens for live play!
+                <br>
+                If you change window sizes, when you refresh the map, the new map will spawn to the new size.
             </h4>
-            <div>
-            <button id="save-map" class=" secondary-button bottom-right"> 
-                SAVE MAP 
-                <div class="map-made-alert">Map Saved Below</div>
-            </button> 
-            <button class="bottom-right clearmap" id="clearmap"> 
-                CLEAR MAP 
-            </button>
-            <a href="./index.html">
-                <button class="bottom-right clearmap"> 
-                    RETURN TO SITE
+            <br>
+            <div >  
+                <button id="save-map" class="secondary-button bottom-right"> 
+                    SAVE MAP 
+                    <div class="map-made-alert">Map Saved Below</div>
+                </button> 
+                <button class="bottom-right clearmap" id="clearmap"> 
+                    REFRESH MAP 
                 </button>
-            </a>
-            </div>
+                <a href="./index.html">
+                    <button class="bottom-right clearmap"> 
+                        RETURN TO SITE
+                    </button>
+                </a>
+                <button class="clearmap" id="hidetokenbar"> 
+                    HIDE TOKENS & BAR
+                </button>
+            </div>  
         </header>
         <!--below custom styling needed for buttons-->
-        <section class="section monkbg"style="padding: 5px;">
+        <section id="tokenbar" class="section monkbg" style="padding: 5px;">
             <!--Archer-->
                 <div class="item-outer-box">
                     <div class="width20"> 
@@ -128,6 +134,7 @@
         <script src="./assets/js/html2canvas.min.js"></script> 
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="scripts/jquery.ui.touch-punch.min.js"></script>
         <script src="./assets/js/maps2.js"></script>
     </body>
 </html>
